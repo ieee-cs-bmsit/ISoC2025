@@ -1,5 +1,6 @@
 {
   "name": "client",
+   "homepage": "https://ieee-cs-bmsit.github.io/ISoC2025",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+
+    "deploy": "gh-pages -d dist",
+  
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.3",
@@ -26,6 +32,7 @@
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
+    "gh-pages": "^6.3.0",
     "globals": "^15.15.0",
     "vite": "^6.2.0"
   }
