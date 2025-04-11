@@ -39,7 +39,7 @@ const Home = () => {
       </div> */}
 
       {/* Hero Section */}
-      <div style={{height:"600px"}} className=" text-center p-10 text-9xl bg-[#fff] font-bold text-blue-500 space-grotesk-regular"
+      <div style={{height:"500px"}} className=" text-center p-10 text-5xl bg-[#fff] font-bold text-blue-500 space-grotesk-regular"
       >
         
         Hero Section
@@ -52,12 +52,13 @@ const Home = () => {
 
       {/*Sponsor Section*/}
       <div className="bg-[#f6eee2] py-10">
-        <p
-          className="text-center text-7xl p-6 text-[#ee540e] my-5"
-          style={{ fontFamily: "CameraObscuraDEMO, sans-serif" }}
-        >
-          Our Sponsors
-        </p>
+      <p
+  className="text-center text-5xl md:text-7xl p-5 text-[#ee540e] my-5"
+  style={{ fontFamily: "CameraObscuraDEMO, sans-serif" }}
+>
+  Our Sponsors
+</p>
+
         <Sponsorsection
           texts={[sponsors, sponsors]} // Two rows, each showing the 10 sponsors
           velocity={100}
@@ -72,7 +73,7 @@ const Home = () => {
         <Faqsection />
       </div>
 
-      <div style={{height:"600px"}} className=" text-center p-10 text-9xl bg-[#999696] font-bold text-white space-grotesk-regular"
+      <div style={{height:"600px"}} className=" text-center p-10 text-4xl bg-[#999696] font-bold text-white space-grotesk-regular"
       >
         
         Footer Section

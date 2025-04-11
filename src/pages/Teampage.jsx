@@ -9,8 +9,8 @@ const fadeUp = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.1,
-      duration: 0.6,
+      delay: i * 0.06,
+      duration: 0.45,
       ease: "easeOut"
     }
   })
@@ -22,7 +22,7 @@ const slideRight = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.45,
       ease: 'easeOut',
     },
   },
@@ -35,7 +35,7 @@ const Teampage = () => {
 
         {/* Heading */}
         <motion.p
-          className='text-center text-6xl font-bold font-[CameraObscuraDEMO] py-6'
+          className='text-center text-4xl md:text-6xl font-bold font-[CameraObscuraDEMO] py-6'
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -80,7 +80,7 @@ const Teampage = () => {
 
         {/* Coordinators */}
         <motion.h2
-          className='text-center text-6xl font-bold  font-[CameraObscuraDEMO] py-6'
+          className='text-center text-4xl md:text-6xl font-bold  font-[CameraObscuraDEMO] py-6'
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -124,7 +124,7 @@ const Teampage = () => {
 
         {/* Volunteers */}
         <motion.h2
-          className='text-center text-6xl font-bold font-[CameraObscuraDEMO] py-8'
+          className='text-center text-4xl md:text-6xl font-bold font-[CameraObscuraDEMO] py-8'
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}

@@ -7,7 +7,7 @@ return (
         style={{ height: "600px" }}
     >
         <p
-            className="text-center text-7xl p-6 text-[#ee540e] my-5"
+            className="text-center text-5xl p-6 text-[#ee540e] my-5"
             style={{ fontFamily: "CameraObscuraDEMO, sans-serif" }}
         >
             Repo Preview
