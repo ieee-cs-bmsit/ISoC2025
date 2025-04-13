@@ -1,6 +1,6 @@
 {
   "name": "client",
-   "homepage": "https://ieee-cs-bmsit.github.io/ISoC2025",
+  "homepage": "https://ieee-cs-bmsit.github.io/ISoC2025",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,14 +10,13 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-
     "deploy": "gh-pages -d dist",
-  
     "clean": "rm -rf dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.3",
     "framer-motion": "^12.6.3",
+    "lucide-react": "^0.487.0",
     "react": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",

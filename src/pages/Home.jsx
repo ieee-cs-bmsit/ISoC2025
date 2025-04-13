@@ -4,10 +4,12 @@ import Timeline from "../components/Timeline";
 import About from "../components/About";
 import Faqsection from "../components/Faqsection";
 import { motion } from "framer-motion";
-import Repopreview from '../components/Repopreview';
+import Hero from "../components/Hero";
+import Footer from "../components/Footer";
+import ScrollCard from '../components/ScrollCard';
 
 const Home = () => {
-    const sponsors = [];
+  const sponsors = [];
 
   for (let i = 0; i < 10; i++) {
     sponsors.push(
@@ -32,32 +34,23 @@ const Home = () => {
   }
   return (
     <div>
-      {/* Navbar Section */}
-      {/* <div className=" text-center bg-black py-5 text-xl font-bold text-blue-500 mb-[300px] space-grotesk-regular"
-      >
-        Navbar
-      </div> */}
 
       {/* Hero Section */}
-      <div style={{height:"500px"}} className=" text-center p-10 text-5xl bg-[#fff] font-bold text-blue-500 space-grotesk-regular"
-      >
-        
-        Hero Section
-      </div>
+      <Hero></Hero>
 
-      <About/>
+      <About />
 
       {/* Timeline Section */}
       <Timeline />
 
       {/*Sponsor Section*/}
       <div className="bg-[#f6eee2] py-10">
-      <p
-  className="text-center text-5xl md:text-7xl p-5 text-[#ee540e] my-5"
-  style={{ fontFamily: "CameraObscuraDEMO, sans-serif" }}
->
-  Our Sponsors
-</p>
+        <p
+          className="text-center text-5xl md:text-7xl p-5 text-[#ee540e] my-5"
+          style={{ fontFamily: "CameraObscuraDEMO, sans-serif" }}
+        >
+          Our Sponsors
+        </p>
 
         <Sponsorsection
           texts={[sponsors, sponsors]} // Two rows, each showing the 10 sponsors
@@ -66,18 +59,16 @@ const Home = () => {
           className="custom-scroll-text"
         />
       </div>
-      <div>
-        <Repopreview/>
+
+      <div className="h-screen">
+        <ScrollCard />
       </div>
+
       <div className="bg-[#1f3cfc] py-10">
         <Faqsection />
       </div>
 
-      <div style={{height:"600px"}} className=" text-center p-10 text-4xl bg-[#999696] font-bold text-white space-grotesk-regular"
-      >
-        
-        Footer Section
-      </div>
+      <Footer></Footer>
     </div>
   )
 }

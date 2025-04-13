@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <div className='navbar'>
+    <div className='navbar -mb-14'>
       {/* Logo */}
       <NavLink to="/" className="navbar-logo-link">
         <img

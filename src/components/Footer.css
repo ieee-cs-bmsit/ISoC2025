@@ -1,0 +1,8 @@
+li {
+  cursor: pointer;
+  width: fit-content;
+}
+
+li:hover {
+  color: white;
+}
