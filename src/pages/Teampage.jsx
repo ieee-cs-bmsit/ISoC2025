@@ -30,8 +30,8 @@ const slideRight = {
 
 const Teampage = () => {
   return (
-    <div className='bg-[#eed2a9] p-6'>
-      <div className='max-w-[1280px] mx-auto p-6 rounded-xl border-2 bg-[#f6eee2]'>
+    <div>
+      <div className=' mt-[2rem] p-6 rounded-xl border-2 bg-[#f6eee2]'>
 
         {/* Heading */}
         <motion.p
@@ -41,7 +41,7 @@ const Teampage = () => {
           viewport={{ once: true }}
           variants={slideRight}
         >
-          Meet the <span className='text-[#EE540E] uppercase'>Team</span>
+          Meet the <span className='text-[#EE540E] uppercase mt-2'>Team</span>
         </motion.p>
 
         {/* Team Cards */}
