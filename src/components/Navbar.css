@@ -9,6 +9,15 @@ body {
   font-family: 'Space Grotesk', sans-serif;
 } */
 
+/* Scroll Lock */
+.no-scroll {
+  overflow: hidden;
+  touch-action: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 /* Navbar Container */
 .navbar {
   height: 9vh;
@@ -112,6 +121,11 @@ body {
   display: flex;
   flex-direction: column;
   animation: slideIn 0.3s ease-in-out;
+
+  /* Disable scroll inside and outside */
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
 @keyframes slideIn {
@@ -226,3 +240,4 @@ body {
     display: block;
   }
 }
+  
