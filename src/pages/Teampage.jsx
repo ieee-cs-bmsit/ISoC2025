@@ -32,7 +32,6 @@ const Teampage = () => {
   return (
     <div>
       <div className=' mt-[2rem] p-6 rounded-xl border-2 bg-[#f6eee2]'>
-
         {/* Heading */}
         <motion.p
           className='text-center text-4xl md:text-6xl font-bold font-[CameraObscuraDEMO] py-6'
