@@ -27,7 +27,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.1rem 3rem;
+  padding: 0.1rem 2.7rem;
   position: relative;
   z-index: 10;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
@@ -94,9 +94,9 @@ body {
 .dot-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 6px;
-  width: 24px;
-  height: 24px;
+  gap: 4px;
+  width: 16px;
+  height: 16px;
 }
 
 .dot {
@@ -240,4 +240,3 @@ body {
     display: block;
   }
 }
-  
