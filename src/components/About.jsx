@@ -9,7 +9,7 @@ function About() {
       <div className="about-main-container">
         <div className="left-container">
           <div className="stay-updated-container">
-            <p className='font-title px-4 py-2'> Stay Updated </p>
+            <p className='font-title lg:px-4 py-2'> Stay Updated </p>
           </div>
 
           <div className="about-content space-grotesk-regular">

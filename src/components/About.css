@@ -8,7 +8,7 @@
 /* Main About Container */
 .about-main-container {
   background-color: #323339;
-  padding: 4rem 4rem;
+  padding: 8rem 4rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -124,7 +124,6 @@
   .about-main-container {
     flex-direction: column;
     padding: 2rem 2rem;
-    margin: 2rem 1.5rem;
   }
 
   .left-container {
@@ -159,7 +158,6 @@
   .about-main-container {
     flex-direction: column;
     padding: 1.5rem 1rem;
-    margin: 1.5rem 1rem;
     gap: 2.2rem;
   }
 
