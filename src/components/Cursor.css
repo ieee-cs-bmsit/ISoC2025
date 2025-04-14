@@ -1,0 +1,17 @@
+:root {
+  --cursor-size: 2rem;
+  --cursor-border-radius: 100%;
+  --cursor-border-thickness: 0.1rem;
+}
+
+.cursor {
+  height: var(--cursor-size);
+  aspect-ratio: 1;
+  border: var(--cursor-border-thickness) solid;
+  border-radius: var(--cursor-border-radius);
+  position: fixed;
+  z-index: 9999;
+  top: calc(var(--cursor-size) / 2 * -1);
+  left: calc(var(--cursor-size) / 2 * -1);
+  pointer-events: none;
+}

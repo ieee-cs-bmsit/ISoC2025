@@ -6,3 +6,9 @@ li {
 li:hover {
   color: white;
 }
+
+.footer-wave {
+  position: absolute;
+  top: -30px;
+  width: 100%;
+}
