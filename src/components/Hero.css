@@ -1,0 +1,22 @@
+.marquee-text {
+  overflow: clip;
+}
+
+.marquee-text-track {
+  display: flex;
+  padding-left: 4.8rem;
+  gap: 4.8rem;
+  width: max-content;
+  animation: marquee-move-text var(--speed, 15s) linear infinite
+    var(--direction, forwards);
+}
+
+.marquee-text p {
+  padding: 1rem 2.5rem;
+}
+
+@keyframes marquee-move-text {
+  to {
+    transform: translateX(-50%);
+  }
+}
