@@ -1,4 +1,10 @@
 /* Reset */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
 /* Main About Container */
 .about-main-container {
   margin: 2rem 0rem;

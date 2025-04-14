@@ -46,8 +46,14 @@ const Home = () => {
       {/*Sponsor Section*/}
       <div className="bg-[#f6eee2] py-10">
         <p
-          className="text-center text-5xl md:text-7xl p-5 text-[#ee540e] my-5"
-          style={{ fontFamily: "CameraObscuraDEMO, sans-serif" }}
+          className="text-center text-5xl md:text-7xl p-5 text-[#ee540e] my-5 text-shadow-xl font-bold"
+          style={{ fontFamily: "CameraObscuraDEMO, sans-serif",
+            textShadow: `
+              -1px -1px 0 #fff,
+              1px -1px 0 #fff,
+              -1px 1px 0 #fff,
+              1px 1px 0 #fff
+            `, }}
         >
           Our Sponsors
         </p>
@@ -64,9 +70,9 @@ const Home = () => {
         <ScrollCard />
       </div>
 
-      <div className="bg-[#1f3cfc] py-10">
-        <Faqsection />
-      </div>
+      <div className="bg-[#1f8d42] py-10">
+  <Faqsection />
+</div>
 
       <Footer></Footer>
     </div>

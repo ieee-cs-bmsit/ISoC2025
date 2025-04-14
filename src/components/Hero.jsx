@@ -25,7 +25,7 @@ const Hero = () => {
                     </button>
                 </div>
             </div>
-            <div className="w-[100vw] overflow-hidden bg-sky-300 py-3 text-black font-bold relative">
+            <div className="w-[100vw] overflow-hidden bg-sky-300 py-4 text-black font-bold relative">
                 <style>
                     {`
           @keyframes scroll {
@@ -41,7 +41,7 @@ const Hero = () => {
           }
         `}
                 </style>
-                <div className="w-max scrolling-content">
+                <div className="w-max scrolling-content text-xl">
                     <p>IEEE BMSITM</p>
                     <p>✺</p>
                     <p>5th May to 21st June</p>

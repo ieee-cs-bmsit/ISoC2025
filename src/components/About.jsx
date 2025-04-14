@@ -9,16 +9,16 @@ function About() {
       <div className="about-main-container">
         <div className="left-container">
           <div className="stay-updated-container">
-            <p> Stay Updated </p>
+            <p className='space-grotesk-regular '> Stay Updated </p>
           </div>
 
-          <div className="about-content">
+          <div className="about-content space-grotesk-regular ">
             <p>Open source is more than just code- it's a community.</p>
             <p>Stay connected, collaborate, and keep your journey going beyond the event!</p>
           </div>
 
           <div className='button-div'>
-            <button className='left-button'><span>Join Here</span></button></div>
+            <button className='left-button'><span className='space-grotesk-regular '>Join Here</span></button></div>
         </div>
 
         <div className="right-container">

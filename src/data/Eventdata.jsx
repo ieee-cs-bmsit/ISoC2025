@@ -1,39 +1,28 @@
 const events = [
   {
-    title: "Event One",
-    subtitle: "Jan 1, 2025",
-    event_visual:<div className="bg-[#f6b801] text-center text-4xl rounded-xl" style={{width:"100%",height:"100%"}}>Event One Visual</div>,
-    tags: ["Design", "UI"],
+    title: "Event Begins",
+    subtitle: "Event starts",
+    date: "April 20, 2025"
   },
   {
-    title: "Event Two",
-    subtitle: "Feb 14, 2025",
-    event_visual:<div className="bg-[#f6b801] text-center text-4xl rounded-xl" style={{width:"100%",height:"100%"}}>Event Two Visual</div>,
-    tags: ["Development", "React"],
+    title: "End of registration and Meet & Code",
+    subtitle: "We Stop accepting new participants and start coding",
+    date: "May 1, 2025",
   },
   {
-    title: "Event Three",
-    subtitle: "Mar 10, 2025",
-    event_visual:<div className="bg-[#f6b801] text-center text-4xl rounded-xl" style={{width:"100%",height:"100%"}}>Event Three Visual</div>,
-    tags: ["Launch", "Strategy"],
+    title: "Second issue release",
+    subtitle: "Second set of issues released",
+    date: "May 28, 2025",
   },
   {
-    title: "Event Four",
-    subtitle: "Apr 20, 2025",
-    event_visual:<div className="bg-[#f6b801] text-center text-4xl rounded-xl" style={{width:"100%",height:"100%"}}>Event Four Visual</div>,
-    tags: ["Marketing", "Growth"],
+    title: "Third issue release",
+    subtitle: "Third set of issues released",
+    date: "June 11, 2025",
   },
   {
-    title: "Event Five",
-    subtitle: "May 5, 2025",
-    event_visual:<div className="bg-[#f6b801] text-center text-4xl rounded-xl" style={{width:"100%",height:"100%"}}>Event Five Visual</div>,
-    tags: ["UX", "Research"],
-  },
-  {
-    title: "Event Six",
-    subtitle: "Jun 18, 2025",
-    event_visual:<div className="bg-[#f6b801] text-center text-4xl rounded-xl" style={{width:"100%",height:"100%"}}>Event Six Visual</div>,
-    tags: ["Testing", "QA"],
+    title: "Event concludes",
+    subtitle: "Event ends",
+    date: "June 28, 2025",
   },
 ];
 
