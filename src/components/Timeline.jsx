@@ -50,11 +50,12 @@ const Timeline = () => {
                 className="border-b border-white px-4 pl-0 pb-6 hover:scale-[1.01] transition-transform duration-300 cursor-pointer"
               >
                 {/* Title & Date */}
-                <div className="flex justify-between items-center flex-wrap gap-y-2">
+                <div className="flex items-start justify-between gap-4 flex-nowrap w-full">
                   <h3
-                    className={`text-xl md:text-4xl shrikhand-regular max-w-[60%] ${
+                    className={`text-xl md:text-4xl shrikhand-regular ${
                       isSelected ? "text-white" : "text-[#adb8f9]"
                     }`}
+                    style={{ flex: "1 1 auto" }}
                   >
                     {event.title}
                   </h3>
@@ -64,6 +65,7 @@ const Timeline = () => {
                         ? "border-white bg-white/20 text-white"
                         : "border-white/50 bg-white/10 text-white"
                     }`}
+                    style={{ flexShrink: 0 }}
                   >
                     {event.date}
                   </span>

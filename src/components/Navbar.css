@@ -10,6 +10,13 @@ body {
 } */
 
 /* Scroll Lock */
+.disabled-link {
+  color: #aaa;
+  cursor: not-allowed;
+  text-decoration: none;
+  pointer-events: none;
+  opacity: 0.6;
+}
 .no-scroll {
   overflow: hidden;
   touch-action: none;
@@ -17,6 +24,8 @@ body {
   width: 100%;
   height: 100%;
 }
+
+
 
 /* Navbar Container */
 .navbar {
