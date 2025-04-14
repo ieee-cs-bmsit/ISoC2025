@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const faqs = [
   {
@@ -32,24 +33,38 @@ const FAQAccordion = () => {
   };
 
   return (
-    <div className="w-full px-6 py-12 bg-[#1f3cfc] max-w-screen-xl mx-auto">
+    <div className="w-full px-6 py-12 bg-[#1f8d42] max-w-screen-xl mx-auto">
       <h2
-        className="text-4xl md:text-6xl mb-10 text-center py-5"
-        style={{ fontFamily: "CameraObscuraDEMO, sans-serif", color: "#f6eee2" }}
-      >
-        Frequently Asked Questions
-      </h2>
-      <div className="border-t" style={{ borderColor: "#bbc5fa" }}>
+  className="text-4xl md:text-7xl mb-8 text-center py-5"
+  style={{
+    fontFamily: "CameraObscuraDEMO, sans-serif",
+    color: "#ffffff",
+    textShadow: `
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      2px 2px 0 #000,
+      0px 2px 0 #000,
+      2px 0px 0 #000,
+      0px -2px 0 #000,
+      -2px 0px 0 #000
+    `,
+  }}
+>
+  Frequently Asked Questions
+</h2>
+
+      <div className="border-t" style={{ borderColor: "#000" }}>
         {faqs.map((faq, index) => (
           <div
             key={index}
             className="py-6 cursor-pointer select-none"
             onClick={() => toggleFAQ(index)}
             style={{
-              borderBottom: index !== faqs.length - 1 ? "1px solid #bbc5fa" : "none",
+              borderBottom: index !== faqs.length - 1 ? "1px solid #000" : "none",
             }}
           >
-            <div className="text-lg md:text-3xl font-bold text-[#bbc5fa] flex justify-between items-center shrikhand-regular">
+            <div className="text-lg md:text-3xl font-bold text-[#c4eec2] flex justify-between items-center space-grotesk-regular ">
               {faq.question}
             </div>
             <AnimatePresence initial={false}>
@@ -60,7 +75,7 @@ const FAQAccordion = () => {
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="space-grotesk-regular overflow-hidden text-base md:text-xl text-[#f6eee2] my-3 mt-6 pr-2"
+                  className="space-grotesk-regular overflow-hidden text-base md:text-xl text-[#fff] my-3 mt-6 pr-2"
                 >
                   {faq.answer}
                 </motion.div>
@@ -69,6 +84,17 @@ const FAQAccordion = () => {
           </div>
         ))}
       </div>
+      <Link 
+        to={"/faq"}
+        className="flex justify-center text-center my-5 group"
+      >
+        <div className="text-[#c4eec2] text-2xl space-grotesk-regular px-2 group-hover:scale-110 transition-transform duration-300">
+          View More
+        </div>
+        <span className="material-symbols-outlined pt-1 group-hover:scale-110 transition-transform duration-300">
+          keyboard_double_arrow_right  
+        </span>
+      </Link>
     </div>
   );
 };
