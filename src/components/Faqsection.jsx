@@ -47,6 +47,7 @@ const FAQAccordion = () => {
           >
             <div className="text-lg md:text-3xl pl-3 font-bold text-[#c4eec2] flex justify-between items-center space-grotesk-regular">
               {faq.question}
+              
             </div>
             <AnimatePresence initial={false}>
               {openIndex === index && (
