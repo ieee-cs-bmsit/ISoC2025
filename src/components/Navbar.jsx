@@ -59,8 +59,14 @@ function Navbar() {
             <span className="disabled-link">Repos</span>
           </li>
           <li>
+            
             <NavLink to="/team" onClick={closeMenu}>
               Team
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/faqs" onClick={closeMenu}>
+              FAQs
             </NavLink>
           </li>
           <li>
@@ -106,6 +112,11 @@ function Navbar() {
             <li>
               <NavLink to="/team" onClick={closeMenu}>
                 Team
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/faqs" onClick={closeMenu}>
+                FAQs
               </NavLink>
             </li>
             <li>

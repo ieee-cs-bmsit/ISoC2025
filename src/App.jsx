@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Leaderboard from './pages/Leaderboard';
 import Teampage from './pages/Teampage';
 import Cursor from './components/Cursor';
+import FAQpage from './pages/FAQpage';
 import './App.css';
 
 const App = () => {
@@ -11,11 +12,15 @@ const App = () => {
     <>
       <Cursor />
       <Navbar />
-      <Routes>
+      <main>
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/team" element={<Teampage />} />
+        <Route path='/faqs' element={<FAQpage />} />
       </Routes>
+      </main>
+      
     </>
   );
 };

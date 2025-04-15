@@ -1,13 +1,11 @@
-/* Reset & Base */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
   font-family: 'Space Grotesk', sans-serif;
 } */
+
+main {
+  padding-top: 9vh;
+}
 
 /* Scroll Lock */
 .disabled-link {
@@ -24,8 +22,6 @@ body {
   width: 100%;
   height: 100%;
 }
-
-
 
 /* Navbar Container */
 .navbar {

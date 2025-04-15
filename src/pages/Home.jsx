@@ -72,7 +72,7 @@ const Home = () => {
         <ScrollCard />
       </div>
 
-      <div className="bg-[#1f8d42] py-10">
+      <div className="bg-[#1b7738] py-10">
         <Faqsection />
       </div>
 
