@@ -1,32 +1,24 @@
-/* Reset */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
-/* Main About Container */
 .about-main-container {
-  background-color: #323339;
+  background-color: #a4a6b5;
   padding: 8rem 4rem;
   display: flex;
+  flex-direction: row; /* row by default */
   justify-content: space-evenly;
   align-items: center;
   gap: 3rem;
   flex-wrap: wrap;
-  color: #1c1c1c;
+  color: #808080;
 }
 
-/* Left Column */
 .left-container {
   display: flex;
   flex-direction: column;
   gap: 3rem;
   max-width: 50%;
   padding: 0 2rem;
+  
 }
 
-/* Stay Updated Box */
 .stay-updated-container {
   display: flex;
   align-items: center;
@@ -45,7 +37,6 @@
   box-shadow: 0 0 15px #f4b400aa;
 }
 
-/* Heading text */
 .stay-updated-container p {
   font-size: 2.8rem;
   font-weight: 700;
@@ -54,7 +45,6 @@
   line-height: 1;
 }
 
-/* About Content */
 .about-content {
   display: flex;
   flex-direction: column;
@@ -107,7 +97,6 @@
   z-index: 1;
 }
 
-/* Right Section */
 .right-container {
   display: flex;
 }
@@ -115,48 +104,16 @@
 .frame {
   height: 35rem;
   width: 35rem;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5); /* Added shadow */
+  border-radius: 0.75rem; /* Optional: for a softer edge */
 }
 
 /* ---------- RESPONSIVE STYLES ---------- */
 
-/* Screens < 1349px: column layout + Discord center */
-@media (max-width: 1349px) {
-  .about-main-container {
-    flex-direction: column;
-    padding: 2rem 2rem;
-  }
-
-  .left-container {
-    display: flex;
-    gap: 1.5rem;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 100%;
-    padding: 0;
-  }
-
-  .about-content {
-    width: 90%;
-  }
-
-  .button-div {
-    width: 100%;
-  }
-
-  .right-container {
-    width: 100%;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-/* Screens < 768px: mobile view */
+/* Mobile (widget on top) */
 @media (max-width: 768px) {
   .about-main-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 1.5rem 1rem;
     gap: 2.2rem;
   }
@@ -165,8 +122,13 @@
     width: 100%;
     justify-content: center;
   }
+
   .left-container {
     gap: 1.2rem;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 0;
   }
 
   .stay-updated-container p {
@@ -182,14 +144,17 @@
   .button-div {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
 
   .right-container {
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
 
   .frame {
     height: 28rem;
+    width: 100%;
   }
 }
