@@ -202,21 +202,27 @@
         padding: 1rem;
     }
 
-    /* Prevent the card from becoming squarish */
     .main-box1 {
         padding: 1.8rem 1.5rem;
-        width: 100%;  /* Ensure the width is 100% of the parent container */
+        width: 100%;
+        align-items: center; /* Ensure vertical centering of children */
     }
 
-    /* Adjust image size to maintain proportions */
     .image-box {
-        height: 110px;
-        width: 110px;
+        height: 100px;
+        width: 100px;
+        min-width: 100px;
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .images {
-        height: 110px;
-        width: 110px;
+        height: 100px;
+        width: 100px;
+        object-fit: cover;
+        border-radius: 50%;
     }
 
     .title-name {
