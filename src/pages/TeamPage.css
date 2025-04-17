@@ -1,0 +1,244 @@
+
+
+.top-main-container {
+    margin: 4rem auto;
+    margin-bottom: 2.5rem;
+    background-color: #ebebeb; /* Dark background for contrast */
+    padding: 1rem 1.5rem;
+    padding-bottom: 5rem;
+    border-radius: 12px;
+}
+
+.top-main-container h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: .5rem 0;
+    color: #656363;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Shrikhand', sans-serif;
+    padding: 1rem 1rem;
+}
+
+.top-main-container span {
+    color: #EE540E;
+}
+
+.card-main-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+    gap: 2rem;
+    padding: 1rem 3rem;
+    justify-content: center;
+}
+
+.main-box {
+    position: relative;
+    background-color: transparent; /* no background for wrapper */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Yellow back layer */
+.main-box::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 100%;
+    width: 100%;
+    background-color: #FFD700;
+    border-radius: 12px;
+    z-index: 0;
+}
+
+/* Blue content box */
+.main-box1 {
+    position: relative;
+    background-color: #1a3cff;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.8rem 1.5rem;
+    border-radius: 12px;
+    z-index: 1;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+/* Keep the rest of your previous styles the same */
+.image-box {
+    height: 110px;
+    width: 110px;
+    background-color: grey;
+    border-radius: 90%;
+    position: relative;
+}
+
+.images {
+    border-radius: 90%;
+    object-fit: cover;
+    height: 110px;
+    width: 110px;
+}
+
+.details-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.title-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+}
+
+.role {
+    font-weight: 400;
+    font-size: 1.12rem;
+    color: white;
+}
+
+.socials-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: .25rem;
+}
+
+.social-1,
+.social-2 {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.social-1 {
+    background-color: #0077B5;
+}
+.social-2 {
+    background-color: #E1306C;
+}
+
+.social-1 a,
+.social-2 a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.linkedin-icons,
+.insta-icons {
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.social-1:hover,
+.social-2:hover {
+    filter: brightness(1.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Update for star-icons to use images */
+.star-icons {
+    position: absolute;
+    top: -23px;
+    right: -35px;
+    z-index: 2;
+    padding: 4px;
+}
+
+.star-icons img {
+    width: 70px; /* Adjust size as needed */
+    height: 70px; /* Adjust size as needed */
+    object-fit: contain; /* Ensures the image fits within the specified width/height */
+}
+
+/* Additional styles if needed for hover or other states */
+
+.hr{
+    margin-top: 2.5rem;
+}
+.main-box.motion-hover {
+    will-change: transform;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-box.motion-hover:hover {
+    transform: scale(1.04) rotate(1deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.socials-container .social-1:hover,
+.socials-container .social-2:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Responsive */
+/* Responsive */
+@media (max-width: 600px) {
+    .top-main-container {
+        padding: 1rem;
+        padding-bottom: 4rem;
+        margin-bottom: 2.5rem;
+    }
+
+    /* Keep the grid layout as on desktop */
+    .card-main-container {
+        grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));  /* Same as desktop */
+        justify-items: center;
+        padding: 1rem;
+    }
+
+    /* Prevent the card from becoming squarish */
+    .main-box1 {
+        padding: 1.8rem 1.5rem;
+        width: 100%;  /* Ensure the width is 100% of the parent container */
+    }
+
+    /* Adjust image size to maintain proportions */
+    .image-box {
+        height: 110px;
+        width: 110px;
+    }
+
+    .images {
+        height: 110px;
+        width: 110px;
+    }
+
+    .title-name {
+        font-size: 1.6rem;  /* Keep title size consistent */
+    }
+
+    .role {
+        font-size: 1.12rem;  /* Keep role font size consistent */
+    }
+
+    /* Maintain spacing and alignment */
+    .details-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .5rem;
+    }
+
+    .socials-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: .25rem;
+    }
+}
