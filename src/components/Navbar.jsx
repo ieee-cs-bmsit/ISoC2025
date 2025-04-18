@@ -69,11 +69,7 @@ function Navbar() {
               FAQs
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/contact" onClick={closeMenu}>
-              Contact
-            </NavLink>
-          </li>
+          
         </ul>
       </div>
 
@@ -119,11 +115,7 @@ function Navbar() {
                 FAQs
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/contact" onClick={closeMenu}>
-                Contact
-              </NavLink>
-            </li>
+            
           </ul>
 
           <button className="register-btn">Register</button>
