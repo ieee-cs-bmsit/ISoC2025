@@ -19,11 +19,11 @@ const FAQpage = () => {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-[#1b6f36] py-20 mb-10">
+      <div className="min-h-screen w-full bg-[#1b7738] py-20 mb-10">
         <div className="max-w-6xl mx-auto px-5 py-10 mt-8">
           {/* Title */}
           <h1
-            className="text-4xl md:text-5xl lg:text-7xl font-bold text-center text-[#f6f1e8] mb-16"
+            className="text-4xl md:text-5xl lg:text-7xl font-bold text-center text-[#fff] mb-16"
             style={{
               fontFamily: "CameraObscuraDEMO, sans-serif",
 
@@ -47,7 +47,7 @@ const FAQpage = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border-[#c4eec2] border-2 rounded overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
+                className="border-[#fff] border-2 rounded overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
               >
                 <button
                   className="w-full text-left px-7 py-6 bg-[#1b6f36] hover:bg-[#239d4a69] transition flex justify-between items-center cursor-pointer"
@@ -71,7 +71,7 @@ const FAQpage = () => {
                       transition={{ duration: 0.4, ease: [0.25, 0.8, 0.25, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 py-4 bg-[#f6eee2] text-[#16632e] text-base md:text-xl whitespace-pre-line origin-top font-semibold">
+                      <div className="px-6 py-4 bg-[#f5efe7] text-[#000] text-base md:text-xl whitespace-pre-line origin-top font-semibold">
                         {faq.answer}
                       </div>
                     </motion.div>

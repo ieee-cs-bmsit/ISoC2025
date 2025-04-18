@@ -14,10 +14,10 @@ const Timeline = () => {
     if (isInView && !hasAnimated.current) {
       const el = scrollRef.current;
       if (el && el.scrollHeight > el.clientHeight) {
-        el.scrollTo({ top: 200, behavior: "smooth" });
+        el.scrollTo({ top: 300, behavior: "smooth" });
         setTimeout(() => {
           el.scrollTo({ top: 0, behavior: "smooth" });
-        }, 500);
+        }, 1000);
       }
       hasAnimated.current = true; // mark as done
     }
