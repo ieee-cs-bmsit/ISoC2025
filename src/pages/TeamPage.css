@@ -24,7 +24,7 @@
 
 .card-main-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(555px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: 2rem;
     padding: 1rem 3rem;
     justify-content: center;
@@ -70,8 +70,8 @@
 
 /* Image box */
 .image-box {
-    height: 230px;
-    width: 230px;
+    height: 200px;
+    width: 200px;
     background-color: grey;
     border-radius: 90%;
     position: relative;
@@ -97,14 +97,14 @@
 }
 
 .title-name {
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 900;
     color: white;
 }
 
 .role {
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: white;
 }
 
@@ -118,8 +118,8 @@
 
 .social-1,
 .social-2 {
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -147,7 +147,7 @@
 .linkedin-icons,
 .insta-icons {
     color: white;
-    font-size: 2rem;
+    font-size: 1.7rem;
     line-height: 1;
 }
 
