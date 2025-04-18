@@ -1,34 +1,63 @@
 import React from 'react';
-import { TeamDetails, TeamDetails1, TeamDetails2 } from '../data/Teamdata';
+import { TeamDetails } from '../data/Teamdata';
 import { motion } from 'framer-motion';
 import Footer from "../components/Footer";
 import { LiaLinkedinIn } from "react-icons/lia";
 import { GrInstagram } from "react-icons/gr";
 import './TeamPage.css';
 
-const Team = () => {
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.2, delayChildren: 0.2 }
-        }
-    };
+// Animation variants
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.2, delayChildren: 0.2 }
+    }
+};
 
-    const cardVariants = {
-        hidden: { opacity: 0, scale: 0.8, rotate: -5 },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            rotate: 0,
-            transition: {
-                duration: 0.6,
-                ease: 'easeOut',
-                type: 'spring',
-                stiffness: 120
-            }
+const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8, rotate: -5 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        rotate: 0,
+        transition: {
+            duration: 0.6,
+            ease: 'easeOut',
+            type: 'spring',
+            stiffness: 120
         }
-    };
+    }
+};
+
+// Format heading: put the entire last word in <span>
+const formatHeading = (title) => {
+    if (!title) return '';
+    const words = title.trim().split(' ');
+    if (words.length === 1) {
+        return <span>{words[0]}</span>;
+    }
+    const lastWord = words.pop();
+    const firstPart = words.join(' ');
+    return (
+        <>
+            {firstPart} <span>{lastWord}</span>
+        </>
+    );
+};
+
+// Group by category instead of role
+const groupByCategory = (data) => {
+    return data.reduce((acc, member) => {
+        const category = member.category || "Others";
+        if (!acc[category]) acc[category] = [];
+        acc[category].push(member);
+        return acc;
+    }, {});
+};
+
+const Team = () => {
+    const groupedData = groupByCategory(TeamDetails);
 
     const renderCards = (data) => (
         <motion.div
@@ -87,44 +116,24 @@ const Team = () => {
     return (
         <div>
             <div className='top-main-container'>
-                <motion.h2
-                    initial={{ opacity: 0, y: -40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                >
-                    Meet the <span>Team</span>
-                </motion.h2>
+                {Object.entries(groupedData).map(([category, members], idx) => (
+                    <React.Fragment key={category}>
+                        <motion.h2
+                            initial={{ opacity: 0, y: -40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: idx * 0.1 }}
+                            viewport={{ once: true }}
+                        >
+                            {formatHeading(category)}
+                        </motion.h2>
 
-                {renderCards(TeamDetails)}
+                        {renderCards(members)}
 
-                <hr className='hr' />
-
-                <motion.h2
-                    initial={{ opacity: 0, y: -40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    viewport={{ once: true }}
-                >
-                    IEEE Student <span>Coordinators</span>
-                </motion.h2>
-
-                {renderCards(TeamDetails1)}
-
-                <hr className='hr' />
-
-                <motion.h2
-                    initial={{ opacity: 0, y: -40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    viewport={{ once: true }}
-                >
-                    IEEE Student <span>Coordinators</span>
-                </motion.h2>
-
-                {renderCards(TeamDetails2)}
+                        {idx !== Object.keys(groupedData).length - 1 && <hr className='hr' />}
+                    </React.Fragment>
+                ))}
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };

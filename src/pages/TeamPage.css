@@ -1,9 +1,7 @@
-
-
 .top-main-container {
     margin: 4rem auto;
     margin-bottom: 2.5rem;
-    background-color: #ebebeb; /* Dark background for contrast */
+    background-color: #ebebeb;
     padding: 1rem 1.5rem;
     padding-bottom: 5rem;
     border-radius: 12px;
@@ -12,7 +10,7 @@
 .top-main-container h2 {
     text-align: center;
     font-size: 2.2rem;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     color: #656363;
     text-transform: uppercase;
     font-weight: bold;
@@ -26,18 +24,20 @@
 
 .card-main-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(555px, 1fr));
     gap: 2rem;
     padding: 1rem 3rem;
     justify-content: center;
+    align-items: stretch;
 }
 
 .main-box {
     position: relative;
-    background-color: transparent; /* no background for wrapper */
+    background-color: transparent;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
+    height: 100%;
 }
 
 /* Yellow back layer */
@@ -49,7 +49,6 @@
     height: 100%;
     width: 100%;
     background-color: #FFD700;
-    border-radius: 12px;
     z-index: 0;
 }
 
@@ -61,58 +60,66 @@
     align-items: center;
     gap: 2rem;
     padding: 1.8rem 1.5rem;
-    border-radius: 12px;
+    
     z-index: 1;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
     width: 100%;
+    min-height: 240px;
+    flex-grow: 1;
 }
 
-/* Keep the rest of your previous styles the same */
+/* Image box */
 .image-box {
-    height: 110px;
-    width: 110px;
+    height: 230px;
+    width: 230px;
     background-color: grey;
     border-radius: 90%;
     position: relative;
+    flex-shrink: 0;
 }
 
 .images {
-    border-radius: 90%;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
-    height: 110px;
-    width: 110px;
+    object-position: center 20%;
+    border-radius: 50%;
+    display: block;
 }
 
+/* Text info */
 .details-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: .5rem;
+    flex-grow: 1;
 }
 
 .title-name {
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 2.3rem;
+    font-weight: 900;
     color: white;
 }
 
 .role {
     font-weight: 400;
-    font-size: 1.12rem;
+    font-size: 1.4rem;
     color: white;
 }
 
+/* Socials */
 .socials-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: .25rem;
 }
 
 .social-1,
 .social-2 {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -140,7 +147,7 @@
 .linkedin-icons,
 .insta-icons {
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
     line-height: 1;
 }
 
@@ -150,7 +157,13 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Update for star-icons to use images */
+.socials-container .social-1:hover,
+.socials-container .social-2:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+/* Stars */
 .star-icons {
     position: absolute;
     top: -23px;
@@ -160,16 +173,12 @@
 }
 
 .star-icons img {
-    width: 70px; /* Adjust size as needed */
-    height: 70px; /* Adjust size as needed */
-    object-fit: contain; /* Ensures the image fits within the specified width/height */
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
 }
 
-/* Additional styles if needed for hover or other states */
-
-.hr{
-    margin-top: 2.5rem;
-}
+/* Animation */
 .main-box.motion-hover {
     will-change: transform;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -180,65 +189,77 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.socials-container .social-1:hover,
-.socials-container .social-2:hover {
-    transform: scale(1.1);
-    transition: transform 0.2s ease;
+/* HR */
+.hr {
+    margin-top: 2.5rem;
 }
 
-/* Responsive */
-/* Responsive */
 @media (max-width: 600px) {
     .top-main-container {
-        padding: 1rem;
+        padding: 1.2rem;
         padding-bottom: 4rem;
         margin-bottom: 2.5rem;
     }
 
-    /* Keep the grid layout as on desktop */
     .card-main-container {
-        grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));  /* Same as desktop */
-        justify-items: center;
+        grid-template-columns: 1fr;
         padding: 1rem;
+        gap: 1.8rem;
+        justify-items: stretch;
+        align-items: stretch;
     }
 
-    /* Prevent the card from becoming squarish */
+    .main-box {
+        height: auto;
+    }
+
     .main-box1 {
-        padding: 1.8rem 1.5rem;
-        width: 100%;  /* Ensure the width is 100% of the parent container */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        min-height: 280px;
+        border-radius: 12px;
     }
 
-    /* Adjust image size to maintain proportions */
     .image-box {
-        height: 110px;
-        width: 110px;
+        height: 120px;
+        width: 120px;
+        min-width: 120px;
+        margin-bottom: 1rem;
     }
 
     .images {
-        height: 110px;
-        width: 110px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .details-box {
+        gap: .6rem;
     }
 
     .title-name {
-        font-size: 1.6rem;  /* Keep title size consistent */
+        font-size: 1.8rem;
     }
 
     .role {
-        font-size: 1.12rem;  /* Keep role font size consistent */
-    }
-
-    /* Maintain spacing and alignment */
-    .details-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: .5rem;
+        font-size: 1.15rem;
     }
 
     .socials-container {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-top: .25rem;
+        justify-content: center;
+        gap: 1.2rem;
+        margin-top: 0.6rem;
+    }
+
+    .social-1, .social-2 {
+        height: 60px;
+        width: 60px;
+    }
+
+    .linkedin-icons, .insta-icons {
+        font-size: 1.6rem;
     }
 }
