@@ -46,17 +46,17 @@ const Home = () => {
 
       {/*Sponsor Section*/}
       <div
-  className="bg-cover bg-center bg-no-repeat py-10"
-  style={{
-    backgroundImage: "url('/images/sponsorsectionbg.png')" // replace with your actual image path
-  }}
->
-  <p
-    className="text-center text-5xl md:text-7xl p-5 my-5 font-bold"
-    style={{
-      color: "#fff",
-      fontFamily: 'CameraObscuraDEMO, sans-serif',
-      textShadow: `
+        className="bg-cover bg-center bg-no-repeat py-10"
+        style={{
+          backgroundImage: "url('/images/sponsorsectionbg.png')" // replace with your actual image path
+        }}
+      >
+        <p
+          className="text-center text-5xl md:text-7xl p-5 my-5 font-bold"
+          style={{
+            color: "#fff",
+            fontFamily: 'CameraObscuraDEMO, sans-serif',
+            textShadow: `
         -2px -2px 0 #000,
         2px -2px 0 #000,
         -2px 2px 0 #000,
@@ -66,10 +66,10 @@ const Home = () => {
         0px -2px 0 #000,
         -3px 0px 0 #000
       `,
-    }}
-  >
-    Our Sponsors
-  </p>
+          }}
+        >
+          Our Sponsors
+        </p>
 
 
         <Sponsorsection
@@ -84,7 +84,7 @@ const Home = () => {
         <ScrollCard />
       </div> */}
       <div>
-        <WhyParticipate/>
+        <WhyParticipate />
       </div>
 
       <div className="bg-[#1b7738] py-10">
