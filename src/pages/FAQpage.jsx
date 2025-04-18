@@ -47,7 +47,7 @@ const FAQpage = () => {
             {faqs.map((faq, index) => (
               <div
               key={index}
-              className="border-[#c4eec2] border-3 rounded-xl overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
+              className="border-[#c4eec2] border-2 rounded-xl overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
             >
             
                 <button
