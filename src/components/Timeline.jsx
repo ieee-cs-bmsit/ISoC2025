@@ -1,18 +1,33 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { events } from "../data/Eventdata";
 
 const Timeline = () => {
   const headingRef = useRef(null);
+  const scrollRef = useRef(null);
+  const hasAnimated = useRef(false); // <- New ref to track first-time animation
   const isInView = useInView(headingRef, { margin: "-100px" });
 
-  const [selectedIndex, setSelectedIndex] = useState(0); // Track selected event
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  useEffect(() => {
+    if (isInView && !hasAnimated.current) {
+      const el = scrollRef.current;
+      if (el && el.scrollHeight > el.clientHeight) {
+        el.scrollTo({ top: 40, behavior: "smooth" });
+        setTimeout(() => {
+          el.scrollTo({ top: 0, behavior: "smooth" });
+        }, 500);
+      }
+      hasAnimated.current = true; // mark as done
+    }
+  }, [isInView]);
 
   return (
     <div className="flex flex-col md:flex-row w-full min-h-screen bg-[#1f3cfc] text-white font-bold">
       {/* Image Section */}
-      <div className="w-full md:w-2/5 flex items-center justify-center p-6 md:p-0 relative overflow-hidden">
-        <div className="w-[80%] h-[400px] md:h-[65%] border-4 border-white rounded-2xl flex items-center justify-center shadow-lg bg-white/10">
+      <div className="w-full md:w-2/5 flex items-center justify-center p-6 md:p-0 relative overflow-visible">
+        <div className="w-[80%] h-[400px] md:h-[65%] border-4 border-white rounded-2xl flex items-center justify-center bg-white/10 shadow-[-12px_12px_24px_rgba(0,0,0,0.2)] z-10">
           <img
             src={`images/eventvisual${selectedIndex + 1}.svg`}
             alt="Event Visual"
@@ -38,8 +53,15 @@ const Timeline = () => {
           </h2>
         </motion.div>
 
-        {/* Events List */}
-        <div className="flex-1 overflow-y-auto space-y-6 md:space-y-8 pl-4 md:pl-8 pr-2 scrollbar-hide max-h-[50vh] md:max-h-[70vh]">
+        {/* Scrollable Events List */}
+        <div
+          ref={scrollRef}
+          className="flex-1 space-y-6 md:space-y-8 pl-4 md:pl-8 pr-2 max-h-[50vh] md:max-h-[70vh] overflow-y-auto"
+          style={{
+            scrollbarWidth: "normal",
+            scrollbarColor: "#adb8f9 transparent",
+          }}
+        >
           {events.map((event, index) => {
             const isSelected = index === selectedIndex;
 
@@ -49,7 +71,6 @@ const Timeline = () => {
                 onClick={() => setSelectedIndex(index)}
                 className="border-b border-white px-4 pl-0 pb-6 hover:scale-[1.01] transition-transform duration-300 cursor-pointer"
               >
-                {/* Title & Date */}
                 <div className="flex items-start justify-between gap-4 flex-nowrap w-full">
                   <h3
                     className={`text-xl md:text-4xl shrikhand-regular ${
@@ -71,7 +92,6 @@ const Timeline = () => {
                   </span>
                 </div>
 
-                {/* Subtitle below */}
                 <p
                   className={`text-sm md:text-xl space-grotesk-regular mt-2 ${
                     isSelected ? "text-white" : "text-[#adb8f9]"
