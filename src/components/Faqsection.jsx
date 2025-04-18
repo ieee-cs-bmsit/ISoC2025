@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import faqs from "../data/Faqs"; // 👈 import the actual FAQ data
+import { ChevronDown } from "lucide-react"; 
+import faqs from "../data/Faqs"; 
 
 const FAQAccordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -10,11 +11,10 @@ const FAQAccordion = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Get only the first 5 FAQs
   const previewFaqs = faqs.slice(0, 5);
 
   return (
-    <div className="w-full px-6 py-12 bg-[#1b7738] max-w-screen-xl mx-auto">
+    <div className="w-full px-6 py-12 pb-20 bg-[#1b7738] max-w-screen-xl mx-auto">
       <h2
         className="text-4xl md:text-7xl mb-8 text-center py-5"
         style={{
@@ -47,7 +47,12 @@ const FAQAccordion = () => {
           >
             <div className="text-lg md:text-3xl pl-3 font-bold text-[#c4eec2] flex justify-between items-center space-grotesk-regular">
               {faq.question}
-              
+              <ChevronDown
+                size={28}
+                className={`text-[#c4eec2] transition-transform duration-300 mr-3 ${
+                  openIndex === index ? "rotate-180" : ""
+                }`}
+              />
             </div>
             <AnimatePresence initial={false}>
               {openIndex === index && (
@@ -67,13 +72,16 @@ const FAQAccordion = () => {
         ))}
       </div>
 
-      <Link to="/faqs" className="flex justify-center text-center my-5 group">
-        <div className="text-[#c4eec2] text-2xl space-grotesk-regular px-2 group-hover:scale-110 transition-transform duration-300">
-          View More
+      <Link to="/faqs" className="flex justify-center mt-8">
+        <div className="relative group">
+          {/* Yellow shadow box */}
+          <div className="absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 z-0"></div>
+
+          {/* Foreground button */}
+          <div className="relative z-10 border-2 border-black bg-white px-4 py-2 md:px-8 md:py-4 font-bold text-black text-lg md:text-2xl transition-transform duration-300 group-hover:scale-103 space-grotesk-regular">
+  View More FAQs
+</div>
         </div>
-        <span className="material-symbols-outlined pt-1 group-hover:scale-110 transition-transform duration-300">
-          keyboard_double_arrow_right
-        </span>
       </Link>
     </div>
   );
