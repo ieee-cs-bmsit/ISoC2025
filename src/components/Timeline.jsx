@@ -14,7 +14,7 @@ const Timeline = () => {
     if (isInView && !hasAnimated.current) {
       const el = scrollRef.current;
       if (el && el.scrollHeight > el.clientHeight) {
-        el.scrollTo({ top: 40, behavior: "smooth" });
+        el.scrollTo({ top: 200, behavior: "smooth" });
         setTimeout(() => {
           el.scrollTo({ top: 0, behavior: "smooth" });
         }, 500);
@@ -59,7 +59,7 @@ const Timeline = () => {
           className="flex-1 space-y-6 md:space-y-8 pl-4 md:pl-8 pr-2 max-h-[50vh] md:max-h-[70vh] overflow-y-auto"
           style={{
             scrollbarWidth: "normal",
-            scrollbarColor: "#adb8f9 transparent",
+            scrollbarColor: "#a7adf2 transparent",
           }}
         >
           {events.map((event, index) => {
@@ -74,7 +74,7 @@ const Timeline = () => {
                 <div className="flex items-start justify-between gap-4 flex-nowrap w-full">
                   <h3
                     className={`text-xl md:text-4xl shrikhand-regular ${
-                      isSelected ? "text-white" : "text-[#adb8f9]"
+                      isSelected ? "text-white " : "text-[#adb8f9] hover:text-[#d7d8fe]"
                     }`}
                     style={{ flex: "1 1 auto" }}
                   >

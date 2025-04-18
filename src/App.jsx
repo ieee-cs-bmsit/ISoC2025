@@ -10,7 +10,7 @@ import './App.css';
 const App = () => {
   return (
     <>
-      <Cursor />
+      {/* <Cursor /> */}
       <Navbar />
       <main>
         <Routes>

@@ -47,11 +47,10 @@ const FAQpage = () => {
             {faqs.map((faq, index) => (
               <div
               key={index}
-              className="border-[#c4eec2] border-2 rounded-xl overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
+              className="border-[#c4eec2] border-2 rounded overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
             >
-            
                 <button
-                  className="w-full text-left px-6 py-5 bg-[#1b6f36] hover:bg-[#239d4a69] transition flex justify-between items-center cursor-pointer"
+                  className="w-full text-left px-7 py-6 bg-[#1b6f36] hover:bg-[#239d4a69] transition flex justify-between items-center cursor-pointer"
                   onClick={() => toggleAccordion(index)}
                 >
                   <span className="font-semibold text-lg md:text-xl text-white">
