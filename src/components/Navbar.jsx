@@ -28,7 +28,7 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar -mb-17">
+    <div className="navbar -mb-16">
       {/* Logo */}
       <NavLink to="/" className="navbar-logo-link">
         <img src="/images/logo.png" alt="Logo" className="navbar-logo" />
@@ -59,7 +59,7 @@ function Navbar() {
             <span className="disabled-link">Repos</span>
           </li>
           <li>
-            
+
             <NavLink to="/team" onClick={closeMenu}>
               Team
             </NavLink>
@@ -69,7 +69,7 @@ function Navbar() {
               FAQs
             </NavLink>
           </li>
-          
+
         </ul>
       </div>
 
@@ -115,7 +115,7 @@ function Navbar() {
                 FAQs
               </NavLink>
             </li>
-            
+
           </ul>
 
           <button className="register-btn">Register</button>

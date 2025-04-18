@@ -1,5 +1,5 @@
 import React from 'react';
-import FooterLogo from '../assets/img/full logo.png'
+import { Link } from 'react-router-dom';
 import "./Footer.css"
 
 const Footer = () => {
@@ -20,40 +20,69 @@ const Footer = () => {
                 </svg>
             </div>
 
-            <div className="max-w-full mx-auto lg:px-15 px-4 lg:py-20 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-black text-xl outline-none border-none bg-[#ebd22f]">
+            <div className="max-w-full mx-auto lg:px-15 px-4 lg:pt-20 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-black text-xl outline-none border-none bg-[#ebd22f]">
                 <div>
                     <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">PAGES</h3>
-                    <ul className='lg:text-2xl lg:font-semibold lg:font-body font-body2 text-xl flex lg:flex-col flex-row gap-10'><li>Work</li></ul>
-                </div>
-                <div>
-                    <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">GOOD LINKS</h3>
-                    <ul className="lg:-space-y-8 lg:font-semibold lg:font-body font-body2 lg:text-2xl text-xl flex lg:flex-col flex-row gap-10">
-                        <li>Join as a talent</li>
-                        <li>Join Waitlist</li>
-                        <li>Open Doooookan</li>
+                    <ul className='lg:text-2xl font-semibold font-body text-xl flex lg:flex-col flex-row gap-10'>
+                        <Link to="/" className='w-fit h-fit'>
+                            <li>Home</li>
+                        </Link>
+                        <Link to="/team" className='w-fit h-fit'>
+                            <li>Team</li>
+                        </Link>
                     </ul>
                 </div>
                 <div>
-                    <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">SOCIAL STUFF</h3>
-                    <ul className="lg:-space-y-8 lg:font-semibold lg:font-body font-body2 lg:text-2xl text-xl flex lg:flex-col flex-row gap-10">
+                    <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">QUICK LINKS</h3>
+                    <ul className="lg:-space-y-8 font-semibold font-body lg:text-2xl text-xl flex lg:flex-col flex-row gap-10">
+                        <li>
+                            <a href="https://bmsit.ac.in/" target='_blank'>
+                                BMSIT</a>
+                        </li>
+                        <li>
+                            <a href="https://40yrs.ieeebangalore.org/" target='_blank'>
+                                IEEE YP Blr
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://ieeecsbangalore.org/" target='_blank'>
+                                IEEE CS Blr
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">IEEE CS SOCIALS</h3>
+                    <ul className="lg:-space-y-8 font-semibold font-body lg:text-2xl text-xl flex lg:flex-col flex-row gap-10">
+                        <li>
+                            <a href="https://ieeecsbangalore.org/" target="_blank">
+                                Instagram</a>
+                        </li>
+                        <li>
+                            <a href="https://ieeecsbangalore.org/" target="_blank">
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://ieeecsbangalore.org/" target="_blank">
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">ISOC SOCIALS</h3>
+                    <ul className="lg:-space-y-8 font-semibold font-body lg:text-2xl text-xl flex lg:flex-col flex-row gap-10">
                         <li>Instagram</li>
                         <li>LinkedIn</li>
-                        <li>Sounding Board</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">LEGAL-SHMEGAL</h3>
-                    <ul className="lg:-space-y-8 lg:font-semibold lg:font-body font-body2 lg:text-2xl text-xl flex lg:flex-col flex-row gap-10">
-                        <li>Privacy Policy</li>
-                        <li>Terms of Service</li>
                     </ul>
                 </div>
             </div>
-
+            <p className='bg-[#ebd22f] outline-none border-none font-body font-bold text-lg flex items-center justify-center py-2 -mt-1'>Contact us @ieee_cs@bmsit.in</p>
             <div className="w-full border-t border-black text-center text-black flex sm:justify-between justify-center lg:px-20 sm:px-4 py-4 font-bold lg:text-lg text-sm bg-[#ebd22f]">
-                <p>© 2025 IEEE Summer of Code</p>
+                <p>2025 IEEE Summer of Code</p>
                 <p> &nbsp; | &nbsp;</p>
-                <p>MADE BY IEEE BMISTM</p>
+                <p>MADE BY IEEE CS BMSIT&M</p>
             </div>
         </footer>
     );

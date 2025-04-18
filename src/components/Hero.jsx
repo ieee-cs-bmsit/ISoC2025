@@ -27,7 +27,7 @@ const Hero = () => {
                     </button>
                 </div>
             </div>
-            <div className="marquee-text lg:text-xl sm:text-lg text-md text-white font-body font-bold bg-blue-600">
+            <div className="marquee-text lg:text-xl sm:text-lg text-md text-white font-body font-bold bg-[#1f3bfb]">
                 <div className="marquee-text-track">
                     <p>BMSITM</p>
                     <p>✺</p>

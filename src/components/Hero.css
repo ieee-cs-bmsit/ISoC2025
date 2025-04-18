@@ -4,8 +4,8 @@
 
 .marquee-text-track {
   display: flex;
-  padding-left: 4.8rem;
-  gap: 4.8rem;
+  padding-left: 0.5rem;
+  gap: 0.5rem;
   width: max-content;
   animation: marquee-move-text var(--speed, 15s) linear infinite
     var(--direction, forwards);

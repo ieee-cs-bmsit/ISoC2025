@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import ScrollCard from '../components/ScrollCard';
-import WhyParticipate from '../components/WhyParticipate';
 
 const Home = () => {
   const sponsors = [];
@@ -45,32 +44,21 @@ const Home = () => {
       <Timeline />
 
       {/*Sponsor Section*/}
-      <div
-  className="bg-cover bg-center bg-no-repeat py-10"
-  style={{
-    backgroundImage: "url('/images/sponsorsectionbg.png')" // replace with your actual image path
-  }}
->
-  <p
-    className="text-center text-5xl md:text-7xl p-5 my-5 font-bold"
-    style={{
-      color: "#fff",
-      fontFamily: 'CameraObscuraDEMO, sans-serif',
-      textShadow: `
-        -2px -2px 0 #000,
-        2px -2px 0 #000,
-        -2px 2px 0 #000,
-        2px 2px 0 #000,
-        0px 2px 0 #000,
-        2px 0px 0 #000,
-        0px -2px 0 #000,
-        -3px 0px 0 #000
-      `,
-    }}
-  >
-    Our Sponsors
-  </p>
-
+      <div className="bg-[#f6eee2] py-10">
+        <p
+          className="text-center text-5xl md:text-7xl p-5 text-[#ee540e] my-5 text-shadow-xl font-bold"
+          style={{
+            fontFamily: "CameraObscuraDEMO, sans-serif",
+            textShadow: `
+              -1px -1px 0 #fff,
+              1px -1px 0 #fff,
+              -1px 1px 0 #fff,
+              1px 1px 0 #fff
+            `,
+          }}
+        >
+          Our Sponsors
+        </p>
 
         <Sponsorsection
           texts={[sponsors, sponsors]} // Two rows, each showing the 10 sponsors
@@ -78,13 +66,6 @@ const Home = () => {
           numCopies={3} // Controls how many times the row loops horizontally
           className="custom-scroll-text"
         />
-      </div>
-
-      {/* <div className="h-screen">
-        <ScrollCard />
-      </div> */}
-      <div>
-        <WhyParticipate/>
       </div>
 
       <div className="bg-[#1b7738] py-10">
