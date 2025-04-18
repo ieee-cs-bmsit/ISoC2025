@@ -64,7 +64,7 @@ export const TeamDetails = [
         category: "Co - Ordinator",
         role: "Core Co-ordinator ",
         linkedin: "https://www.linkedin.com/in/atul-kumar-458aa1275",
-       instagram: "https://www.instagram.com/lord_fooog_the_2st/",
+       instagram: "",
        star_icon: starIcon3,
     }, 
     {
