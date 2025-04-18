@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import faqs from '../data/Faqs';
-import Footer from '../components/Footer';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import faqs from "../data/Faqs";
+import Footer from "../components/Footer";
 
 const FAQpage = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -9,7 +9,7 @@ const FAQpage = () => {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }, []);
 
@@ -46,9 +46,9 @@ const FAQpage = () => {
           <div className="space-y-6">
             {faqs.map((faq, index) => (
               <div
-              key={index}
-              className="border-[#c4eec2] border-2 rounded overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
-            >
+                key={index}
+                className="border-[#c4eec2] border-2 rounded overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
+              >
                 <button
                   className="w-full text-left px-7 py-6 bg-[#1b6f36] hover:bg-[#239d4a69] transition flex justify-between items-center cursor-pointer"
                   onClick={() => toggleAccordion(index)}
@@ -57,20 +57,23 @@ const FAQpage = () => {
                     {faq.question}
                   </span>
                   <span className="text-2xl md:text-3xl font-bold text-white">
-                    {activeIndex === index ? '-' : '+'}
+                    {activeIndex === index ? "-" : "+"}
                   </span>
                 </button>
 
                 <AnimatePresence initial={false}>
                   {activeIndex === index && (
                     <motion.div
-                      initial={{ opacity: 0, scaleY: 0 }}
-                      animate={{ opacity: 1, scaleY: 1 }}
-                      exit={{ opacity: 0, scaleY: 0 }}
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.4, ease: [0.25, 0.8, 0.25, 1] }}
-                      className="px-6 py-4 bg-[#f6eee2] text-[#16632e] text-base md:text-xl whitespace-pre-line origin-top overflow-hidden font-semibold"
+                      className="overflow-hidden"
                     >
-                      {faq.answer}
+                      <div className="px-6 py-4 bg-[#f6eee2] text-[#16632e] text-base md:text-xl whitespace-pre-line origin-top font-semibold">
+                        {faq.answer}
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
