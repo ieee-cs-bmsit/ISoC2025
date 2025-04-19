@@ -32,7 +32,7 @@ const FAQpage = () => {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-[#fffff]">
+      <div className="min-h-screen w-full bg-[#fff7ea]">
         <div
           style={{
             backgroundImage: `url(${bgImage})`,
@@ -93,9 +93,9 @@ const FAQpage = () => {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
 
-      <Footer />
     </>
   );
 };

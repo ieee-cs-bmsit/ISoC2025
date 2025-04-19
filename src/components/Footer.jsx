@@ -78,7 +78,6 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-            <p className='bg-[#ebd22f] outline-none border-none font-body font-bold text-lg flex items-center justify-center py-2 -mt-1'>Contact us @ieee_cs@bmsit.in</p>
             <div className="w-full border-t border-black text-center text-black flex sm:justify-between justify-center lg:px-20 sm:px-4 py-4 font-bold lg:text-lg text-sm bg-[#ebd22f]">
                 <p>2025 IEEE Summer of Code</p>
                 <p> &nbsp; | &nbsp;</p>
