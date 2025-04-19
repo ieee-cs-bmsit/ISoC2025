@@ -26,7 +26,11 @@ const Timeline = () => {
   return (
     <div className="flex flex-col md:flex-row w-full min-h-screen bg-[#1f3cfc] text-white font-bold">
       {/* Image Section */}
-      <div className="w-full md:w-2/5 flex items-center justify-center p-6 md:p-0 relative overflow-visible">
+      <div
+  className="w-full md:w-2/5 flex items-center justify-center p-6 md:p-0 relative overflow-visible bg-no-repeat bg-cover bg-center"
+  style={{ backgroundImage: "url('/images/timelinebg.svg')" }}
+>
+
         <div className="w-[80%] h-[400px] md:h-[65%] border-4 border-white rounded-2xl flex items-center justify-center bg-white/10 shadow-[-12px_12px_24px_rgba(0,0,0,0.2)] z-10">
           <img
             src={`images/eventvisual${selectedIndex + 1}.svg`}
@@ -47,7 +51,7 @@ const Timeline = () => {
         >
           <h2
             className="text-3xl md:text-7xl mb-6 md:mb-10 py-4"
-            style={{ fontFamily: "CameraObscuraDEMO, sans-serif" }}
+            style={{ fontFamily: "CameraObscuraDEMO, sans-serif", letterSpacing: 1 }}
           >
             <span style={{ color: "#f6b801" }}>Here’s</span> What’s Coming!
           </h2>

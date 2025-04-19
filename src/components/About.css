@@ -1,11 +1,18 @@
+@font-face {
+  font-family: "CameraObscuraDEMO";
+  src: local("CameraObscuraDEMO"),
+       url("./assets/fonts/CameraObscuraDEMO.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .about-main-container {
   background-color: #f6b801;
-  padding: 5rem 5rem;
+  padding: 5rem;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 3rem;
-  flex-wrap: wrap;
   color: #808080;
 }
 
@@ -14,87 +21,71 @@
   flex-direction: column;
   gap: 3rem;
   max-width: 50%;
-  padding: 0 0rem;
-  
 }
 
-.stay-updated-container {
+/* ---- restore original Join Here CSS ---- */
+.button-div .join-wrapper {
   display: flex;
-  align-items: center;
-  border: black;
-  background-color: #5865f2;
-  width: fit-content;
-  padding: 0.8rem 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  gap: 1rem;
-  transition: all 0.3s ease-in-out;
-  border: 2px solid transparent;
+  margin: 1rem 0 2rem;
+}
+.button-div .join-wrapper .relative {
+  position: relative;
+}
+.button-div .join-wrapper .shadow-box {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 0;
 }
 
-.stay-updated-container:hover {
-  border-color: #f4b400;
-  box-shadow: 0 0 15px #f4b400aa;
+.stay-updated-heading {
+  font-family: 'CameraObscuraDEMO', sans-serif;
+  color: #fff;
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 3px;
+  text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+     0px  2px 0 #000,
+     2px  0px 0 #000,
+     0px -2px 0 #000,
+    -2px  0px 0 #000;
 }
 
-.stay-updated-container p {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 1px;
-  line-height: 1;
+/* Mobile override */
+@media (max-width: 768px) {
+  .stay-updated-heading {
+    font-size: 2.75rem;
+  }
+}
+
+.button-div .join-wrapper .join-button {
+  position: relative;
+  z-index: 10;
+  border: 1px solid black;
+  background-color: #1f3cfc;
+  padding: 0.75rem 2rem;
+  color: white;
+  font-size: 1.25rem;
+  font-family: "Shrikhand", cursive;
+  transition: transform 0.3s;
+}
+.button-div .join-wrapper .join-button:hover {
+  transform: scale(1.03);
 }
 
 .about-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 0.5rem;
-}
-
-.about-content p {
-  font-size: 1.7rem;
-  font-weight: 700;
-}
-
-.left-button {
-  position: relative;
-  background-color: #5865f2;
-  color: #ffffff;
-  border: 1px solid transparent;
-  border-radius: 0.75rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 40%;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 1rem 0;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  outline: none;
-}
-
-.left-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: #334155;
-  transition: left 0.3s ease;
-  z-index: 0;
-}
-
-.left-button:hover::after {
-  left: 0;
-}
-
-.left-button span {
-  position: relative;
-  z-index: 1;
+  color: #000;
 }
 
 .right-container {
@@ -102,59 +93,34 @@
 }
 
 .frame {
-  height: 35rem;
   width: 35rem;
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5); /* Added shadow */
-  border-radius: 0.75rem; /* Optional: for a softer edge */
+  height: 35rem;
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.5);
+  border-radius: 0.75rem;
 }
 
-/* ---------- RESPONSIVE STYLES ---------- */
-
-/* Mobile (widget on top) */
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
   .about-main-container {
-    flex-direction: column-reverse;
-    padding: 1.5rem 1rem;
-    gap: 2.2rem;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 2rem;
   }
-
-  .stay-updated-container {
-    width: 100%;
-    justify-content: center;
-  }
-
   .left-container {
-    gap: 1.2rem;
     max-width: 100%;
+    text-align: center;
     align-items: center;
-    text-align: center;
-    padding: 0;
   }
-
-  .stay-updated-container p {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .about-content {
-    text-align: center;
-    gap: 1.25rem;
-  }
-
-  .button-div {
-    display: flex;
+  .button-div .join-wrapper {
     justify-content: center;
     width: 100%;
   }
-
-  .right-container {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  }
-
   .frame {
-    height: 28rem;
     width: 100%;
+    height: 28rem;
+  }
+
+  .stay-updated-heading {
+    font-size: 3rem;
   }
 }

@@ -11,10 +11,10 @@
     text-align: center;
     font-size: 2.2rem;
     margin: 0.5rem 0;
-    color: #656363;
+    color: #474646;
     text-transform: uppercase;
     font-weight: bold;
-    font-family: 'Shrikhand', sans-serif;
+    font-family: 'CameraObscuraDEMO', sans-serif;
     padding: 1rem 1rem;
 }
 
@@ -24,9 +24,9 @@
 
 .card-main-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(555px, 1fr));
-    gap: 2rem;
-    padding: 1rem 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+    gap: 2.5rem;
+    padding: 1rem 10rem;
     justify-content: center;
     align-items: stretch;
 }
@@ -60,7 +60,7 @@
     align-items: center;
     gap: 2rem;
     padding: 1.8rem 1.5rem;
-    
+    border: #000000 solid 1px;
     z-index: 1;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
     width: 100%;
@@ -70,8 +70,8 @@
 
 /* Image box */
 .image-box {
-    height: 230px;
-    width: 230px;
+    height: 170px;
+    width: 170px;
     background-color: grey;
     border-radius: 90%;
     position: relative;
@@ -97,14 +97,14 @@
 }
 
 .title-name {
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 900;
     color: white;
 }
 
 .role {
     font-weight: 400;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: white;
 }
 
@@ -112,42 +112,19 @@
 .socials-container {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.8rem;
     margin-top: .25rem;
 }
 
-.social-1,
-.social-2 {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
+.linkedin-icons{
+    color: white;
+    font-size: 1.8rem;
+    line-height: 1;
 }
 
-.social-1 {
-    background-color: #0077B5;
-}
-.social-2 {
-    background-color: #E1306C;
-}
-
-.social-1 a,
-.social-2 a {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-}
-
-.linkedin-icons,
 .insta-icons {
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1;
 }
 
@@ -178,16 +155,6 @@
     object-fit: contain;
 }
 
-/* Animation */
-.main-box.motion-hover {
-    will-change: transform;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.main-box.motion-hover:hover {
-    transform: scale(1.04) rotate(1deg);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
 
 /* HR */
 .hr {
@@ -219,7 +186,6 @@
         text-align: center;
         padding: 1.5rem 1rem;
         min-height: 280px;
-        border-radius: 12px;
     }
 
     .image-box {
