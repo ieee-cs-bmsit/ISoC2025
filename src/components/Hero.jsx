@@ -1,10 +1,19 @@
 import React from 'react'
-import heroLogo from '../assets/img/socblacklogo.png'
+import heroLogo from '../assets/img/socbiegelogo.png'
 import "./Hero.css"
+import heroBg from "../assets/img/herobg.png"
 
 const Hero = () => {
     return (
-        <section className="h-screen w-screen bg-white text-white flex flex-col font-body">
+        <section
+            className="h-screen w-screen text-white flex flex-col font-body"
+            style={{
+                backgroundImage: `url(${heroBg})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+            }}
+        >
             <div className="flex-grow flex flex-col lg:justify-start justify-center items-center text-center">
                 <img src={heroLogo} alt="IEEE Summer of Code" className="max-w-[90%] md:max-w-lg lg:scale-150 md:scale-120 sm:scale-100
                 sm:-mt-15 lg:mt-25" />
