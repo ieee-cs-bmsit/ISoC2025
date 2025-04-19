@@ -51,7 +51,7 @@ const WhyParticipate = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
         >
-          Why Participate ?
+          Why Contribute?
         </motion.h2>
 
         <motion.p
