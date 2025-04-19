@@ -40,18 +40,26 @@ const Footer = () => {
                                 BMSIT</a>
                         </li>
                         <li>
-                            <a href="https://40yrs.ieeebangalore.org/" target='_blank'>
+                            <a href="https://www.ieee.org/" target='_blank'>
+                                IEEE
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://yp.ieee.org/
+    
+    " target='_blank'>
+                                IEEE YP
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://yp.ieeebangalore.org/
+" target='_blank'>
                                 IEEE YP Blr
                             </a>
                         </li>
                         <li>
-                            <a href="https://ieeecsbangalore.org/" target='_blank'>
+                            <a href="https://cs.ieeebangalore.org/" target='_blank'>
                                 IEEE CS Blr
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.ieee.org/" target='_blank'>
-                                IEEE
                             </a>
                         </li>
                     </ul>
@@ -87,6 +95,11 @@ const Footer = () => {
                         <li>
                             <a href="https://www.linkedin.com/company/ieeesoc/about/?viewAsMember=true" target="_blank">
                                 LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/tNPJG7Qh" target="_blank">
+                                Discord
                             </a>
                         </li>
                     </ul>
