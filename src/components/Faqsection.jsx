@@ -19,6 +19,7 @@ const FAQAccordion = () => {
         className="text-4xl md:text-7xl mb-8 text-center py-5"
         style={{
           fontFamily: "CameraObscuraDEMO, sans-serif",
+          letterSpacing: 2,
           color: "#ffffff",
           textShadow: `
             -2px -2px 0 #000,

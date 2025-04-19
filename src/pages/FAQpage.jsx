@@ -48,6 +48,7 @@ const FAQpage = () => {
               className="text-4xl md:text-5xl lg:text-7xl text-center text-black mb-16"
               style={{
                 fontFamily: "CameraObscuraDEMO, sans-serif",
+              
               }}
             >
               Frequently Asked Questions
