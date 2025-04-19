@@ -23,15 +23,12 @@ function About() {
       {/* LEFT COLUMN */}
       <div className="left-container">
         {/* Animated “Stay Updated” heading */}
-        <motion.h2
+        <h2
   className="stay-updated-heading"
-  initial={{ opacity: 0, x: -100 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8, ease: 'easeOut' }}
-  viewport={{ once: false }}
+
 >
   Stay Updated
-</motion.h2>
+</h2>
 
 
         {/* Animated description */}

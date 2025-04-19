@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 import faqs from "../data/Faqs";
 import Footer from "../components/Footer";
 import Thunder from '../assets/img/thhunder.png';
@@ -40,9 +41,9 @@ const FAQpage = () => {
             backgroundPosition: 'top',
             backgroundRepeat: 'no-repeat',
           }}
-          className="w-full min-h-screen mb-20 py-20"
+          className="w-full min-h-screen mb-20 pt-20"
         >
-          <div className="max-w-6xl mx-auto px-5 py-10 mt-8">
+          <div className="max-w-6xl mx-auto px-5 pt-10 mt-8">
             {/* Title */}
             <h1
               className="text-4xl md:text-5xl lg:text-7xl text-center text-black mb-16"
@@ -93,6 +94,13 @@ const FAQpage = () => {
               ))}
             </div>
           </div>
+        </div>
+        <div>
+
+        <div className="text-center text-xl mx-15 md:text-4xl font-semibold text-black pb-30">
+ Got more questions? Let’s talk on <a href="https://discord.com/invite/T2CdKqUq?utm_source=Discord%20Widget&utm_medium=Connect" className="text-blue-600  hover:text-blue-800 transition-colors cursor-pointer">Discord </a>!
+</div>
+
         </div>
         <Footer />
       </div>
