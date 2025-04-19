@@ -49,22 +49,28 @@ const Footer = () => {
                                 IEEE CS Blr
                             </a>
                         </li>
+                        <li>
+                            <a href="https://www.ieee.org/" target='_blank'>
+                                IEEE
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div>
                     <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">IEEE CS SOCIALS</h3>
                     <ul className="lg:-space-y-8 font-semibold font-body lg:text-2xl text-xl flex lg:flex-col flex-row gap-10">
                         <li>
-                            <a href="https://ieeecsbangalore.org/" target="_blank">
+                            <a href="https://www.instagram.com/ieeecs.bmsit/" target="_blank">
                                 Instagram</a>
                         </li>
                         <li>
-                            <a href="https://ieeecsbangalore.org/" target="_blank">
+                            <a href="https://www.linkedin.com/company/ieee-cs-bmsit/about/?viewAsMember=true" target="_blank">
                                 LinkedIn
                             </a>
                         </li>
                         <li>
-                            <a href="https://ieeecsbangalore.org/" target="_blank">
+                            <a href="https://github.com/ieee-cs-bmsit
+" target="_blank">
                                 GitHub
                             </a>
                         </li>
@@ -73,8 +79,16 @@ const Footer = () => {
                 <div>
                     <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">ISOC SOCIALS</h3>
                     <ul className="lg:-space-y-8 font-semibold font-body lg:text-2xl text-xl flex lg:flex-col flex-row gap-10">
-                        <li>Instagram</li>
-                        <li>LinkedIn</li>
+                        <li>
+                            <a href="https://www.instagram.com/ieeesoc/" target="_blank">
+                                Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/ieeesoc/about/?viewAsMember=true" target="_blank">
+                                LinkedIn
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
