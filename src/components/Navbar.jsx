@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../assets/img/just logo.png";
 import "./Navbar.css";
 
 function Navbar() {
@@ -31,7 +32,7 @@ function Navbar() {
     <div className="navbar -mb-16">
       {/* Logo */}
       <NavLink to="/" className="navbar-logo-link">
-        <img src="/images/logo.png" alt="Logo" className="navbar-logo" />
+        <img src={logo} alt="Logo" className="navbar-logo" />
       </NavLink>
 
       {/* Hamburger Icon */}
@@ -79,7 +80,7 @@ function Navbar() {
           <div className="mobile-menu-top">
             <NavLink to="/" onClick={closeMenu}>
               <img
-                src="/src/assets/Screenshot 2025-04-06 191735.png"
+                src={logo}
                 alt="Logo"
                 className="mobile-menu-logo"
               />

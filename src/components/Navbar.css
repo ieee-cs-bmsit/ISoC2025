@@ -41,7 +41,7 @@ main {
 
 /* Logo */
 .navbar-logo {
-  height: 45px;
+  height: 70px;
   width: auto;
   transition: transform 0.3s ease;
 }
