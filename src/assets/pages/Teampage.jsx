@@ -1,7 +1,7 @@
 import React from 'react';
-import { TeamDetails } from '../data/Teamdata';
+import { TeamDetails } from '../../data/Teamdata';
 import { motion } from 'framer-motion';
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 import { LiaLinkedinIn } from "react-icons/lia";
 import { GrInstagram } from "react-icons/gr";
 import './TeamPage.css';

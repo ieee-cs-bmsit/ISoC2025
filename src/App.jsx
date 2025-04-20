@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Leaderboard from './pages/Leaderboard';
-import Teampage from './pages/Teampage';
+import Home from './assets/pages/Home';
+import Leaderboard from './assets/pages/Leaderboard';
+import Teampage from './assets/pages/Teampage';
 import Cursor from './components/Cursor';
-import FAQpage from './pages/FAQpage';
+import FAQpage from './assets/pages/FAQpage';
 import './App.css';
 
 const App = () => {
