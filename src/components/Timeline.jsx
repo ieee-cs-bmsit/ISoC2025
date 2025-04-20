@@ -5,10 +5,11 @@ import { events } from "../data/Eventdata";
 const Timeline = () => {
   const headingRef = useRef(null);
   const scrollRef = useRef(null);
-  const hasAnimated = useRef(false); // <- New ref to track first-time animation
+  const hasAnimated = useRef(false); // Track if scroll animation has already happened
   const isInView = useInView(headingRef, { margin: "-100px" });
 
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null); // New state for hover preview
 
   useEffect(() => {
     if (isInView && !hasAnimated.current) {
@@ -19,7 +20,7 @@ const Timeline = () => {
           el.scrollTo({ top: 0, behavior: "smooth" });
         }, 1000);
       }
-      hasAnimated.current = true; // mark as done
+      hasAnimated.current = true;
     }
   }, [isInView]);
 
@@ -27,15 +28,14 @@ const Timeline = () => {
     <div className="flex flex-col md:flex-row w-full min-h-screen bg-[#1f3cfc] text-white font-bold">
       {/* Image Section */}
       <div
-  className="w-full md:w-2/5 flex items-center justify-center p-6 md:p-0 relative overflow-visible bg-no-repeat bg-cover bg-center"
-  style={{ backgroundImage: "url('/images/timelinebg.svg')" }}
->
-
+        className="w-full md:w-2/5 flex items-center justify-center p-6 md:p-0 relative overflow-visible bg-no-repeat bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/timelinebg.svg')" }}
+      >
         <div className="w-[80%] h-[400px] md:h-[65%] border-4 border-white rounded-2xl flex items-center justify-center bg-white/10 shadow-[-12px_12px_24px_rgba(0,0,0,0.2)] z-10">
           <img
-            src={`images/eventvisual${selectedIndex + 1}.svg`}
+            src={`images/eventvisual${(hoveredIndex !== null ? hoveredIndex : selectedIndex) + 1}.svg`}
             alt="Event Visual"
-            className="w-full h-full object-cover rounded-xl"
+            className="w-full h-full object-cover rounded-xl transition-all duration-300 ease-in-out"
           />
         </div>
       </div>
@@ -73,12 +73,14 @@ const Timeline = () => {
               <div
                 key={index}
                 onClick={() => setSelectedIndex(index)}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
                 className="border-b border-white px-4 pl-0 pb-6 hover:scale-[1.01] transition-transform duration-300 cursor-pointer"
               >
                 <div className="flex items-start justify-between gap-4 flex-nowrap w-full">
                   <h3
                     className={`text-xl md:text-4xl shrikhand-regular ${
-                      isSelected ? "text-white " : "text-[#adb8f9] hover:text-[#d7d8fe]"
+                      isSelected ? "text-white" : "text-[#adb8f9] hover:text-[#d7d8fe]"
                     }`}
                     style={{ flex: "1 1 auto" }}
                   >
