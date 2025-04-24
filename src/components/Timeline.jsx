@@ -35,7 +35,7 @@ const Timeline = () => {
           <img
             src={`images/eventvisual${(hoveredIndex !== null ? hoveredIndex : selectedIndex) + 1}.svg`}
             alt="Event Visual"
-            className="w-full h-full object-cover rounded-xl transition-all duration-300 ease-in-out"
+            className="w-full h-full object-cover rounded-xl transition-all duration-300 ease-in-out" 
           />
         </div>
       </div>
