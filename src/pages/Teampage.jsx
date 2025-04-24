@@ -73,6 +73,7 @@ const Team = () => {
                                     </div>
                                     <div className='main-box1'>
                                         <div className="image-box">
+                                            {/* Lazy load the image */}
                                             <img src={member.img} alt={member.name} className='images' loading='lazy' />
                                         </div>
                                         <div className="details-box">

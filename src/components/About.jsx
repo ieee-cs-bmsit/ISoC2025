@@ -23,13 +23,7 @@ function About() {
       {/* LEFT COLUMN */}
       <div className="left-container">
         {/* Animated “Stay Updated” heading */}
-        <h2
-  className="stay-updated-heading"
-
->
-  Stay Updated
-</h2>
-
+        <h2 className="stay-updated-heading">Stay Updated</h2>
 
         {/* Animated description */}
         <motion.div
@@ -41,21 +35,21 @@ function About() {
         >
           <motion.p
             variants={descItem}
-            className="font-semibold text-lg md:text-3xl"
+            className="font-semibold text-xl md:mb-3 md:text-3xl"
           >
             Open source is more than just code – it's a community.
           </motion.p>
           <motion.p
             variants={descItem}
-            className="font-semibold text-lg md:text-3xl"
+            className="font-semibold text-xl md:mb-3 md:text-3xl"
           >
             Stay connected, collaborate, and keep your journey going beyond the
             event!
           </motion.p>
-          <motion.p variants={descItem} className="text-lg md:text-3xl">
+          {/* <motion.p variants={descItem} className="text-lg md:text-3xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
             suscipit.
-          </motion.p>
+          </motion.p> */}
         </motion.div>
 
         {/* Join Here button */}
