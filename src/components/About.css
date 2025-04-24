@@ -19,7 +19,7 @@
 .left-container {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   max-width: 50%;
 }
 
@@ -120,7 +120,12 @@
     height: 28rem;
   }
 
+  .right-container{
+    padding-bottom: 1rem;
+  }
   .stay-updated-heading {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 }

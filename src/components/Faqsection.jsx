@@ -14,7 +14,7 @@ const FAQAccordion = () => {
   const previewFaqs = faqs.slice(0, 5);
 
   return (
-    <div className="w-full px-6 py-12 pb-20 bg-[#1b7738] max-w-screen-xl mx-auto">
+    <div className="w-full px-6 py-12 pt-5 pb-20 bg-[#1b7738] max-w-screen-xl mx-auto">
       <h2
         className="text-4xl md:text-7xl mb-8 text-center py-5"
         style={{
