@@ -24,7 +24,6 @@ body.menu-open {
   left: 50%;
   transform: translateX(-50%);
   max-width: 1100px;
-  width: 50%;
   height: 70px;
   background-color: rgb(255, 255, 255);
   backdrop-filter: blur(12px);
@@ -88,11 +87,29 @@ body.menu-open {
 
 .navbar-list li {
   position: relative;
-  padding-bottom: 2px;
+}
+
+.navbar-list li a {
+  position: relative;
+  display: inline-block;
+  padding: 0 2px;
+  color: inherit;
+  /* Remove background-color - we'll handle this differently */
+}
+
+.navbar-list li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white; /* Match navbar background */
+  z-index: -1; /* Place behind text */
 }
 
 .navbar-list li a:hover {
-  color: #7f7f7f; /* This changes the text color to grey on hover */
+  color: #7f7f7f;
 }
 
 .navbar-list li::after {
@@ -100,16 +117,17 @@ body.menu-open {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0%;
+  width: 0;
   height: 2px;
   background-color: #474646;
   transition: width 0.3s ease;
+  z-index: -2; /* Place even further back */
 }
 
 .navbar-list li:hover::after {
   width: 100%;
-  color: #474646;
 }
+
 
 .disabled-link {
   color: #858484;
@@ -166,7 +184,7 @@ body.menu-open {
   right: 0;
   left: 0;
   width: 100vw;
-  max-width: 400px;
+  max-width: 1000px;
   height: 100vh;
   background-color: white;
   transform: translateX(100%);
