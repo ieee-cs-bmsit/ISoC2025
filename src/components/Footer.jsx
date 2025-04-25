@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import "./Footer.css"
 
 const Footer = () => {
+    const scrollToTop = () => window.scrollTo(0, 0);
+
     return (
         <footer className="relative z-1 font-body -mt-20">
             <div className="overflow-hidden w-full leading-none mb-10">
@@ -24,40 +26,33 @@ const Footer = () => {
                 <div>
                     <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">PAGES</h3>
                     <ul className='lg:text-2xl font-semibold font-body text-xl flex lg:flex-col flex-row gap-10'>
-                        <Link to="/" className='w-fit h-fit'>
+                        <Link to="/" className='w-fit h-fit' onClick={scrollToTop}>
                             <li>Home</li>
                         </Link>
-                        <Link to="/team" className='w-fit h-fit'>
+                        <Link to="/team" className='w-fit h-fit' onClick={scrollToTop}>
                             <li>Team</li>
                         </Link>
                     </ul>
                 </div>
+                {/* other sections unchanged */}
                 <div>
                     <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">QUICK LINKS</h3>
-                    <ul className="lg:-space-y-8 font-semibold font-body lg:text-2xl text-xl flex lg:flex-col flex-row gap-10">
-                        <li>
+                    <ul className="font-semibold font-body lg:text-2xl text-xl flex flex-wrap lg:flex-col gap-x-10 gap-y-5">
+                        <li className="whitespace-nowrap">
                             <a href="https://bmsit.ac.in/" target='_blank'>
                                 BMSIT</a>
                         </li>
-                        <li>
-                            <a href="https://www.ieee.org/" target='_blank'>
-                                IEEE
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://yp.ieee.org/
-    
-    " target='_blank'>
+                        <li className="whitespace-nowrap">
+                            <a href="https://yp.ieee.org/" target='_blank'>
                                 IEEE YP
                             </a>
                         </li>
-                        <li>
-                            <a href="https://yp.ieeebangalore.org/
-" target='_blank'>
+                        <li className="whitespace-nowrap">
+                            <a href="https://yp.ieeebangalore.org/" target='_blank'>
                                 IEEE YP Blr
                             </a>
                         </li>
-                        <li>
+                        <li className="whitespace-nowrap">
                             <a href="https://cs.ieeebangalore.org/" target='_blank'>
                                 IEEE CS Blr
                             </a>
@@ -77,8 +72,7 @@ const Footer = () => {
                             </a>
                         </li>
                         <li>
-                            <a href="https://github.com/ieee-cs-bmsit
-" target="_blank">
+                            <a href="https://github.com/ieee-cs-bmsit" target="_blank">
                                 GitHub
                             </a>
                         </li>
