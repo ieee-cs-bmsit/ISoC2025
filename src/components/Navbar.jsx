@@ -55,11 +55,19 @@ function Navbar() {
     e.preventDefault();
     setIsMenuOpen((prev) => !prev);
   }
-  const closeMenu = () => setIsMenuOpen(false);
+  
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    // Scroll to top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
 
   return (
     <div className={`navbar ${visible ? "visible" : "hidden"}`}>
-      <NavLink to="/" className="navbar-logo-link">
+      <NavLink to="/" className="navbar-logo-link" onClick={closeMenu}>
         <img src={logo} alt="Logo" className="navbar-logo" />
       </NavLink>
 
@@ -76,13 +84,13 @@ function Navbar() {
 
       {/* Hamburger only on mobile */}
       <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
-  <div className="dot-grid">
-    <span className="dot" />
-    <span className="dot" />
-    <span className="dot" />
-    <span className="dot" />
-  </div>
-</button>
+        <div className="dot-grid">
+          <span className="dot" />
+          <span className="dot" />
+          <span className="dot" />
+          <span className="dot" />
+        </div>
+      </button>
 
       {/* Mobile Menu - Full Screen Overlay */}
       <div className={`mobile-menu-overlay ${isMenuOpen ? "open" : ""}`}>
