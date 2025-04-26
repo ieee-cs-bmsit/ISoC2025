@@ -35,7 +35,7 @@ import member23 from '../assets/Photos Members/spandana.jpg';
 import member24 from '../assets/Photos Members/tarun.jpg';
 import member25 from '../assets/Photos Members/tejas.jpg';
 import member26 from '../assets/Photos Members/Tirth.jpg';
-import member27 from '../assets/Photos Members/utkarsh.jpg';
+import member27 from '../assets/Photos Members/utkarsh1.jpg';
 
 
 
@@ -92,7 +92,7 @@ export const TeamDetails = [
         category: "Co - Ordinator",
         role: "Core Co-ordinator ",
         linkedin: "https://www.linkedin.com/in/utkarsh-jain-5a673b22b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        instagram: "",
+        instagram: "https://www.instagram.com/_iamutkarshjain__",
         star_icon: starIcon6,
           
           
