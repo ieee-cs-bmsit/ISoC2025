@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TeamDetails } from "../data/Teamdata";
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
@@ -17,6 +17,8 @@ const cardVariants = {
     },
   },
 };
+
+
 
 const formatHeading = (title) => {
   if (!title) return "";
@@ -39,6 +41,14 @@ const groupByCategory = (data) =>
   }, {});
 
 const Team = () => {
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []); 
+
   const groupedData = groupByCategory(TeamDetails);
 
   return (

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Sponsorsection from "../components/Sponsorsection";
 import Timeline from "../components/Timeline";
 import About from "../components/About";
@@ -11,6 +11,13 @@ import WhyParticipate from '../components/WhyParticipate';
 
 const Home = () => {
   const sponsors = [];
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   for (let i = 0; i < 10; i++) {
     sponsors.push(

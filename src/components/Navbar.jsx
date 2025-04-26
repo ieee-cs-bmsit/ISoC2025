@@ -50,6 +50,15 @@ function Navbar() {
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   }
+
+  const handleMobileNavClick = () => {
+    setIsMenuOpen(false);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+  
   
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -98,11 +107,11 @@ function Navbar() {
           </div>
 
           <ul className="mobile-slide-list">
-            <li><NavLink to="/" onClick={closeMenu}>Home</NavLink></li>
-            <li><NavLink to="/leaderboard" onClick={closeMenu}>Leaderboard</NavLink></li>
-            <li><NavLink to="/repos" onClick={closeMenu}>Repos</NavLink></li>
-            <li><NavLink to="/team" onClick={closeMenu}>Team</NavLink></li>
-            <li><NavLink to="/faqs" onClick={closeMenu}>FAQs</NavLink></li>
+            <li><NavLink to="/" onClick={handleMobileNavClick}>Home</NavLink></li>
+            <li><NavLink to="/leaderboard" onClick={handleMobileNavClick}>Leaderboard</NavLink></li>
+            <li><NavLink to="/repos" onClick={handleMobileNavClick}>Repos</NavLink></li>
+            <li><NavLink to="/team" onClick={handleMobileNavClick}>Team</NavLink></li>
+            <li><NavLink to="/faqs" onClick={handleMobileNavClick}>FAQs</NavLink></li>
           </ul>
 
           <button className="register-btn">Register</button>
