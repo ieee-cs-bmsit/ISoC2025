@@ -16,22 +16,18 @@ function Navbar() {
 
   useEffect(() => {
     if (isMenuOpen) {
-      document.body.classList.add("no-scroll");
-      document.body.classList.add("menu-open");
-      // Save current scroll position
       const scrollY = window.scrollY;
       document.body.style.position = 'fixed';
       document.body.style.top = `-${scrollY}px`;
+      document.body.dataset.scrollY = scrollY; // Store scrollY safely
     } else {
-      // Restore scroll position
-      const scrollY = document.body.style.top;
-      document.body.classList.remove("no-scroll");
-      document.body.classList.remove("menu-open");
+      const scrollY = document.body.dataset.scrollY || "0";
       document.body.style.position = '';
       document.body.style.top = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      window.scrollTo(0, parseInt(scrollY, 10));
     }
   }, [isMenuOpen]);
+  
 
   // Hide navbar on scroll down
   useEffect(() => {
@@ -51,18 +47,17 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
-  const toggleMenu = (e) => {
-    e.preventDefault();
+  const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   }
   
   const closeMenu = () => {
     setIsMenuOpen(false);
     // Scroll to top of the page
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: "smooth"
+    // });
   }
 
   return (
@@ -115,9 +110,9 @@ function Navbar() {
           <div className="mobile-social">
             <p className="social-title">SOCIAL</p>
             <div className="links">
-              <NavLink to="#">Instagram</NavLink>
-              <NavLink to="#">LinkedIn</NavLink>
-              <NavLink to="#">Github</NavLink>
+              <NavLink to="/">Instagram</NavLink>
+              <NavLink to="/">LinkedIn</NavLink>
+              <NavLink to="/">Github</NavLink>
             </div>
             <hr />
             <div className="mobile-policy">
