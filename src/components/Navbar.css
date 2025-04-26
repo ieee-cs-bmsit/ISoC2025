@@ -34,7 +34,7 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2.2rem;
+  padding: 0 2rem;
   z-index: 1000;
   border: 1px solid rgba(16, 15, 15, 0.36);
   transition: all 0.3s ease;
@@ -55,9 +55,9 @@ body.menu-open {
 /* === Logo Styles === */
 .navbar-logo {
   height: 80px;
-  width: auto;
+  width: 80px;
   transition: transform 0.3s ease;
-  padding-right: 50px;
+  
 }
 
 .navbar-logo:hover {

@@ -120,8 +120,8 @@ export const TeamDetails = [
         name: "Shivani Anand ",
         category: "Media & Design",
         role: "Media & Design",
-        linkedin: "",
-       instagram: "",
+        linkedin: "https://www.linkedin.com/in/shivani-anand-4141b2302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+       instagram: "https://www.instagram.com/_shivani_anand_?igsh=MW5haHp3d3JvdzZocA==",
        star_icon: starIcon9,
     }, 
     
