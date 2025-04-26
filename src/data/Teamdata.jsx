@@ -14,7 +14,7 @@ import member2 from '../assets/Photos Members/anne.jpg';
 import member3 from '../assets/Photos Members/Arnab.jpg';
 import member4 from '../assets/Photos Members/atul.jpg';
 import member5 from '../assets/Photos Members/bindu.jpg';
-import member6 from '../assets/Photos Members/devansh1.jpg';
+import member6 from '../assets/Photos Members/devansh.jpg';
 import member7 from '../assets/Photos Members/Harshit.jpg';
 import member8 from '../assets/Photos Members/kavana.jpg';
 import member9 from '../assets/Photos Members/keerthi.jpg';
@@ -73,7 +73,7 @@ export const TeamDetails = [
         category: "Co - Ordinator",
         role: "Core Co-ordinator ",
         linkedin: "http://linkedin.com/in/saanvi-matada-739196277",
-       instagram: "",
+       instagram: "https://www.instagram.com/__saanvi_ms__/profilecard/?igsh=MTc1bWt3ZndzMTczeg==",
        star_icon: starIcon13,
     }, 
     {
@@ -82,7 +82,7 @@ export const TeamDetails = [
         category: "Co - Ordinator",
         role: "Core Co-ordinator ",
         linkedin: "https://www.linkedin.com/in/meghana-k-277bb2318/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-       instagram: "",
+       instagram: "https://www.instagram.com/megghaana/",
        star_icon: starIcon5,
     }, 
     {
@@ -103,7 +103,7 @@ export const TeamDetails = [
         category: "Media & Design",
         role: "Media & Design",
         linkedin: "https://www.linkedin.com/in/kushal-m-a73b1132b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-       instagram: "",
+       instagram: "https://www.instagram.com/kushalll.5/profilecard/?igsh=ODlwaW84Z3N3dXdt",
        star_icon: starIcon7,
     }, 
     {
@@ -140,7 +140,7 @@ export const TeamDetails = [
         category: "Media & Design",
         role: "Media & Design",
         linkedin: "https://www.linkedin.com/in/anne-thyagaraj/",
-       instagram: "",
+       instagram: "https://www.instagram.com/anne_thyagaraj?igsh=MXExa2UyeWxqdWt6OA==",
        star_icon: starIcon2,
     }, 
     {
@@ -158,7 +158,7 @@ export const TeamDetails = [
         category: "Media & Design",
         role: "Media & Design",
         linkedin: "https://www.linkedin.com/in/keerthi-gorey-b422502a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-       instagram: "",
+       instagram: "https://www.instagram.com/kikx.g?igsh=YWY3d29uMGpzNXdy",
        star_icon: starIcon13,
     }, 
     {
@@ -222,7 +222,7 @@ export const TeamDetails = [
         category: "Outreach Team",
         role: "Outreach Team",
         linkedin: "https://www.linkedin.com/in/spandana-h-392474220?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-       instagram: "",
+       instagram: "https://www.instagram.com/_._sponju._7?igsh=ZmJqM3A4eXJtd2d3",
        star_icon: starIcon2,
     }, 
     {
@@ -249,7 +249,7 @@ export const TeamDetails = [
         category: "Events & Operations",
         role: "Events & Operations",
         linkedin: "https://www.linkedin.com/in/shreyaa-kudremane-75a997219",
-       instagram: "https: google",
+       instagram: "https://www.instagram.com/shreyaa.kudremane?igsh=MWs2Yzdxd2p2bWh4bg==",
        star_icon: starIcon5,
     }, 
     {
@@ -257,7 +257,7 @@ export const TeamDetails = [
         name: "Nitish K S",
         category: "Events & Operations",
         role: "Events & Operations",
-        linkedin: "linkedin.com/in/nitish-k-s-317b12302",
+        linkedin: "https://www.linkedin.com/in/nitish-k-s-317b12302/",
        instagram: "https://www.instagram.com/nitish_ksn?igsh=MWUzNTZ0OTh4bHRrMA==",
        star_icon: starIcon6,
     }, 
@@ -267,7 +267,7 @@ export const TeamDetails = [
         category: "Events & Operations",
         role: "Events & Operations",
         linkedin: "https://www.linkedin.com/in/tarun-patil-751678278",
-       instagram: "https: google",
+       instagram: "https://www.instagram.com/mrtarunpatil?igsh=MTN5cjhzcTVhZmgwaw==",
        star_icon: starIcon7,
     }, 
     {
@@ -285,7 +285,7 @@ export const TeamDetails = [
         category: "Events & Operations",
         role: "Events & Operations",
         linkedin: "https://www.linkedin.com/in/bindu-sanjeev-1791ab2a0",
-       instagram: "",
+       instagram: "https://www.instagram.com/bindusanjeev_6?igsh=MW02ZnVxdzBzajE5NA==",
        star_icon: starIcon9,
     }, 
     
