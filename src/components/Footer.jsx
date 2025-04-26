@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./Footer.css"
+import COC from '../assets/pdf/CoC_open_source.pdf (1).pdf'
+import tc from '../assets/pdf/T&C_open_source.pdf'
+import pp from '../assets/pdf/Privacy_Policy_open_source.pdf'
 
 const Footer = () => {
     const scrollToTop = () => window.scrollTo(0, 0);
@@ -22,7 +25,7 @@ const Footer = () => {
                 </svg>
             </div>
 
-            <div className="max-w-full mx-auto lg:px-15 px-4 lg:pt-20 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-black text-xl outline-none border-none bg-[#ebd22f]">
+            <div className="max-w-full mx-auto lg:px-15 px-4 lg:pt-20 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 text-black text-xl outline-none border-none bg-[#ebd22f]">
                 <div>
                     <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">PAGES</h3>
                     <ul className='lg:text-2xl font-semibold font-body text-xl flex lg:flex-col flex-row gap-10'>
@@ -37,7 +40,7 @@ const Footer = () => {
                 {/* other sections unchanged */}
                 <div>
                     <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">QUICK LINKS</h3>
-                    <ul className="font-semibold font-body lg:text-2xl text-xl flex flex-wrap lg:flex-col gap-x-10 gap-y-5">
+                    <ul className="font-semibold font-body lg:text-2xl text-xl flex flex-wrap lg:flex-col gap-x-10 lg:gap-y-2 gap-y-5">
                         <li className="whitespace-nowrap">
                             <a href="https://bmsit.ac.in/" target='_blank'>
                                 BMSIT</a>
@@ -94,6 +97,26 @@ const Footer = () => {
                         <li>
                             <a href="https://discord.gg/tNPJG7Qh" target="_blank">
                                 Discord
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 className="font-title lg:text-4xl text-2xl lg:mb-5">POLICY LINKS</h3>
+                    <ul className="lg:-space-y-8 font-semibold font-body lg:text-2xl text-xl flex flex-wrap lg:flex-col flex-row gap-10 lg:gap-y-10 gap-y-5">
+                        <li className='whitespace-nowrap'>
+                            <a href={tc} target="_blank">
+                                Terms & Conditions
+                            </a>
+                        </li>
+                        <li className='whitespace-nowrap'>
+                            <a href={COC} target="_blank">
+                                Code of Conduct
+                            </a>
+                        </li>
+                        <li className='whitespace-nowrap'>
+                            <a href={pp} target="_blank">
+                                Privacy Policy
                             </a>
                         </li>
                     </ul>
