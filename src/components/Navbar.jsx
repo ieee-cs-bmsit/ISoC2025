@@ -79,8 +79,8 @@ function Navbar() {
       <div className="navbar-links">
         <ul className="navbar-list">
           <li><NavLink to="/" onClick={closeMenu}>Home</NavLink></li>
-          <li><span className="disabled-link">Leaderboard</span></li>
-          <li><span className="disabled-link">Repos</span></li>
+          <li><NavLink to="/leaderboard" onClick={closeMenu}>LeaderBoard</NavLink></li>
+          <li><NavLink to="/repos" onClick={closeMenu}>Repos</NavLink></li>
           <li><NavLink to="/team" onClick={closeMenu}>Team</NavLink></li>
           <li><NavLink to="/faqs" onClick={closeMenu}>FAQs</NavLink></li>
         </ul>

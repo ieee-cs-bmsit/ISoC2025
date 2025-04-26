@@ -6,7 +6,7 @@ import heroBg from '../assets/img/herobg2.svg'
 const Hero = () => {
     return (
         <section
-            className="h-screen w-screen text-white flex flex-col font-body"
+            className="h-screen w-screen text-white flex flex-col font-body mt-[4rem]"
             style={{
                 backgroundImage: `url(${heroBg})`,
                 backgroundSize: "cover",
