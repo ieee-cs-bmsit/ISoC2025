@@ -18,8 +18,6 @@ const cardVariants = {
   },
 };
 
-
-
 const formatHeading = (title) => {
   if (!title) return "";
   const words = title.trim().split(" ");
