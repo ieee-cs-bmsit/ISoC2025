@@ -72,7 +72,7 @@ const Home = () => {
       <div
         className="py-8"
         style={{
-          backgroundImage: "url('/images/sponsorsectionbg.svg')",
+          backgroundImage: "url('/images/sponsorbg.png')",
           backgroundPosition: "center",
         }}
       >
