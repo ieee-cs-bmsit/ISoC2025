@@ -38,25 +38,25 @@ const Hero = () => {
                 <div className="marquee-text-track">
                     <p>BMSITM</p>
                     <p>✺</p>
-                    <p>5th May to 21st June</p>
+                    <p>9th May to 28st June</p>
                     <p>✺</p>
                     <p>IEEE CS BMSITM</p>
                     <p>✺</p>
                     <p>BMSITM</p>
                     <p>✺</p>
-                    <p>5th May to 21st June</p>
+                    <p>9th May to 28st June</p>
                     <p>✺</p>
                     <p>IEEE CS BMSITM</p>
                     <p>✺</p>
                     <p aria-hidden="true">BMSITM</p>
                     <p aria-hidden="true">✺</p>
-                    <p aria-hidden="true">5th May to 21st June</p>
+                    <p aria-hidden="true">9th May to 28st June</p>
                     <p aria-hidden="true">✺</p>
                     <p aria-hidden="true">IEEE CS BMSITM</p>
                     <p aria-hidden="true">✺</p>
                     <p aria-hidden="true">BMSITM</p>
                     <p aria-hidden="true">✺</p>
-                    <p aria-hidden="true">5th May to 21st June</p>
+                    <p aria-hidden="true">9th May to 28st June</p>
                     <p aria-hidden="true">✺</p>
                     <p aria-hidden="true">IEEE CS BMSITM</p>
                     <p aria-hidden="true">✺</p>

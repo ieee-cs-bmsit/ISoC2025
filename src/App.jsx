@@ -6,6 +6,7 @@ import Teampage from './pages/Teampage';
 import Cursor from './components/Cursor';
 import FAQpage from './pages/FAQpage';
 import './App.css';
+import Repospage from './pages/Repospage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/repos" element={<Repospage />} />
         <Route path="/team" element={<Teampage />} />
         <Route path='/faqs' element={<FAQpage />} />
       </Routes>
