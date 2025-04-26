@@ -17,7 +17,7 @@ const Leaderboard = () => {
           <h1>LeaderBoard</h1>
           <p> The LeaderBoard Page will Live on <span> 9th May 2025</span></p>
           <p> For further updates, Join our Discord</p>
-          <button><a href=''>Join Discord</a></button>
+          <button><a href='https://discord.com/invite/apYEaEq4'>Join Discord</a></button>
         </motion.div>
       </div>
       <Footer/>

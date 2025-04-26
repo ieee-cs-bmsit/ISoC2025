@@ -310,7 +310,9 @@ hr {
   
   .navbar-logo {
     padding-right: 0;
+    width: 60px;
     height: 60px;
+    
   }
 }
 
