@@ -98,7 +98,7 @@ const FAQpage = () => {
         <div>
 
         <div className="text-center text-xl mx-15 md:text-4xl font-semibold text-black pb-30">
- Got more questions? Let’s talk on <a href="https://discord.com/invite/T2CdKqUq?utm_source=Discord%20Widget&utm_medium=Connect" className="text-blue-600  hover:text-blue-800 transition-colors cursor-pointer">Discord </a>!
+ Got more questions? Let’s talk on <a href="https://discord.gg/apYEaEq4" className="text-blue-600  hover:text-blue-800 transition-colors cursor-pointer">Discord </a>!
 </div>
 
         </div>
