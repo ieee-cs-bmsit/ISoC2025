@@ -6,6 +6,22 @@ const WhyParticipate = () => {
 
   const reasons = [
     {
+      title: 'Prize Pool : Rs.50,000',
+      description: (
+        <>
+          <p>Compete for a chance to win cash prizes.</p>
+          <p>Showcase your skills to a wider audience.</p>
+          <p>Boost your portfolio with impactful contributions.</p>
+        </>
+      )
+      ,
+    },
+    {
+      title: 'Swags & Recognition',
+      description:
+        'Goodie Boxes for top 50 participants! Earn cool swags, and showcase your work to the community and potential recruiters.',
+    },
+    {
       title: 'Real-World Impact',
       description:
         'Contribute to meaningful open-source projects that solve real problems and benefit the global community.',
@@ -15,16 +31,7 @@ const WhyParticipate = () => {
       description:
         'Meet passionate developers, designers, and innovators from all over. Build connections that last beyond the event.',
     },
-    {
-      title: 'Learn by Doing',
-      description:
-        'Work on real issues, make pull requests, and get mentorship from experienced contributors. No tutorials — just real code.',
-    },
-    {
-      title: 'Swags & Recognition',
-      description:
-        'Get recognized for your contributions, earn cool swags, and showcase your work to the community and potential recruiters.',
-    },
+    
   ];
 
   return (
@@ -63,6 +70,13 @@ const WhyParticipate = () => {
         >
           Whether you're a seasoned contributor or just starting your open-source journey,
           this event is your launchpad to connect, learn, and make a real impact.
+          <br />
+          <ul className="list-disc font-bold text-2xl list-inside mt-8">
+            <li>FREE Registrations</li>
+            <li>INR 50K Prize Pool</li>
+            <li>Swags and Merchandise</li>
+            
+          </ul>
         </motion.p>
 
         <div className="flex flex-wrap gap-12 justify-center">

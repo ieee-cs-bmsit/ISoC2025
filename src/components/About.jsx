@@ -57,7 +57,9 @@ function About() {
           <Link to="/" className="join-wrapper">
             <div className="relative">
               <div className="shadow-box" />
-              <div className="join-button">Join Here</div>
+              <button onClick={
+                () => window.open('https://discord.gg/apYEaEq4', '_blank')
+              } className="join-button cursor-pointer">Join Here</button>
             </div>
           </Link>
         </div>
