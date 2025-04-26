@@ -1,24 +1,22 @@
 import React from 'react'
 import heroLogo from '../assets/img/socbiegelogo.png'
 import "./Hero.css"
-import heroBg from '../assets/img/herobg2.svg'
+import heroBg from '../assets/img/2.svg'
 
 const Hero = () => {
     return (
         <section
             className="h-screen w-screen text-white flex flex-col font-body"
-            style={{
-                backgroundImage: `url(${heroBg})`,
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-            }}
         >
-            <div className="flex-grow flex flex-col lg:justify-start justify-center items-center text-center">
-                <img src={heroLogo} alt="IEEE Summer of Code" className="max-w-[90%] md:max-w-lg lg:scale-150 md:scale-120 sm:scale-100
-                sm:-mt-15 lg:mt-25" />
 
-                <div className="mt-10 w-1/2 justify-around flex space-x-6 -ml-8">
+            <div className="flex-grow flex flex-col lg:justify-end justify-end items-center text-center">
+                <img src={heroBg} alt=""
+                    className='w-full h-full absolute'
+                />
+                {/* <img src={heroLogo} alt="IEEE Summer of Code" className="max-w-[90%] md:max-w-lg lg:scale-150 md:scale-120 sm:scale-100
+                sm:-mt-15 lg:mt-25" /> */}
+
+                <div className="w-1/2 justify-around flex space-x-6 -ml-8 relative -top-5">
                     <button
                         className="relative py-3 lg:py-4 font-bold text-black bg-white cursor-pointer 
         px-6 sm:px-8 md:px-6 lg:px-10 z-1
