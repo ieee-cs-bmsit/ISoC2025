@@ -36,7 +36,7 @@ import member24 from '../assets/Photos Members/tarun.jpg';
 import member25 from '../assets/Photos Members/tejas.jpg';
 import member26 from '../assets/Photos Members/Tirth.jpg';
 import member27 from '../assets/Photos Members/utkarsh1.jpg';
-
+import member28 from '../assets/Photos Members/harshit1.jpeg';
 
 
 export const TeamDetails = [
@@ -126,7 +126,7 @@ export const TeamDetails = [
     }, 
     
     {
-        img: member7,
+        img: member28,
         name: "Harshit Kumar ",
         category: "Media & Design",
         role: "Media & Design",
