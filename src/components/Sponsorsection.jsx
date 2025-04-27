@@ -73,6 +73,7 @@ export const ScrollVelocity = ({
     const copyRef = useRef(null);
     const copyWidth = useElementWidth(copyRef);
 
+    
     function wrap(min, max, v) {
       const range = max - min;
       const mod = (((v - min) % range) + range) % range;
@@ -110,8 +111,9 @@ export const ScrollVelocity = ({
     return (
       <div className={parallaxClassName} style={parallaxStyle}>
         <motion.div
+          
           className={scrollerClassName}
-          style={{ x, ...scrollerStyle }}
+          style={{ x, ...scrollerStyle, cursor: "pointer" }}
         >
           {spans}
         </motion.div>

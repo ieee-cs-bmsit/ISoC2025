@@ -38,7 +38,7 @@ const WhyParticipate = () => {
     <section id="why-participate" className="py-20 px-4 bg-[#f4611d]">
       <div className="max-w-7xl mx-auto text-white">
         <motion.h2
-          className="text-4xl md:text-5xl lg:text-7xl font-bold text-[#f5f1eb] mb-10 text-center md:text-left"
+          className="text-4xl md:text-5xl lg:text-7xl font-bold text-[#f5f1eb] mb-10 text-center md:text-center"
           style={{
             fontFamily: 'CameraObscuraDEMO, sans-serif',
             letterSpacing: 3.5,

@@ -9,16 +9,18 @@ import Hero from "../components/Hero";
 import Footer from "../components/Footer";
 import WhyParticipate from '../components/WhyParticipate';
 
-// Sponsor Images Array
-const sponsorImages = [
-  "/images/sponsorimages/bmsit.png",
-  "/images/sponsorimages/codecrafters.png",
-  "/images/sponsorimages/yp.png",
-  "/images/sponsorimages/holopin.png",
-  "/images/sponsorimages/prime.png",
-  "/images/sponsorimages/0xday.png",
-  "/images/sponsorimages/gofr.png",
+const sponsorData = [
+  { image: "/images/sponsorimages/bmsit.png", url: "https://www.bmsit.ac.in/" },
+  { image: "/images/sponsorimages/codecrafters.png", url: "https://codecrafters.io/" },
+  { image: "/images/sponsorimages/yp.png", url: "https://yp.ieee.org/" }, // example
+  { image: "/images/sponsorimages/holopin.png", url: "https://www.holopin.io/" },
+  { image: "/images/sponsorimages/prime.png", url: "https://www.bmsit.ac.in/" }, // example
+  { image: "/images/sponsorimages/0xday.png", url: "https://0x.day/" },
+  { image: "/images/sponsorimages/ieeecs.png", url: "https://cs.ieeebangalore.org/" },
+  { image: "/images/sponsorimages/gofr.png", url: "https://gofr.dev/" },
+  { image: "/images/sponsorimages/xyz.png", url: "https://gen.xyz/" },
 ];
+
 
 const Home = () => {
   const location = useLocation();
@@ -42,19 +44,27 @@ const Home = () => {
     }
   }, [location]);
 
-  for (let i = 0; i < sponsorImages.length; i++) {
+  for (let i = 0; i < sponsorData.length; i++) {
     sponsors.push(
-      <motion.img
+      <a
         key={i}
-        src={sponsorImages[i]}
-        alt={`Sponsor ${i + 1}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: i * 0.1 }}
-        className="w-[220px] md:w-[370px] mx-2 inline-block object-contain"
-      />
+        href={sponsorData[i].url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mx-2 inline-block"
+      >
+        <motion.img
+          src={sponsorData[i].image}
+          alt={`Sponsor ${i + 1}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: i * 0.1 }}
+          className="w-[220px] md:w-[370px] object-contain"
+        />
+      </a>
     );
   }
+  
 
   return (
     <div>

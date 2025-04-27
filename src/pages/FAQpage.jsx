@@ -33,10 +33,9 @@ const FAQpage = () => {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-[#fff7ea]">
+      <div className="min-h-screen w-full bg-[#1b7738]">
         <div
           style={{
-            backgroundImage: `url(${bgImage})`,
             backgroundSize: 'contain',
             backgroundPosition: 'top',
             backgroundRepeat: 'no-repeat',
@@ -46,9 +45,19 @@ const FAQpage = () => {
           <div className="max-w-6xl mx-auto px-5 pt-10 mt-8">
             {/* Title */}
             <h1
-              className="text-4xl md:text-5xl lg:text-7xl text-center text-black mb-16"
+              className="text-4xl md:text-5xl lg:text-7xl text-center text-white mb-16"
               style={{
                 fontFamily: "CameraObscuraDEMO, sans-serif",
+                textShadow: `
+              -2px -2px 0 #000,
+              2px -2px 0 #000,
+              -2px 2px 0 #000,
+              2px 2px 0 #000,
+              0px 2px 0 #000,
+              2px 0px 0 #000,
+              0px -2px 0 #000,
+              -3px 0px 0 #000
+            `,
               
               }}
             >
@@ -63,10 +72,10 @@ const FAQpage = () => {
                   className="border-gray-100 hover:border-gray-200 border-2 rounded overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
                 >
                   <button
-                    className="w-full text-left px-7 py-6 bg-gray-100 hover:bg-gray-200 transition flex justify-between items-center cursor-pointer"
+                    className="w-full text-left px-7 py-6 bg-[#dcf0dbfc] hover:bg-[#e4ece4] transition flex justify-between items-center cursor-pointer"
                     onClick={() => toggleAccordion(index)}
                   >
-                    <span className="font-semibold text-lg md:text-xl text-black">
+                    <span className="font-bold text-lg md:text-xl text-[#2f2e2e]">
                       {faq.question}
                     </span>
                     <span className="text-2xl md:text-3xl font-bold text-black">
@@ -97,8 +106,8 @@ const FAQpage = () => {
         </div>
         <div>
 
-        <div className="text-center text-xl mx-15 md:text-4xl font-semibold text-black pb-30">
- Got more questions? Let’s talk on <a href="https://discord.gg/apYEaEq4" className="text-blue-600  hover:text-blue-800 transition-colors cursor-pointer">Discord </a>!
+        <div className="text-center text-xl mx-15 md:text-4xl font-semibold text-white pb-30">
+ Got more questions? Let’s talk on <a href="https://discord.gg/apYEaEq4" className="text-blue-400  hover:text-blue-800 transition-colors cursor-pointer">Discord </a>!
 </div>
 
         </div>
