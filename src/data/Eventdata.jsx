@@ -4,16 +4,16 @@ const events = [
     subtitle: "The registration window opens!",
     date: "April 27, 2025"
   },
-  {
-    title: "Registrations Close",
-    subtitle: "Last date to register for the event",
-    date: "May 15, 2025"
-  },
   
   {
     title: "Kickoff + Meet & Code Session",
     subtitle: "Meet your team and start coding together!",
     date: "May 9, 2025"
+  },
+  {
+    title: "Registrations Close",
+    subtitle: "Last date to register for the event",
+    date: "May 15, 2025"
   },
   {
     title: "Issues Reveal ",

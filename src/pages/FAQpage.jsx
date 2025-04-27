@@ -72,7 +72,7 @@ const FAQpage = () => {
                   className="border-gray-100 hover:border-gray-200 border-2 rounded overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
                 >
                   <button
-                    className="w-full text-left px-7 py-6 bg-[#dcf0dbfc] hover:bg-[#e4ece4] transition flex justify-between items-center cursor-pointer"
+                    className="w-full text-left px-7 py-6 bg-[#e4ece4] hover:bg-[#ededed] transition flex justify-between items-center cursor-pointer"
                     onClick={() => toggleAccordion(index)}
                   >
                     <span className="font-bold text-lg md:text-xl text-[#2f2e2e]">
