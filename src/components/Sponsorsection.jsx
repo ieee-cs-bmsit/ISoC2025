@@ -110,8 +110,9 @@ export const ScrollVelocity = ({
     return (
       <div className={parallaxClassName} style={parallaxStyle}>
         <motion.div
+          
           className={scrollerClassName}
-          style={{ x, ...scrollerStyle }}
+          style={{ x, ...scrollerStyle, cursor: "pointer" }}
         >
           {spans}
         </motion.div>
