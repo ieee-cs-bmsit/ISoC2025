@@ -73,6 +73,7 @@ export const ScrollVelocity = ({
     const copyRef = useRef(null);
     const copyWidth = useElementWidth(copyRef);
 
+    
     function wrap(min, max, v) {
       const range = max - min;
       const mod = (((v - min) % range) + range) % range;
