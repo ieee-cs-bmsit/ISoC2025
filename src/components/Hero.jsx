@@ -6,12 +6,11 @@ import heroBg from '../assets/img/2.svg'
 const Hero = () => {
     return (
         <section
-            className="h-screen w-screen text-white flex flex-col font-body"
+            className="h-[640px] md:h-screen  w-screen text-white flex flex-col font-body bg-cover bg-center bg-no-repeat lg:bg-[url('../assets/img/2.svg')] bg-[url('/images/heromobilebg9.png')]"
         >
-
             <div className="flex-grow flex flex-col lg:justify-end justify-end items-center text-center">
                 <img src={heroBg} alt=""
-                    className='w-full h-full absolute'
+                    className='w-full h-full absolute hidden lg:block' // Keeps the desktop background image
                 />
                 {/* <img src={heroLogo} alt="IEEE Summer of Code" className="max-w-[90%] md:max-w-lg lg:scale-150 md:scale-120 sm:scale-100
                 sm:-mt-15 lg:mt-25" /> */}
@@ -22,7 +21,7 @@ const Hero = () => {
         px-6 sm:px-8 md:px-6 lg:px-10 z-1
         shadow-[8px_8px_0px_-2px_rgba(235,_210,_47,_1)] border-2 border-black"
                     >
-                        <p className='text-xs sm:text-lg'>
+                        <p className='text-sm sm:text-lg'>
                             <a href="https://unstop.com/p/ieee-summer-of-code-bms-insitute-of-technology-and-management-1469982" target='_blank'>REGISTER</a>
                         </p>
                     </button>
@@ -32,7 +31,7 @@ const Hero = () => {
         px-6 sm:px-8 md:px-6 lg:px-10 
         shadow-[8px_8px_0px_-2px_rgba(235,_210,_47,_1)] border-2 border-black"
                     >
-                        <p className='text-xs sm:text-lg'>ABOUT</p>
+                        <p className='text-sm sm:text-lg'>ABOUT</p>
                     </button>
                 </div>
             </div>

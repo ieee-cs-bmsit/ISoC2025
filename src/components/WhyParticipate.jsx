@@ -61,7 +61,7 @@ const WhyParticipate = () => {
           Why Contribute?
         </motion.h2>
 
-        <motion.p
+        {/* <motion.p
           className="text-xl md:text-2xl mb-16 md:mb-20 max-w-6xl mx-auto md:mx-0 font-semibold text-center md:text-left"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ const WhyParticipate = () => {
           Whether you're a seasoned contributor or just starting your open-source journey,
           this event is your launchpad to connect, learn, and make a real impact.
           
-        </motion.p>
+        </motion.p> */}
 
         <div className="flex flex-wrap gap-12 justify-center">
           {reasons.map((item, idx) => (
