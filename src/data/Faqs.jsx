@@ -17,7 +17,7 @@ const faqs = [
     },
     {
       question: "When does the event take place?",
-      answer: "The program runs from 5th May 2025 to 21st June 2025.",
+      answer: "The program runs from 9th May 2025 to 21st June 2025.",
     },
     {
       question: "How will the event be conducted?",
