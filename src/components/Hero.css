@@ -20,3 +20,19 @@
     transform: translateX(-50%);
   }
 }
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait),
+  (min-width: 1366px) and (max-width: 1024px) and (orientation: landscape) {
+  .hero-img-container {
+    width: 100%;
+    height: 55vh;
+  }
+}
+
+@media only screen and (device-width: 540px) and (device-height: 720px),
+  only screen and (device-width: 1350px) and (device-height: 1800px) {
+  .hero-img-container {
+    width: 100%;
+    height: 75vh;
+  }
+}
