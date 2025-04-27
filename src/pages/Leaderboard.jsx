@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion';  // Import Framer Motion
 import './Leaderboard.css'
 import Footer from '../components/Footer'
 
 const Leaderboard = () => {
+
+  useEffect(() => {
+      // Scroll to top when visiting leaderboard page
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+  }
+  , []);
+
   return (
     <>
       <div className='leaderboardPage'>
@@ -14,7 +24,7 @@ const Leaderboard = () => {
           animate={{ opacity: 1, y: 0 }}   // Animate to opacity 1 and position 0px (normal position)
           transition={{ duration: 0.8 }}   // Animation duration: 0.8 seconds
         >
-          <h1>LeaderBoard</h1>
+          <h1 style={{letterSpacing:1}}>LeaderBoard</h1>
           <p> The LeaderBoard Page will Live on <span> 9th May 2025</span></p>
           <p> For further updates, Join our Discord</p>
           <button><a href='https://discord.com/invite/apYEaEq4'>Join Discord</a></button>

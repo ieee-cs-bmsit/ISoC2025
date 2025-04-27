@@ -70,7 +70,7 @@ const Home = () => {
 
       {/* Sponsor Section */}
       <div
-        className="py-8"
+        className="py-15"
         style={{
           backgroundImage: "url('/images/sponsorbg.png')",
           backgroundPosition: "center",
@@ -79,7 +79,7 @@ const Home = () => {
         <p
           className="text-center text-5xl md:text-7xl p-5 my-5 font-bold"
           style={{
-            color: "#ff2838",
+            color: "#ee540e",
             fontFamily: 'CameraObscuraDEMO, sans-serif',
             textShadow: `
               -2px -2px 0 #fff,
