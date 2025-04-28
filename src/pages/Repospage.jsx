@@ -24,7 +24,7 @@ const Repospage = () => {
           transition={{ duration: 0.8 }}   // Animation duration: 0.8 seconds
         >
           <h1 style={{letterSpacing:1}}>Repos</h1>
-          <p> The Repos Page will Live on <span> 9th May 2025</span></p>
+          <p> The Repos Page will be Live on <span> 9th May 2025</span></p>
           <p> For further updates, Join our Discord</p>
           <button><a href='https://discord.com/invite/apYEaEq4'>Join Discord</a></button>
         </motion.div>

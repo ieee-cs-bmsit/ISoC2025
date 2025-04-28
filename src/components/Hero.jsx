@@ -36,11 +36,11 @@ const Hero = () => {
                         px-6 sm:px-8 md:px-6 lg:px-10
                         shadow-[8px_8px_0px_-2px_rgba(235,_210,_47,_1)] border-2 border-black"
                     >
-                        <p className='text-xs sm:text-lg'>
-                            <a href="https://unstop.com/p/ieee-summer-of-code-bms-insitute-of-technology-and-management-1469982" target='_blank' rel="noopener noreferrer">
-                                REGISTER
-                            </a>
-                        </p>
+                        <a href="https://unstop.com/p/ieee-summer-of-code-bms-insitute-of-technology-and-management-1469982" target='_blank' rel="noopener noreferrer">
+                            <p className='text-xs sm:text-lg'>
+                                  REGISTER
+                            </p>
+                        </a>
                     </button>
 
                     <button
@@ -51,7 +51,7 @@ const Hero = () => {
                         <p className='text-xs sm:text-lg'>ABOUT</p>
                     </button>
                 </div>
-            </div>
+            </div>  
 
             {/* Marquee */}
             <div className="marquee-text lg:text-xl sm:text-lg text-md text-white font-body font-bold bg-[#1f3bfb]">
