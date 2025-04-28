@@ -23,11 +23,6 @@ const Footer = () => {
                             </a>
                         </li>
                         <li className="whitespace-nowrap">
-                            <a href="https://yp.ieeebangalore.org/" target='_blank'>
-                                IEEE YP Blr
-                            </a>
-                        </li>
-                        <li className="whitespace-nowrap">
                             <a href="https://cs.ieeebangalore.org/" target='_blank'>
                                 IEEE CS Blr
                             </a>
