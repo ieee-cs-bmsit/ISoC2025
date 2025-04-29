@@ -31,22 +31,24 @@ const Hero = () => {
 
                 {/* Buttons */}
                 <div className="w-1/2 justify-around flex space-x-6 -ml-8 relative -top-5 z-20">
-                    <button
-                        className="relative py-3 lg:py-4 font-bold text-black bg-white cursor-pointer 
-                        px-6 sm:px-8 md:px-6 lg:px-10
-                        shadow-[8px_8px_0px_-2px_rgba(235,_210,_47,_1)] border-2 border-black"
-                    >
-                        <a href="https://unstop.com/p/ieee-summer-of-code-bms-insitute-of-technology-and-management-1469982" target='_blank' rel="noopener noreferrer">
-                            <p className='text-xs sm:text-lg'>
-                                  REGISTER
-                            </p>
-                        </a>
-                    </button>
+                <button className="relative py-3 lg:py-4 font-bold text-black bg-white cursor-pointer 
+                px-6 sm:px-8 md:px-6 lg:px-10
+                shadow-[8px_8px_0px_-2px_rgba(235,_210,_47,_1)] border-2 border-black 
+                hover:scale-105 transition-all duration-200"
+                >
+    <a href="https://unstop.com/p/ieee-summer-of-code-bms-insitute-of-technology-and-management-1469982" target='_blank' rel="noopener noreferrer">
+        <p className='text-xs sm:text-lg'>
+              REGISTER
+        </p>
+    </a>
+</button>
+
 
                     <button
                         className="relative py-3 lg:py-4 font-bold text-black bg-white cursor-pointer 
                         px-6 sm:px-8 md:px-6 lg:px-10
-                        shadow-[8px_8px_0px_-2px_rgba(235,_210,_47,_1)] border-2 border-black"
+                        shadow-[8px_8px_0px_-2px_rgba(235,_210,_47,_1)] border-2 border-black
+                         hover:scale-105 transition-all duration-200"
                     >
                         <p className='text-xs sm:text-lg'>ABOUT</p>
                     </button>
