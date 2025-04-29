@@ -47,7 +47,7 @@ export const TeamDetails = [
         role: "Chief Co-ordinator",
         linkedin: "https://www.linkedin.com/in/akhilesh-pachnanda/",
        instagram: "https://www.instagram.com/akhilesh.pachnanda/",
-       github:"https://github.com/Atul-k-m",
+       github:"https://github.com/AkhileshPachnanda",
        star_icon: starIcon1,
     }, 
     {
