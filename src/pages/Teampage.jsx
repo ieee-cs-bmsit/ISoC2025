@@ -3,7 +3,9 @@ import { TeamDetails } from "../data/Teamdata";
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 import { LiaLinkedinIn } from "react-icons/lia";
+
 import { GrInstagram } from "react-icons/gr";
+import { FaGithub } from "react-icons/fa";
 import "./TeamPage.css";
 
 const cardVariants = {
@@ -108,6 +110,16 @@ const Team = () => {
                             rel="noopener noreferrer"
                           >
                             <GrInstagram />
+                          </a>
+                        )}
+                        {member.github && (
+                          <a
+                            href={member.github}
+                            className="github-icons"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <FaGithub />
                           </a>
                         )}
                       </div>

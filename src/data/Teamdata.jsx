@@ -65,6 +65,7 @@ export const TeamDetails = [
         role: "Core Co-ordinator ",
         linkedin: "https://www.linkedin.com/in/atul-kumar-458aa1275",
        instagram: "",
+       github:"https://github.com/Atul-k-m",
        star_icon: starIcon3,
     }, 
     {
