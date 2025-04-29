@@ -7,7 +7,7 @@ import starIcon5 from '../assets/ISoC - SVG_Elements (1)/ISoC - SVG (5).svg';
 import starIcon6 from '../assets/ISoC - SVG_Elements (1)/ISoC - SVG (6).svg';
 import starIcon7 from '../assets/ISoC - SVG_Elements (1)/ISoC - SVG (7).svg';
 import starIcon12 from '../assets/ISoC - SVG_Elements (1)/ISoC - SVG (12).svg';
-import starIcon9 from '../assets/ISoC - SVG_Elements (1)/ISoC - SVG (9).svg';
+import starIcon9 from '../assets/ISoC - SVG_Elements (1)/ISoC - SVG (16).svg';
 
 import member1 from '../assets/Photos Members/akhilesh.jpg';
 import member2 from '../assets/Photos Members/anne.jpg';
@@ -69,7 +69,7 @@ export const TeamDetails = [
     }, 
     {
         img: member19,
-        name: "Saanvi M S ",
+        name: "Saanvi M S",
         category: "Co - Ordinator",
         role: "Core Co-ordinator ",
         linkedin: "http://linkedin.com/in/saanvi-matada-739196277",
@@ -78,7 +78,7 @@ export const TeamDetails = [
     }, 
     {
         img: member12,
-        name: "Meghana Kiranchand ",
+        name: "Meghana Kiranchand",
         category: "Co - Ordinator",
         role: "Core Co-ordinator ",
         linkedin: "https://www.linkedin.com/in/meghana-k-277bb2318/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",

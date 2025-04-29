@@ -55,7 +55,7 @@ const faqs = [
     },
     {
       question: "Are Meet & Code sessions mandatory?",
-      answer: "No, but highly recommended for mentorship and networking.",
+      answer: "No, but highly recommended for mentorship, speaker sessions and networking.",
     },
     {
       question: "What if I face technical issues?",
