@@ -1,12 +1,18 @@
-# React + Vite
+# IEEE Summer of Code
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the official repository for the **IEEE Summer of Code**!
 
-Currently, two official plugins are available:
+This is your chance to **code, learn, and grow** over the summer. Whether you're a beginner or a seasoned developer, IEEE Summer of Code offers exciting projects, mentorship, and a platform to showcase your skills.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Ready to get started?**  
+Visit the website and **register now** to take part in this amazing journey!
 
-## Expanding the ESLint configuration
+[Register Here](https://www.ieeesoc.xyz)  
+Stay tuned for updates, project lists, and mentor announcements!
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+Feel free to explore the codebase, report issues, or contribute!
+
+Happy coding! 💙  
+— Team IEEE SoC
