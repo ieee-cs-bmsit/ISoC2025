@@ -134,6 +134,7 @@ export const TeamDetails = [
         role: "Media & Design",
         linkedin: "https://www.linkedin.com/in/harshit-kumar1705?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
        instagram: "https://www.instagram.com/harkr005?igsh=cW54emlxbnFvZWU3",
+       github: "https://github.com/harkr005",
        star_icon: starIcon1,
     }, 
     {
