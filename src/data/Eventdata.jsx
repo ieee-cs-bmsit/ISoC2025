@@ -16,11 +16,6 @@ const events = [
     date: "May 15, 2025"
   },
   {
-    title: "Issues Reveal ",
-    subtitle: "Second set of issues are revealed",
-    date: "June 1, 2025"
-  },
-  {
     title: "More Coming Soon",
     subtitle: "Stay tuned for upcoming surprises!",
     date: "Date TBD"
