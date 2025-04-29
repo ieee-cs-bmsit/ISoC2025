@@ -206,6 +206,7 @@ export const TeamDetails = [
         role: "Outreach Team",
         linkedin: "https://www.linkedin.com/in/milan4606/",
        instagram: "https://www.instagram.com/milxn_18/",
+       github: "https://github.com/CodewMilan",
        star_icon: starIcon9,
     }, 
 
