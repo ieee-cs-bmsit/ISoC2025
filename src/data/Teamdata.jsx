@@ -171,6 +171,7 @@ export const TeamDetails = [
         role: "Tech Team",
         linkedin: "https://www.linkedin.com/in/arnab-paul-76b306248/",
        instagram: "",
+       github:"https://github.com/Arnabpaul0101",
        star_icon: starIcon5,
     }, 
     {
