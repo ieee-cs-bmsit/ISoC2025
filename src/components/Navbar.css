@@ -109,7 +109,9 @@ body.menu-open {
 }
 
 .navbar-list li a:hover {
-  color: #7f7f7f;
+  color: #717171;
+  scale: 1.03;
+  transition: all 0.3s ease;
 }
 
 .navbar-list li::after {
