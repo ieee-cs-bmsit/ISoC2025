@@ -20,6 +20,7 @@ const App = () => {
         <Route path="/repos" element={<Repospage />} />
         <Route path="/team" element={<Teampage />} />
         <Route path='/faqs' element={<FAQpage />} />
+        <Route path="/register" element={ <Register />} />
       </Routes>
       </main>
       
