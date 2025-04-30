@@ -1,9 +1,9 @@
 const reasons = [
     {
-      title: 'Prize Pool : Rs.50,000',
+      title: 'Prize Pool : Rs. 75,000',
       description: (
         <>
-          <p className=" text-lg md:text-xl font-semibold">FREE Registrations</p>
+          <p className=" text-lg md:text-xl font-semibold">Free Registrations!</p>
           <p>Compete for a chance to win cash prizes.</p>
           
           <p>Boost your portfolio with impactful contributions.</p>
