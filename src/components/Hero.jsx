@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import heroBg from '../assets/img/ISoc_Desktop_Hero.svg'
 import mobileLogo from '../assets/img/ISoc_Mobile_Hero.svg'
 import "./Hero.css"
-
 const Hero = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
 
@@ -45,11 +44,13 @@ const Hero = () => {
 
 
                     <button
+                    onClick={() => window.open('/IEEE SoC - Brochure.pdf', '_blank')}
                         className="relative py-3 lg:py-4 font-bold text-black bg-white cursor-pointer 
                         px-6 sm:px-8 md:px-6 lg:px-10
                         shadow-[8px_8px_0px_-2px_rgba(235,_210,_47,_1)] border-2 border-black
                          hover:scale-105 transition-all duration-200"
                     >
+                        
                         <p className='text-xs sm:text-lg'>ABOUT</p>
                     </button>
                 </div>
