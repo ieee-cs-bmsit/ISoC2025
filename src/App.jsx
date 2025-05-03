@@ -7,6 +7,7 @@ import Cursor from './components/Cursor';
 import FAQpage from './pages/FAQpage';
 import './App.css';
 import Repospage from './pages/Repospage';
+import Sponsorspage from './pages/Sponsorspage';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/repos" element={<Repospage />} />
         <Route path="/team" element={<Teampage />} />
         <Route path='/faqs' element={<FAQpage />} />
+        <Route path="/sponsors" element={<Sponsorspage />} />
       </Routes>
       </main>
       
