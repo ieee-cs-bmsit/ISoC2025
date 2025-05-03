@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Sponsorsection from "../components/Sponsorsection";
 import Timeline from "../components/Timeline";
 import About from "../components/About";
@@ -7,13 +7,12 @@ import Faqsection from "../components/Faqsection";
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
 import Footer from "../components/Footer";
-import WhyParticipate from '../components/WhyParticipate';
-import sponsorData from "../data/Sponsordata.jsx";
-
+import WhyParticipate from "../components/WhyParticipate";
+import {sponsors} from "../data/Sponsordata.jsx";
 
 const Home = () => {
   const location = useLocation();
-  const sponsors = [];
+  const sponsor = [];
 
   useEffect(() => {
     // Scroll to top when visiting home
@@ -33,17 +32,17 @@ const Home = () => {
     }
   }, [location]);
 
-  for (let i = 0; i < sponsorData.length; i++) {
-    sponsors.push(
+  for (let i = 0; i < sponsors.length; i++) {
+    sponsor.push(
       <a
         key={i}
-        href={sponsorData[i].url}
+        href={sponsors[i].url}
         target="_blank"
         rel="noopener noreferrer"
         className="mx-2 inline-block"
       >
         <motion.img
-          src={sponsorData[i].image}
+          src={sponsors[i].image}
           alt={`Sponsor ${i + 1}`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -53,7 +52,6 @@ const Home = () => {
       </a>
     );
   }
-  
 
   return (
     <div>
@@ -79,7 +77,7 @@ const Home = () => {
           className="text-center text-5xl md:text-7xl p-5 my-5 font-bold"
           style={{
             color: "#ee540e",
-            fontFamily: 'CameraObscuraDEMO, sans-serif',
+            fontFamily: "CameraObscuraDEMO, sans-serif",
             textShadow: `
               -2px -2px 0 #fff,
               2px -2px 0 #fff,
@@ -96,11 +94,23 @@ const Home = () => {
         </p>
 
         <Sponsorsection
-          texts={[sponsors, sponsors]}
+          texts={[sponsor, sponsor]}
           velocity={80}
           numCopies={3}
           className="custom-scroll-text"
         />
+
+        <Link to="/sponsors" className="flex justify-center mt-8">
+          <div className="relative group">
+            {/* Yellow shadow box */}
+            <div className="absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 z-0"></div>
+
+            {/* Foreground button */}
+            <div className="relative z-10 border-2 border-black bg-white px-4 py-3 md:px-8 md:py-5 font-bold text-black text-lg md:text-2xl transition-transform duration-300 group-hover:scale-103 space-grotesk-regular">
+              View All Sponsors
+            </div>
+          </div>
+        </Link>
       </div>
 
       <WhyParticipate />
