@@ -58,7 +58,7 @@ function About() {
             <div className="relative">
               <div className="shadow-box" />
               <button onClick={
-                () => window.open('https://discord.gg/apYEaEq4', '_blank')
+                () => window.open('https://discord.gg/AUX9RP8fMr', '_blank')
               } className="join-button cursor-pointer">Join Here</button>
             </div>
           </Link>

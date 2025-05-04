@@ -58,7 +58,7 @@ const FAQpage = () => {
               0px -2px 0 #000,
               -3px 0px 0 #000
             `,
-              
+
               }}
             >
               Frequently Asked Questions
@@ -106,9 +106,9 @@ const FAQpage = () => {
         </div>
         <div>
 
-        <div className="text-center text-xl mx-15 md:text-4xl font-semibold text-white pb-30">
- Got more questions? Let’s talk on <a href="https://discord.gg/apYEaEq4" className="text-blue-400  hover:text-blue-800 transition-colors cursor-pointer">Discord </a>!
-</div>
+          <div className="text-center text-xl mx-15 md:text-4xl font-semibold text-white pb-30">
+            Got more questions? Let’s talk on <a href="https://discord.gg/AUX9RP8fMr" className="text-blue-400  hover:text-blue-800 transition-colors cursor-pointer">Discord </a>!
+          </div>
 
         </div>
         <Footer />
