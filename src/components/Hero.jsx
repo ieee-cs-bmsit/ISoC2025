@@ -44,15 +44,14 @@ const Hero = () => {
 
 
                     <button
-                  
+                    onClick={() => window.open('/IEEE SoC - Brochure.pdf', '_blank')}
                         className="relative py-3 lg:py-4 font-bold text-black bg-white cursor-pointer 
                         px-6 sm:px-8 md:px-6 lg:px-10
                         shadow-[8px_8px_0px_-2px_rgba(235,_210,_47,_1)] border-2 border-black
                          hover:scale-105 transition-all duration-200"
                     >
-                     <a href="https://forms.gle/YUrBab4tDwKFNZiJA" target='_blank' rel="noopener noreferrer"></a>
                         
-                        <p className='text-xs sm:text-lg'>Meet & Code</p>
+                        <p className='text-xs sm:text-lg'>ABOUT</p>
                     </button>
                 </div>
             </div>  
