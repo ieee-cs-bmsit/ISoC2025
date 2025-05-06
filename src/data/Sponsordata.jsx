@@ -5,10 +5,10 @@ export const sponsors = [
     url: "https://codecrafters.io/",
   },
   { image: "/images/sponsorimages/yp.png", url: "https://yp.ieee.org/" },
-  {
-    image: "/images/sponsorimages/holopin.png",
-    url: "https://www.holopin.io/",
-  },
+  // {
+  //   image: "/images/sponsorimages/holopin.png",
+  //   url: "https://www.holopin.io/",
+  // },
   { image: "/images/sponsorimages/dify.png", url: "https://dify.ai/" },
   { image: "/images/sponsorimages/prime.png", url: "https://www.bmsit.ac.in/" },
   { image: "/images/sponsorimages/0xday.png", url: "https://0x.day/" },
@@ -74,11 +74,11 @@ export const sponsorspagesponsors = [
     image: "/images/sponsorimages/givemycertificate.png",
     url: "https://givemycertificate.com/",
   },
-  {
-    sponsorcategory: "Digital Access Partners",
-    image: "/images/sponsorimages/holopin.png",
-    url: "https://www.holopin.io/",
-  },
+  // {
+  //   sponsorcategory: "Digital Access Partners",
+  //   image: "/images/sponsorimages/holopin.png",
+  //   url: "https://www.holopin.io/",
+  // },
   {
     sponsorcategory: "Track Sponsors",
     image: "/images/sponsorimages/bseb.png",
