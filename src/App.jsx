@@ -16,7 +16,6 @@ const App = () => {
   return (
     <>
       <Toaster 
-        
         position="top-center"
         toastOptions={{
           success: {
