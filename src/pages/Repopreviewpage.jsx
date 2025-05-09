@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 // import Header from "../components/Header";
 // import axios from "axios";
 import { toast } from "react-hot-toast";
-import reposData from "../data/reposdata";
+import reposData from "../data/Reposdata";
 import { useRepo } from "../context/Repocontext";
 
 const RepoPreview = () => {
