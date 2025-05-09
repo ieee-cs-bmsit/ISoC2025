@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import reposData from "../data/reposdata";
+import reposData from "../data/Reposdata";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
 
