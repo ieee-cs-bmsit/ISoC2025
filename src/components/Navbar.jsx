@@ -107,15 +107,16 @@ function Navbar() {
             </NavLink>
           </li>
           <li>
+            <NavLink to="/dashboard" onClick={closeMenu}>
+              Dashboard
+            </NavLink>
+          </li>
+          <li>
             <NavLink to="/team" onClick={closeMenu}>
               Team
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/faqs" onClick={closeMenu}>
-              FAQs
-            </NavLink>
-          </li>
+          
         </ul>
       </div>
 
@@ -164,15 +165,16 @@ function Navbar() {
               </NavLink>
             </li>
             <li>
+              <NavLink to="/dashboard" onClick={handleMobileNavClick}>
+                Dashboard
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/team" onClick={handleMobileNavClick}>
                 Team
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/faqs" onClick={handleMobileNavClick}>
-                FAQs
-              </NavLink>
-            </li>
+            
           </ul>
 
           <Link
