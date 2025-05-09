@@ -12,7 +12,6 @@ import Dashboard from "./pages/Dashboardpage";
 // import ProtectedRoute from "./components/Protectedroutes";
 import {Toaster} from "react-hot-toast";
 
-
 const App = () => {
   return (
     <>
