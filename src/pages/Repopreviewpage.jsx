@@ -101,8 +101,8 @@ const RepoPreview = () => {
           
           <p className="text-gray-700 mb-4">{repo.shortDescription}</p>
           <p className="text-gray-700 mb-6">{repo.longDescription}</p>
-          <Link to={repo.url}>
-            Github Link: <span className="text-blue-500">{repo.url}</span>
+          <Link to={repo.url} target="_blank" rel="noopener noreferrer">
+            Github Link: <span  className="text-blue-500">{repo.url}</span>
           </Link>
           <p className="mt-6">Maintainer: {repo.maintainer}</p>
 

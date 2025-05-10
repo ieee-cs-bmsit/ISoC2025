@@ -341,7 +341,7 @@ const reposData = [
     domain: ["Web Dev"],
     stars: 42,
     forks: 10,
-    url: "https://github.com/itsmenuma/Typing-Tutorr",
+    url: "https://github.com/itsmenuma/Typing-Tutor",
     image: "/images/repoimages/repoimg20.png",
     category: "Bronze",
     maintainer:"Numa"
