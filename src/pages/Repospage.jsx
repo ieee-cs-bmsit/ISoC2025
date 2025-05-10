@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import reposData from "../data/Reposdata";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import  contributionGuidlines  from '../assets/pdf/Cont_Guidelines.pdf'
+import  contributionGuidlines  from '../assets/pdf/ContGuide.pdf'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -191,7 +191,7 @@ const ReposPage = () => {
 
             {/* Foreground button */}
             <div className="relative z-10 border-2 border-black bg-white px-4 py-2 md:px-8 md:py-4 font-bold text-black text-lg md:text-2xl transition-transform duration-300 group-hover:scale-103 space-grotesk-regular">
-              ContriBution Guidelines
+              Contribution Guidelines
             </div>
           </div>
         </a>
