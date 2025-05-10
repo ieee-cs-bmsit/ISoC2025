@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import reposData from "../data/Reposdata";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import  contributionGuidlines  from '../assets/pdf/ContGuide.pdf'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -184,7 +183,7 @@ const ReposPage = () => {
           )}
         </div>
 
-        <a href={contributionGuidlines} target = '_blank' className="flex justify-center mt-8">
+        <a href= "/ContGuide.pdf" target = '_blank' className="flex justify-center mt-8">
           <div className="relative group">
             {/* Yellow shadow box */}
             <div className="absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 z-0"></div>
