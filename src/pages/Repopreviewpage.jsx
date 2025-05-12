@@ -1,43 +1,56 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-// import { useAuth } from "../context/Authcontext";
-// import Header from "../components/Header";
-// import axios from "axios";
+import { useAuth } from "../context/Authcontext";
+import Header from "../components/Header";
+import axios from "axios";
 import { toast } from "react-hot-toast";
-import reposData from "../data/Reposdata";
-import { useRepo } from "../context/Repocontext";
+// import reposData from "../data/Reposdata";
+// import { useRepo } from "../context/Repocontext";
 
 const RepoPreview = () => {
   const { id } = useParams();
-  // const { user, login, fetchStatus } = useAuth();
+  const { user, login, fetchStatus } = useAuth();
   const [repo, setRepo] = useState(null);
   const [loading, setLoading] = useState(true);
-  const { myRepos, addToMyRepos } = useRepo();
+  // const { myRepos, addToMyRepos } = useRepo();
 
   useEffect(() => {
     fetchRepo();
   }, [id]);
 
-  useEffect(() => {
-    console.log("Updated myRepos:", myRepos);
-  }, [myRepos]);
+  // useEffect(() => {
+  //   console.log("Updated myRepos:", myRepos);
+  // }, [myRepos]);
 
-  const fetchRepo = () => {
-    const foundRepo = reposData.find((r) => r.id === Number(id));
-    if (foundRepo) {
-      setRepo(foundRepo);
-    } else {
-      toast.error("Repository not found.");
+  const fetchRepo = async () => {
+    try {
+      const res = await axios.get(`http://localhost:5000/api/repos/${id}`);
+      setRepo(res.data);
+    } catch (err) {
+      console.error("Error fetching repo:", err);
+      toast.error("Failed to load repository.");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
-  const handleContribute = () => {
-    if (!repo) return;
-
-    const success = addToMyRepos(repo);
-    if (success) {
-      toast.success("Repository added to your contributions!");
+  const handleContribute = async () => {
+    if (!user) {
+      toast.error("Please Sign in to contribute!");
+    } else {
+      try {
+        const res = await axios.post(
+          `http://localhost:5000/api/users/${user._id}/contribute`,
+          { repoId: repo._id },
+          { withCredentials: true }
+        );
+        toast.success("Added to your ongoing projects!");
+        fetchStatus(); // Refresh user data
+      } catch (err) {
+        const msg =
+          err.response?.data?.message || "Could not add to ongoing projects.";
+        toast.error(msg);
+      }
     }
   };
 
@@ -75,8 +88,8 @@ const RepoPreview = () => {
             }
           `}
         </style>
-        {/* <Header /> */}
-        <div className="px-8 py-10 pt-32 max-w-4xl mx-auto bg-[#eeeeee] ">
+        <Header />
+        <div className="px-8 pt-5 max-w-4xl mx-auto bg-[#eeeeee] ">
           <h2 className="text-3xl font-bold mb-6">{repo.name}</h2>
           <img
             src={repo.image}

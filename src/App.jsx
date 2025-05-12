@@ -6,10 +6,10 @@ import Teampage from "./pages/Teampage";
 import FAQpage from "./pages/FAQpage";
 import Repospage from "./pages/Repospage";
 import Sponsorspage from "./pages/Sponsorspage";
-// import { AuthProvider } from "./context/Authcontext";
+import { AuthProvider } from "./context/Authcontext";
 import RepoPreview from "./pages/Repopreviewpage";
 import Dashboard from "./pages/Dashboardpage";
-// import ProtectedRoute from "./components/Protectedroutes";
+import ProtectedRoute from "./components/Protectedroutes";
 import {Toaster} from "react-hot-toast";
 
 const App = () => {
@@ -51,20 +51,20 @@ const App = () => {
           <Route path="/sponsors" element={<Sponsorspage />} />
         </Routes>
 
-        {/* <AuthProvider> */}
+        <AuthProvider>
           <Routes>
             <Route path="/repos" element={<Repospage />} />
             <Route path="/repo/:id" element={<RepoPreview />} />
             <Route
               path="/dashboard"
               element={
-                // <ProtectedRoute>
+                <ProtectedRoute>
                   <Dashboard />
-                // </ProtectedRoute>
+                </ProtectedRoute>
               }
             />
           </Routes>
-        {/* </AuthProvider> */}
+        </AuthProvider>
 
         
       </main>
