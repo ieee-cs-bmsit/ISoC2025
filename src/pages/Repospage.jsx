@@ -32,7 +32,7 @@ const ReposPage = () => {
     useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/repos");
+        const response = await fetch("https://isoc-backend-s21v.onrender.com/api/repos");
         const data = await response.json();
         console.log(data);
         setRepos(data);
