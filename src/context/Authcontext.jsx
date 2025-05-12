@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -10,7 +9,7 @@ const [loading, setLoading] = useState(true); // new state
 
 const fetchStatus = async () => {
   try {
-    const res = await axios.get("https://isoc-backend-s21v.onrender.com/api/auth/status", {
+    const res = await axios.get("https://api.ieeesoc.xyz/api/auth/status", {
       withCredentials: true,
     });
 
@@ -37,12 +36,12 @@ const fetchStatus = async () => {
   }, []);
 
   const login = () => {
-    window.location.href = "https://isoc-backend-s21v.onrender.com/api/auth/github";
+    window.location.href = "https://api.ieeesoc.xyz/api/auth/github";
   };
 
   const logout = () => {
     sessionStorage.removeItem("hasWelcomed"); // reset for next login
-    window.location.href = "https://isoc-backend-s21v.onrender.com/api/auth/logout";
+    window.location.href = "https://api.ieeesoc.xyz/api/auth/logout";
   };
 
   return (
