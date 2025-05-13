@@ -3,11 +3,15 @@ import { useAuth } from "../../context/Authcontext";
 import axios from "axios";
 import { useDashboard } from "../../context/Dashboardcontext";
 import toast from "react-hot-toast";
+import Loader from "../Sectionloader";
+
 
 const Repositories = () => {
   const { user } = useAuth();
   const [repos, setRepos] = useState([]);
   const { dashboardData, setDashboardData } = useDashboard();
+    const [loading, setLoading] = useState(true);
+
 
   const handleRemoveRepo = async (repoId) => {
     try {
@@ -40,6 +44,8 @@ const Repositories = () => {
         setRepos(enriched);
       } catch (error) {
         console.error("Failed to fetch repos:", error);
+      }finally{
+        setLoading(false);
       }
     };
 
@@ -66,7 +72,7 @@ const Repositories = () => {
       </style>
       <div className="py-12 space-grotesk-regular px-10 bg-transparent min-h-screen text-[#ee540e]">
         <h2
-          className="text-5xl text-center font-bold mb-10"
+          className="md:text-5xl text-3xl text-center font-bold mb-10"
           style={{
             fontFamily: "CameraObscuraDEMO, sans-serif",
             letterSpacing: 2,
@@ -87,12 +93,14 @@ const Repositories = () => {
 
         {/* Grid layout with 2 columns on md+ screens */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-  {repos.length === 0 ? (
-    <p className="text-center col-span-2 text-xl text-gray-700">
-      No ongoing projects found.
-    </p>
-  ) : (
-    repos.map((repo) => (
+          {loading ? (
+            <Loader />
+          ) : repos.length === 0 ? (
+            <p className="text-center col-span-2 text-xl text-gray-700">
+              No ongoing projects found.
+            </p>
+          ) : (
+            repos.map((repo) => (
       <div
         key={repo._id}
         className="bg-white border border-black p-2 rounded-sm overflow-hidden shadow-sm transform transition duration-300 hover:scale-100 hover:shadow-lg w-full flex flex-col"
