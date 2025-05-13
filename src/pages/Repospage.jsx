@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+import Loading from "../components/Sectionloader";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -23,27 +24,33 @@ const ReposPage = () => {
   const [search, setSearch] = useState("");
   const [selecteddomain, setSelecteddomain] = useState("All");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [loading, setLoading] = useState(true);
   const dropdownRef = useRef(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const response = await fetch("https://isoc-backend-s21v.onrender.com/api/repos");
+        setLoading(true);
+        const response = await fetch(
+          "https://isoc-backend-s21v.onrender.com/api/repos"
+        );
         const data = await response.json();
         console.log(data);
         setRepos(data);
       } catch (error) {
         console.error("Error fetching repositories:", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchRepos();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
-  
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -54,24 +61,26 @@ const ReposPage = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const alldomains = [
-    "All",
-    ...new Set(repos.flatMap((repo) => repo.domain)),
-  ];
+  const alldomains = ["All", ...new Set(repos.flatMap((repo) => repo.domain))];
 
   const filteredRepos = repos.filter((repo) => {
-    const matchesSearch = repo.name.toLowerCase().includes(search.toLowerCase());
+    const matchesSearch = repo.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
     const matchesdomain =
       selecteddomain === "All" || repo.domain.includes(selecteddomain);
     return matchesSearch && matchesdomain;
   });
 
   return (
-    <div className="bg-repeat" style={{
-      backgroundImage: "url('/images/repopagebg2.png')",
-      backgroundRepeat: "repeat",
-      backgroundSize: "200%",
-    }}>
+    <div
+      className="bg-repeat"
+      style={{
+        backgroundImage: "url('/images/repopagebg2.png')",
+        backgroundRepeat: "repeat",
+        backgroundSize: "200%",
+      }}
+    >
       <style>
         {`
           @media (min-width: 768px) {
@@ -82,7 +91,7 @@ const ReposPage = () => {
         `}
       </style>
       <Header />
-      
+
       <div className="px-6 mb-30 pt-4 md:pt-10 max-w-7xl mx-auto bg-transparent">
         <h2
           className="md:text-7xl text-4xl sm:text-5xl text-[#1f3cfc] font-bold mb-18 text-center"
@@ -139,7 +148,11 @@ const ReposPage = () => {
         </div>
 
         <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {filteredRepos.length === 0 ? (
+          {loading ? (
+            <div className="col-span-full">
+              <Loading />
+            </div>
+          ) : filteredRepos.length === 0 ? (
             <p className="text-center col-span-full text-gray-600 font-semibold text-lg md:text-2xl py-15">
               No repositories to show. Please search with different keywords...
             </p>
@@ -177,12 +190,17 @@ const ReposPage = () => {
                       ))}
                     </div>
                     <div>
-                      <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${
-                        repo.category === 'Platinum' ? 'bg-gray-100 text-gray-800 border border-gray-300' :
-                        repo.category === 'Gold' ? 'bg-yellow-100 text-yellow-800 border border-yellow-300' :
-                        repo.category === 'Silver' ? 'bg-gray-200 text-gray-800 border border-gray-400' :
-                        'bg-amber-400 text-amber-800 border border-amber-300'
-                      }`}>
+                      <span
+                        className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${
+                          repo.category === "Platinum"
+                            ? "bg-gray-100 text-gray-800 border border-gray-300"
+                            : repo.category === "Gold"
+                            ? "bg-yellow-100 text-yellow-800 border border-yellow-300"
+                            : repo.category === "Silver"
+                            ? "bg-gray-200 text-gray-800 border border-gray-400"
+                            : "bg-amber-400 text-amber-800 border border-amber-300"
+                        }`}
+                      >
                         {repo.category}
                       </span>
                     </div>
@@ -198,6 +216,17 @@ const ReposPage = () => {
             ))
           )}
         </div>
+        <a href= "/ContGuide.pdf" target = '_blank' className="flex justify-center mt-8">
+          <div className="relative group">
+            {/* Yellow shadow box */}
+            <div className="absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 z-0"></div>
+
+            {/* Foreground button */}
+            <div className="relative z-10 border-2 border-black bg-white px-4 py-2 md:px-8 md:py-4 font-bold text-black text-lg md:text-2xl transition-transform duration-300 group-hover:scale-103 space-grotesk-regular">
+              Contribution Guidelines
+            </div>
+          </div>
+        </a>
       </div>
       <Footer />
     </div>

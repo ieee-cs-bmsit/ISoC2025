@@ -24,9 +24,9 @@ const Profile = () => {
         `}
       </style>
 
-      <div className="space-grotesk-regular w-full min-h-screen bg-transparent text-[#000] pt-10 py-7 px-8 shadow-lg space-y-5">
+      <div className="space-grotesk-regular w-full min-h-screen bg-transparent text-[#000] md:pt-10 md:py-7 px-8 shadow-lg space-y-5">
         <h1
-          className="text-2xl md:text-5xl font-bold mb-8 text-center"
+          className="text-3xl md:text-5xl font-bold mb-8 text-center"
           style={{
             fontFamily: "CameraObscuraDEMO, sans-serif",
             letterSpacing: 2,
