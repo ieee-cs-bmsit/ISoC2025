@@ -20,7 +20,7 @@ export const sponsors = [
   },
   { image: "/images/sponsorimages/balsamiq.png", url: "https://balsamiq.com/" },
   { image: "/images/sponsorimages/bsb.png", url: "https://blockseblock.com/" },
-  { image: "/images/sponsorimages/icp.png", url: "https://www.crewsphere.io/" },
+  { image: "/images/sponsorimages/icp.png", url: "https://blockseblock.com/" },
 ];
 
 export const sponsorspagesponsors = [
@@ -94,7 +94,7 @@ export const sponsorspagesponsors = [
   {
     sponsorcategory: "Track Sponsors",
     image: "/images/sponsorimages/icp.png",
-    url: "https://www.crewsphere.io/",
+    url: "https://blockseblock.com/",
   },
 ];
 
