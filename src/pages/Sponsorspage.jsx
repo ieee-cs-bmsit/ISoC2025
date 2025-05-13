@@ -6,9 +6,10 @@ import { sponsorspagesponsors } from "../data/Sponsordata.jsx";
 // Desired display order
 const categoryOrder = [
   "Title Sponsor",
+  "Institutional Sponsor",
   "Platform Partners",
   "Track Sponsors",
-  " Developer Tools & Learning Partners",
+  "Developer Tools & Learning Partners",
   "Digital Access Partners",
 ];
 
