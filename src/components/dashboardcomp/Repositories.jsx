@@ -10,7 +10,7 @@ const Repositories = () => {
   const { user } = useAuth();
   const [repos, setRepos] = useState([]);
   const { dashboardData, setDashboardData } = useDashboard();
-    const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
 
   const handleRemoveRepo = async (repoId) => {
@@ -92,55 +92,58 @@ const Repositories = () => {
         </h2>
 
         {/* Grid layout with 2 columns on md+ screens */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {loading ? (
+        {loading ? (
+          <div className="flex justify-center items-center min-h-[40vh] w-full col-span-2">
             <Loader />
-          ) : repos.length === 0 ? (
-            <p className="text-center col-span-2 text-xl text-gray-700">
-              No ongoing projects found.
-            </p>
-          ) : (
-            repos.map((repo) => (
-      <div
-        key={repo._id}
-        className="bg-white border border-black p-2 rounded-sm overflow-hidden shadow-sm transform transition duration-300 hover:scale-100 hover:shadow-lg w-full flex flex-col"
-      >
-        <div className="p-4 flex-grow flex justify-between items-center">
-          <h3 className="text-lg md:text-2xl font-semibold text-gray-900">
-            {repo.name}
-          </h3>
-          <button
-            onClick={() => handleRemoveRepo(repo._id)}
-            className="text-gray-500 cursor-pointer hover:text-gray-700 focus:outline-none"
-          >
-            Remove
-          </button>
-        </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {repos.length === 0 ? (
+              <p className="text-center col-span-2 text-xl text-gray-700">
+                No ongoing projects found.
+              </p>
+            ) : (
+              repos.map((repo) => (
+                <div
+                  key={repo._id}
+                  className="bg-white border border-black p-2 rounded-sm overflow-hidden shadow-sm transform transition duration-300 hover:scale-100 hover:shadow-lg w-full flex flex-col"
+                >
+                  <div className="p-4 flex-grow flex justify-between items-center">
+                    <h3 className="text-lg md:text-2xl font-semibold text-gray-900">
+                      {repo.name}
+                    </h3>
+                    <button
+                      onClick={() => handleRemoveRepo(repo._id)}
+                      className="text-gray-500 cursor-pointer hover:text-gray-700 focus:outline-none"
+                    >
+                      Remove
+                    </button>
+                  </div>
 
-        <div className="p-4 flex-grow">
-          <p className="text-sm text-gray-600 mt-2">
-            {repo.shortDescription}
-          </p>
-        </div>
+                  <div className="p-4 flex-grow">
+                    <p className="text-sm text-gray-600 mt-2">
+                      {repo.shortDescription}
+                    </p>
+                  </div>
 
-        <div className="mt-auto px-4 py-2 bg-gray-100 flex justify-between items-center">
-          <span className="text-sm px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full font-medium">
-            {repo.domain}
-          </span>
-          <a
-            href={repo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 text-sm md:text-lg hover:scale-105 transition duration-200"
-          >
-            View on GitHub
-          </a>
-        </div>
-      </div>
-    ))
-  )}
-</div>
-
+                  <div className="mt-auto px-4 py-2 bg-gray-100 flex justify-between items-center">
+                    <span className="text-sm px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full font-medium">
+                      {repo.domain}
+                    </span>
+                    <a
+                      href={repo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 text-sm md:text-lg hover:scale-105 transition duration-200"
+                    >
+                      View on GitHub
+                    </a>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
