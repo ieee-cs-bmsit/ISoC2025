@@ -19,12 +19,19 @@ export const sponsors = [
     url: "https://cs.ieeebangalore.org/",
   },
   { image: "/images/sponsorimages/balsamiq.png", url: "https://balsamiq.com/" },
+  { image: "/images/sponsorimages/bsb.png", url: "https://blockseblock.com/" },
+  { image: "/images/sponsorimages/icp.png", url: "https://www.crewsphere.io/" },
 ];
 
 export const sponsorspagesponsors = [
   {
     sponsorcategory: "Title Sponsor",
     image: "/images/sponsorimages/yp.png",
+    url: "https://www.bmsit.ac.in/",
+  },
+  {
+    sponsorcategory: "Institutional Sponsor",
+    image: "/images/sponsorimages/prime.png",
     url: "https://yp.ieee.org/",
   },
   {
@@ -50,7 +57,7 @@ export const sponsorspagesponsors = [
   },
 
   {
-    sponsorcategory: " Developer Tools & Learning Partners",
+    sponsorcategory: "Developer Tools & Learning Partners",
     image: "/images/sponsorimages/codecrafters.png",
     url: "https://codecrafters.io/",
   },
@@ -60,12 +67,12 @@ export const sponsorspagesponsors = [
     url: "https://gen.xyz/",
   },
   {
-    sponsorcategory: " Developer Tools & Learning Partners",
+    sponsorcategory: "Developer Tools & Learning Partners",
     image: "/images/sponsorimages/balsamiq.png",
     url: "https://balsamiq.com/",
   },
   {
-    sponsorcategory: " Developer Tools & Learning Partners",
+    sponsorcategory: "Developer Tools & Learning Partners",
     image: "/images/sponsorimages/oreilly.png",
     url: "https://www.oreilly.com/",
   },
@@ -83,6 +90,11 @@ export const sponsorspagesponsors = [
     sponsorcategory: "Track Sponsors",
     image: "/images/sponsorimages/bseb.png",
     url: "https://blockseblock.com/",
+  },
+  {
+    sponsorcategory: "Track Sponsors",
+    image: "/images/sponsorimages/icp.png",
+    url: "https://www.crewsphere.io/",
   },
 ];
 
