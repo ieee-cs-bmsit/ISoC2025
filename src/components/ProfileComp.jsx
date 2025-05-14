@@ -59,7 +59,7 @@ const ProfileComp = () => {
         </div>
         <div>
           <p>Points:</p>
-          <p className="font-medium">TBD</p>
+          <p className="font-medium">{user.points}</p>
         </div>
       </div>
     </div>
