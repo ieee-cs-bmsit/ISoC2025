@@ -10,24 +10,24 @@ import { AuthProvider } from "./context/Authcontext";
 import RepoPreview from "./pages/Repopreviewpage";
 import Dashboard from "./pages/Dashboardpage";
 import ProtectedRoute from "./components/Protectedroutes";
-import {Toaster} from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
     <>
-      <Toaster 
+      <Toaster
         position="top-center"
         toastOptions={{
           success: {
             iconTheme: {
-              primary: 'blue',
-              secondary: 'white',
+              primary: "blue",
+              secondary: "white",
             },
           },
           error: {
             iconTheme: {
-              primary: 'blue',
-              secondary: 'white',
+              primary: "blue",
+              secondary: "white",
             },
           },
           style: {
@@ -44,7 +44,6 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
           {/* <Route path="/repos" element={<Repospage />} /> */}
           <Route path="/team" element={<Teampage />} />
           <Route path="/faqs" element={<FAQpage />} />
@@ -53,6 +52,7 @@ const App = () => {
 
         <AuthProvider>
           <Routes>
+            <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/repos" element={<Repospage />} />
             <Route path="/repo/:id" element={<RepoPreview />} />
             <Route
@@ -65,8 +65,6 @@ const App = () => {
             />
           </Routes>
         </AuthProvider>
-
-        
       </main>
     </>
   );
