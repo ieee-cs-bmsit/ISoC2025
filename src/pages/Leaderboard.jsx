@@ -21,7 +21,7 @@ const Leaderboard = () => {
 
     const fetchData = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/users/allUserdata');
+            const res = await fetch('https://api.ieeesoc.xyz/api/users/allUserdata');
             const data = await res.json();
 
             if (!data.success) {
