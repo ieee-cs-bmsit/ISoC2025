@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import heroBg from "../assets/img/ISoc_Desktop_Hero.svg";
 import mobileLogo from "../assets/img/ISoc_Mobile_Hero.svg";
@@ -36,23 +37,24 @@ const Hero = () => {
                 shadow-[8px_8px_0px_-2px_rgba(235,_210,_47,_1)] border-2 border-black 
                 hover:scale-105 transition-all duration-200"
           >
-            <a
+            <button
+              onClick={() => navigate("/repos")}
               href="https://unstop.com/p/ieee-summer-of-code-bms-insitute-of-technology-and-management-1469982"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p className="text-xs sm:text-lg">REGISTER</p>
-            </a>
+              <p className="text-xs sm:text-lg">Repos</p>
+            </button>
           </button>
 
           <button
-  onClick={() => navigate("/repos")}
+  onClick={() => navigate("/leaderboard")}
   className="relative py-3 lg:py-4 font-bold text-black bg-white cursor-pointer 
               px-6 sm:px-8 md:px-6 lg:px-10
               shadow-[8px_8px_0px_-2px_rgba(235,_210,_47,_1)] border-2 border-black
               hover:scale-105 transition-all duration-200"
 >
-  <p className="text-sm sm:text-lg">Repos</p>
+  <p className="text-sm sm:text-lg">Leaderboard</p>
 </button>
 
         </div>

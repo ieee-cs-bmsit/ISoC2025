@@ -21,7 +21,7 @@ const Leaderboard = () => {
 
     const fetchData = async () => {
         try {
-            const res = await fetch('https://api.ieeesoc.xyz/api/users/allUserdata');
+            const res = await fetch('http://localhost:5000/api/users/allUserdata');
             const data = await res.json();
 
             if (!data.success) {
@@ -177,7 +177,7 @@ const Leaderboard = () => {
 
                     <div className='user-info-container'>
                         <div className="rank-showcase">
-                            <p className='rank-showcase-para'>{signedInUserRank || sortedData[0]?.rank}</p>
+                            <p className='rank-showcase-para'><span className='text-3xl'>#</span>{signedInUserRank || sortedData[0]?.rank}</p>
                         </div>
                         <div className="info-container">
                             <div className="user-img-container">
