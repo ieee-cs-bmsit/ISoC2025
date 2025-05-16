@@ -1021,7 +1021,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
     }
   
     .point {
@@ -1120,7 +1120,7 @@
         justify-content: center;
         align-items: flex-end;
         gap: 0.5rem;
-        padding: 2.5rem 1rem;
+        padding: 2rem 1rem;
         padding-bottom: 0.5rem;
         background: linear-gradient(to right, #333783, #515afe);
         /* border-radius: 12px; */
@@ -1368,12 +1368,12 @@
       min-width: unset;
       width: 90%;
       gap: 1rem;
-      font-size: medium;
+      font-size: small;
     }
   
     .search-Bar {
       width: 70%;
-      height: 15px;
+      height: 14px;
     }
   
     /* All Ranks Container */
@@ -1405,7 +1405,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+      border-width: 1px;
+      /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
     }
   
     .point{
