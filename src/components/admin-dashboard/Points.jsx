@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
-const Points = ({ prs }) => {
+const Points = ({ prs = [] }) => {
     const [userPRs, setUserPRs] = useState([]);
     const [editingIndex, setEditingIndex] = useState(null);
     const [newPoints, setNewPoints] = useState('');
 
     useEffect(() => {
+        if (!Array.isArray(prs)) return;
+
+        console.log('Received PRs:', prs);
+
         const formattedPRs = prs.map((pr) => ({
             username: pr.user?.login,
             prTitle: pr.title,
