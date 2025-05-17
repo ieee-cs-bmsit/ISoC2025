@@ -13,44 +13,24 @@ const Points = () => {
     const [newPoints, setNewPoints] = useState("");
 
     useEffect(() => {
-        const fetchPoints = async () => {
-            try {
-                const res = await axios.get("https://api.ieeesoc.xyz/api/users/allUserdata");
-
-                const usersArray = Array.isArray(res.data?.data) ? res.data.data : [];
-
-                const userPointsMap = usersArray.reduce((acc, user) => {
-                    acc[user.username] = user.points || 0;
-                    return acc;
-                }, {});
-
-                const entries = prs
-                    .filter((pr) => pr.state === "closed")
-                    .map((pr) => {
-                        const username = pr.user?.login;
-                        return {
-                            username,
-                            avatar: pr.user?.avatar_url,
-                            prTitle: pr.title,
-                            prUrl: pr.html_url,
-                            points: userPointsMap[username] || 0,
-                            isAssigned: !!userPointsMap[username],
-                        };
-                    })
-                    .filter((entry) => entry.username);
-
-                setUserPRs(entries);
-            } catch (error) {
-                console.error("Error fetching users with points:", error);
-                toast.error("Failed to fetch user points");
-            }
-        };
-
-        if (prs.length > 0) {
-            fetchPoints();
-        } else {
+        if (prs.length === 0) {
             setUserPRs([]);
+            return;
         }
+
+        const entries = prs
+            .filter((pr) => pr.state === "closed")
+            .map((pr) => ({
+                username: pr.user?.login,
+                avatar: pr.user?.avatar_url,
+                prTitle: pr.title,
+                prUrl: pr.html_url,
+                points: 0,
+                isAssigned: false,
+            }))
+            .filter((entry) => entry.username);
+
+        setUserPRs(entries);
     }, [prs]);
 
     if (prs.length === 0) {
@@ -58,7 +38,8 @@ const Points = () => {
             <div className="min-h-screen bg-[#eeeeee] text-black flex flex-col items-center justify-center p-6 sm:p-8">
                 <h1 className="text-xl font-bold mb-2">No PRs loaded yet</h1>
                 <p className="text-gray-600 text-center">
-                    Please go to the <strong>Check Submissions</strong> tab and load PRs first.
+                    Please go to the <strong>Check Submissions</strong> tab and load PRs
+                    first.
                 </p>
             </div>
         );
@@ -70,6 +51,7 @@ const Points = () => {
         const validPoints = isNaN(parsedPoints) ? 0 : parsedPoints;
         const user = updated[index];
 
+        // Optimistically update UI
         user.points = validPoints;
         user.isAssigned = validPoints > 0;
         setUserPRs(updated);
@@ -104,15 +86,15 @@ const Points = () => {
                         fontFamily: "CameraObscuraDEMO, sans-serif",
                         letterSpacing: 2,
                         textShadow: `
-                            -2px -2px 0 #fff,
-                            2px -2px 0 #fff,
-                            -2px 2px 0 #fff,
-                            2px 2px 0 #fff,
-                            0px 2px 0 #fff,
-                            2px 0px 0 #fff,
-                            0px -2px 0 #fff,
-                            -2px 0px 0 #fff
-                        `,
+                -2px -2px 0 #fff,
+                2px -2px 0 #fff,
+                -2px 2px 0 #fff,
+                2px 2px 0 #fff,
+                0px 2px 0 #fff,
+                2px 0px 0 #fff,
+                0px -2px 0 #fff,
+                -2px 0px 0 #fff
+            `,
                     }}
                 >
                     Points Assignment
