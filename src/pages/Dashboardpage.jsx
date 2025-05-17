@@ -21,7 +21,7 @@ const Dashboardpage = () => {
   //  useEffect(() => {
   //   const fetchDashboardData = async () => {
   //     try {
-  //       const res = await axios.get(`https://isoc-backend-s21v.onrender.com/api/dashboard/${user._id}/dashboard`, {
+  //       const res = await axios.get(`http://localhost:5000/api/dashboard/${user._id}/dashboard`, {
   //         withCredentials: true,
   //       });
   //       console.log('Dashboard data:', res.data);

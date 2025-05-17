@@ -9,6 +9,7 @@ import Sponsorspage from "./pages/Sponsorspage";
 import { AuthProvider } from "./context/Authcontext";
 import RepoPreview from "./pages/Repopreviewpage";
 import Dashboard from "./pages/Dashboardpage";
+import ADashboard from "./pages/ADashboard";
 import ProtectedRoute from "./components/Protectedroutes";
 import { Toaster } from "react-hot-toast";
 
@@ -20,14 +21,14 @@ const App = () => {
         toastOptions={{
           success: {
             iconTheme: {
-              primary: "blue",
-              secondary: "white",
+              primary: 'blue',
+              secondary: 'white',
             },
           },
           error: {
             iconTheme: {
-              primary: "blue",
-              secondary: "white",
+              primary: 'blue',
+              secondary: 'white',
             },
           },
           style: {
@@ -44,6 +45,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          
           {/* <Route path="/repos" element={<Repospage />} /> */}
           <Route path="/team" element={<Teampage />} />
           <Route path="/faqs" element={<FAQpage />} />
@@ -62,9 +64,18 @@ const App = () => {
                   <Dashboard />
                 </ProtectedRoute>
               }
+
+            />
+            <Route
+              path="/admin-dashboard"
+              element={
+                <ADashboard />
+              }
             />
           </Routes>
         </AuthProvider>
+
+
       </main>
     </>
   );

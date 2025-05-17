@@ -3,6 +3,8 @@ import { useAuth } from "../context/Authcontext";
 import { Link } from "react-router-dom";
 import { Github } from "lucide-react";
 
+const maintainers = ['PrithwisK07', 'Atul-k-m', 'Arnabpaul0101', 'Itsmenuma', 'Devansh051'];
+
 const Header = () => {
   const { user, login, logout } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -20,6 +22,11 @@ const Header = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const isMaintainer = user?.displayName &&
+    maintainers.some(
+      (name) => name.toLowerCase() === user.displayName.toLowerCase()
+    );
 
   return (
     <header className="bg-transparent px-5 py-4 pt-10 w-full">
@@ -58,13 +65,21 @@ const Header = () => {
           {/* Dropdown */}
           {dropdownOpen && (
             <div className="absolute right-0 mt-2 w-35 md:w-45 bg-white border border-gray-200 font-semibold shadow-sm z-50">
-              <Link
+              {isMaintainer ? (
+                <Link
+                  to="/admin-dashboard"
+                  className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                  onClick={() => setDropdownOpen(false)}
+                >
+                  Admin
+                </Link>
+              ) : (<Link
                 to="/dashboard"
                 className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                 onClick={() => setDropdownOpen(false)}
               >
                 Dashboard
-              </Link>
+              </Link>)}
               <button
                 onClick={() => {
                   logout();
@@ -79,26 +94,18 @@ const Header = () => {
         </div>
       ) : (
         <div className="w-full flex justify-end pt-16 md:pt-0">
-  <button
-    onClick={login}
-    className="
-      bg-black text-white
-      px-4 py-2 md:px-6 md:mr-5 md:py-3
-      md:text-lg 
-      font-medium md:font-semibold
-      rounded cursor-pointer
-      flex items-center space-x-3
-      hover:scale-105 transition-transform duration-200
-    "
-  >
-    <img src="/images/githublogo.png" alt="GitHub Logo" className="w-5 h-5" />
-    <span>Sign in</span>
-  </button>
-</div>
-
+          <button
+            onClick={login}
+            className="bg-black text-white px-4 py-2 md:px-6 md:mr-5 md:py-3 md:text-lg font-medium md:font-semibold rounded cursor-pointer flex items-center space-x-3 hover:scale-105 transition-transform duration-200"
+          >
+            <img src="/images/githublogo.png" alt="GitHub Logo" className="w-5 h-5" />
+            <span>Sign in </span>
+          </button>
+        </div>
       )}
     </header>
   );
 };
+
 
 export default Header;
