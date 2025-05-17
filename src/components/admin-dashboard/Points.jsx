@@ -59,7 +59,7 @@ const Points = () => {
         setNewPoints("");
 
         try {
-            await axios.patch(`/api/users/${user.username}/points`, {
+            await axios.patch(`https://api.ieeesoc.xyz/api/users/${user.username}/points`, {
                 points: validPoints,
             });
 
