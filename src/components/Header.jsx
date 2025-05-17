@@ -23,9 +23,9 @@ const Header = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const isMaintainer = user?.displayName &&
+  const isMaintainer = user?.username &&
     maintainers.some(
-      (name) => name.toLowerCase() === user.displayName.toLowerCase()
+      (name) => name.toLowerCase() === user.username.toLowerCase()
     );
 
   return (
@@ -99,13 +99,12 @@ const Header = () => {
             className="bg-black text-white px-4 py-2 md:px-6 md:mr-5 md:py-3 md:text-lg font-medium md:font-semibold rounded cursor-pointer flex items-center space-x-3 hover:scale-105 transition-transform duration-200"
           >
             <img src="/images/githublogo.png" alt="GitHub Logo" className="w-5 h-5" />
-            <span>Sign in </span>
+            <span>Sign in</span>
           </button>
         </div>
       )}
     </header>
   );
 };
-
 
 export default Header;
