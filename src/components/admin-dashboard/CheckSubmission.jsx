@@ -12,22 +12,28 @@ const CheckSubmission = () => {
     const [fetchingMore, setFetchingMore] = useState(false);
     const [noMorePRMessage, setNoMorePRMessage] = useState("");
 
-    const fetchPRs = async (currentOffset) => {
+    const fetchPRs = async (currentOffset, prStatus) => {
         try {
-            const res = await fetch(`https://api.ieeesoc.xyz/api/admin-dashboard?offset=${currentOffset}`, {
+            const res = await fetch(`https://api.ieeesoc.xyz/api/admin-dashboard?offset=${currentOffset}&status=${prStatus}`, {
                 credentials: "include",
             });
             const data = await res.json();
             if (data.pullRequests.length === 0) {
                 setHasMore(false);
                 if (currentOffset > 0) {
-                    setNoMorePRMessage("No additional PRs with #ieeesoc were found.");
+                    setNoMorePRMessage(`No additional PRs with #ieeesoc were found.`);
                 }
             } else {
-                setPRs((prev) => [...prev, ...data.pullRequests]);
+                if (currentOffset === 0) {
+                    // Reset PRs when changing status or initial load
+                    setPRs(data.pullRequests);
+                } else {
+                    // Append PRs when loading more
+                    setPRs((prev) => [...prev, ...data.pullRequests]);
+                }
             }
         } catch (err) {
-            console.error("Failed to fetch admin PRs:", err);
+            console.error(`Failed to fetch ${prStatus} PRs:`, err);
         } finally {
             if (currentOffset === 0) {
                 setLoading(false);
@@ -38,22 +44,25 @@ const CheckSubmission = () => {
     };
 
     useEffect(() => {
-        if (prs.length === 0) {
-            fetchPRs(0);
-        } else {
-            setLoading(false);
-        }
-    }, []);
+        // Reset state when switching PR status
+        setPRs([]);
+        setOffset(0);
+        setHasMore(true);
+        setNoMorePRMessage("");
+        setLoading(true);
+        
+        // Fetch PRs with the current status
+        fetchPRs(0, status);
+    }, [status]);
 
     const loadMore = () => {
         const nextOffset = offset + 1;
         setOffset(nextOffset);
         setFetchingMore(true);
-        fetchPRs(nextOffset);
+        fetchPRs(nextOffset, status);
     };
 
     const filtered = prs
-        .filter((pr) => (status === "merged" ? pr.merged : !pr.merged))
         .filter((pr) =>
             pr.title.toLowerCase().includes(search.toLowerCase()) ||
             pr.user?.login?.toLowerCase().includes(search.toLowerCase()) ||
