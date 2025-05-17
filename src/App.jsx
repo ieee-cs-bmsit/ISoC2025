@@ -45,7 +45,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/leaderboard" element={<Leaderboard />} />
+          
           {/* <Route path="/repos" element={<Repospage />} /> */}
           <Route path="/team" element={<Teampage />} />
           <Route path="/faqs" element={<FAQpage />} />
@@ -54,6 +54,7 @@ const App = () => {
 
         <AuthProvider>
           <Routes>
+            <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/repos" element={<Repospage />} />
             <Route path="/repo/:id" element={<RepoPreview />} />
             <Route
