@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
 import { usePRContext } from "../../context/PRProvider";
 
 const Points = () => {
@@ -6,9 +8,9 @@ const Points = () => {
     const prs = prsByStatus.merged || [];
 
     const [userPRs, setUserPRs] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState("");
     const [editingIndex, setEditingIndex] = useState(null);
-    const [newPoints, setNewPoints] = useState('');
+    const [newPoints, setNewPoints] = useState("");
 
     useEffect(() => {
         if (prs.length === 0) {
@@ -17,8 +19,8 @@ const Points = () => {
         }
 
         const entries = prs
-            .filter(pr => pr.state === 'closed')
-            .map(pr => ({
+            .filter((pr) => pr.state === "closed")
+            .map((pr) => ({
                 username: pr.user?.login,
                 avatar: pr.user?.avatar_url,
                 prTitle: pr.title,
@@ -26,7 +28,7 @@ const Points = () => {
                 points: 0,
                 isAssigned: false,
             }))
-            .filter(entry => entry.username);
+            .filter((entry) => entry.username);
 
         setUserPRs(entries);
     }, [prs]);
@@ -36,21 +38,36 @@ const Points = () => {
             <div className="min-h-screen bg-[#eeeeee] text-black flex flex-col items-center justify-center p-6 sm:p-8">
                 <h1 className="text-xl font-bold mb-2">No PRs loaded yet</h1>
                 <p className="text-gray-600 text-center">
-                    Please go to the <strong>Check Submissions</strong> tab and load PRs first.
+                    Please go to the <strong>Check Submissions</strong> tab and load PRs
+                    first.
                 </p>
             </div>
         );
     }
 
-    const handlePointsSave = (index) => {
+    const handlePointsSave = async (index) => {
         const updated = [...userPRs];
         const parsedPoints = parseInt(newPoints, 10);
         const validPoints = isNaN(parsedPoints) ? 0 : parsedPoints;
-        updated[index].points = validPoints;
-        updated[index].isAssigned = validPoints > 0;
+        const user = updated[index];
+
+        // Optimistically update UI
+        user.points = validPoints;
+        user.isAssigned = validPoints > 0;
         setUserPRs(updated);
         setEditingIndex(null);
-        setNewPoints('');
+        setNewPoints("");
+
+        try {
+            await axios.patch(`/api/users/${user.username}/points`, {
+                points: validPoints,
+            });
+
+            toast.success(`Points updated for ${user.username}`);
+        } catch (error) {
+            toast.error("Failed to update points in database");
+            console.error("Error updating points:", error);
+        }
     };
 
     return (
@@ -69,15 +86,15 @@ const Points = () => {
                         fontFamily: "CameraObscuraDEMO, sans-serif",
                         letterSpacing: 2,
                         textShadow: `
-                            -2px -2px 0 #fff,
-                            2px -2px 0 #fff,
-                            -2px 2px 0 #fff,
-                            2px 2px 0 #fff,
-                            0px 2px 0 #fff,
-                            2px 0px 0 #fff,
-                            0px -2px 0 #fff,
-                            -2px 0px 0 #fff
-                        `,
+                -2px -2px 0 #fff,
+                2px -2px 0 #fff,
+                -2px 2px 0 #fff,
+                2px 2px 0 #fff,
+                0px 2px 0 #fff,
+                2px 0px 0 #fff,
+                0px -2px 0 #fff,
+                -2px 0px 0 #fff
+            `,
                     }}
                 >
                     Points Assignment
@@ -113,10 +130,17 @@ const Points = () => {
                                         entry.username.toLowerCase().includes(searchTerm.toLowerCase())
                                     )
                                     .map((entry, index) => (
-                                        <tr key={index} className="border-b border-gray-700 hover:bg-[#eeeeee]">
+                                        <tr
+                                            key={index}
+                                            className="border-b border-gray-700 hover:bg-[#eeeeee]"
+                                        >
                                             <td className="py-4 px-4 font-semibold">
                                                 <span className="flex items-center gap-2">
-                                                    <img src={entry.avatar} alt="avatar" className="h-5 rounded-full" />
+                                                    <img
+                                                        src={entry.avatar}
+                                                        alt="avatar"
+                                                        className="h-5 rounded-full"
+                                                    />
                                                     {entry.username}
                                                 </span>
                                             </td>
@@ -137,8 +161,8 @@ const Points = () => {
                                                         value={newPoints}
                                                         onChange={(e) => setNewPoints(e.target.value)}
                                                         onKeyDown={(e) => {
-                                                            if (e.key === 'Enter') handlePointsSave(index);
-                                                            if (e.key === 'Escape') setEditingIndex(null);
+                                                            if (e.key === "Enter") handlePointsSave(index);
+                                                            if (e.key === "Escape") setEditingIndex(null);
                                                         }}
                                                         onBlur={() => handlePointsSave(index)}
                                                         autoFocus
