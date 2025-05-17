@@ -15,8 +15,11 @@ const Points = () => {
     useEffect(() => {
         const fetchPoints = async () => {
             try {
-                const { data } = await axios.get("https://api.ieeesoc.xyz/api/users/allUserdata");
-                const userPointsMap = data.reduce((acc, user) => {
+                const res = await axios.get("https://api.ieeesoc.xyz/api/users/allUserdata");
+
+                const usersArray = Array.isArray(res.data?.data) ? res.data.data : [];
+
+                const userPointsMap = usersArray.reduce((acc, user) => {
                     acc[user.username] = user.points || 0;
                     return acc;
                 }, {});
