@@ -1,117 +1,184 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from "react";
+import { usePRContext } from "../../context/PRProvider";
 
-const Points = ({ prs = [] }) => {
+const Points = () => {
+    const { prsByStatus } = usePRContext();
+    const prs = prsByStatus.merged || [];
+
     const [userPRs, setUserPRs] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
     const [editingIndex, setEditingIndex] = useState(null);
     const [newPoints, setNewPoints] = useState('');
 
     useEffect(() => {
-        if (!Array.isArray(prs)) return;
+        if (prs.length === 0) {
+            setUserPRs([]);
+            return;
+        }
 
-        console.log('Received PRs:', prs);
+        const entries = prs
+            .filter(pr => pr.state === 'closed')
+            .map(pr => ({
+                username: pr.user?.login,
+                avatar: pr.user?.avatar_url,
+                prTitle: pr.title,
+                prUrl: pr.html_url,
+                points: 0,
+                isAssigned: false,
+            }))
+            .filter(entry => entry.username);
 
-        const formattedPRs = prs.map((pr) => ({
-            username: pr.user?.login,
-            prTitle: pr.title,
-            prUrl: pr.html_url,
-            points: 0,
-            isAssigned: false,
-        }));
-        setUserPRs(formattedPRs);
+        setUserPRs(entries);
     }, [prs]);
 
-    const handlePointsChange = (e) => {
-        setNewPoints(e.target.value);
-    };
+    if (prs.length === 0) {
+        return (
+            <div className="min-h-screen bg-[#eeeeee] text-black flex flex-col items-center justify-center p-6 sm:p-8">
+                <h1 className="text-xl font-bold mb-2">No PRs loaded yet</h1>
+                <p className="text-gray-600 text-center">
+                    Please go to the <strong>Check Submissions</strong> tab and load PRs first.
+                </p>
+            </div>
+        );
+    }
 
-    const handlePointsSave = async (index) => {
+    const handlePointsSave = (index) => {
         const updated = [...userPRs];
         const parsedPoints = parseInt(newPoints, 10);
         const validPoints = isNaN(parsedPoints) ? 0 : parsedPoints;
-
-        const username = updated[index].username;
-
-        try {
-            const response = await fetch(`https://api.ieeesoc.xyz/api/user/${username}/points`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ points: validPoints }),
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to assign points');
-            }
-
-            updated[index].points = validPoints;
-            updated[index].isAssigned = validPoints > 0;
-            setUserPRs(updated);
-            setEditingIndex(null);
-            setNewPoints('');
-        } catch (error) {
-            console.error('Error assigning points:', error);
-        }
+        updated[index].points = validPoints;
+        updated[index].isAssigned = validPoints > 0;
+        setUserPRs(updated);
+        setEditingIndex(null);
+        setNewPoints('');
     };
 
     return (
-        <div className="mt-8">
-            <h2 className="text-2xl font-bold mb-4">Assign Points to PRs</h2>
-            <ul className="space-y-4">
-                {userPRs.map((pr, index) => (
-                    <li
-                        key={index}
-                        className="bg-white p-4 rounded shadow flex justify-between items-center"
-                    >
-                        <div>
-                            <p className="font-medium text-blue-700">{pr.username}</p>
-                            <p>
-                                <a
-                                    href={pr.prUrl}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-500 underline"
-                                >
-                                    {pr.prTitle}
-                                </a>
-                            </p>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                            {editingIndex === index ? (
-                                <>
-                                    <input
-                                        type="number"
-                                        className="border rounded px-2 py-1 w-20"
-                                        value={newPoints}
-                                        onChange={handlePointsChange}
-                                    />
-                                    <button
-                                        className="bg-green-500 text-white px-3 py-1 rounded"
-                                        onClick={() => handlePointsSave(index)}
-                                    >
-                                        Save
-                                    </button>
-                                </>
-                            ) : (
-                                <>
-                                    <span className="text-gray-800">
-                                        {pr.isAssigned ? `Points: ${pr.points}` : 'Not assigned'}
-                                    </span>
-                                    <button
-                                        className="bg-blue-500 text-white px-3 py-1 rounded"
-                                        onClick={() => {
-                                            setEditingIndex(index);
-                                            setNewPoints(pr.points.toString());
-                                        }}
-                                    >
-                                        Assign
-                                    </button>
-                                </>
-                            )}
-                        </div>
-                    </li>
-                ))}
-            </ul>
+        <div
+            className="bg-repeat"
+            style={{
+                backgroundImage: "url('/images/repopagebg2.png')",
+                backgroundRepeat: "repeat",
+                backgroundSize: "100%",
+            }}
+        >
+            <div className="min-h-screen bg-transparent text-black px-6 py-7 pt-8 font-body">
+                <h1
+                    className="text-2xl sm:text-4xl md:text-5xl font-bold mb-6 text-center font-title text-[#ee540e]"
+                    style={{
+                        fontFamily: "CameraObscuraDEMO, sans-serif",
+                        letterSpacing: 2,
+                        textShadow: `
+                            -2px -2px 0 #fff,
+                            2px -2px 0 #fff,
+                            -2px 2px 0 #fff,
+                            2px 2px 0 #fff,
+                            0px 2px 0 #fff,
+                            2px 0px 0 #fff,
+                            0px -2px 0 #fff,
+                            -2px 0px 0 #fff
+                        `,
+                    }}
+                >
+                    Points Assignment
+                </h1>
+                <p className="text-md text-gray-600 mb-4 sm:mb-6 text-left">
+                    Assign points to contributors based on PRs
+                </p>
+
+                <input
+                    type="text"
+                    placeholder="Search users..."
+                    className="w-full p-3 rounded-md bg-white text-black mb-6 focus:outline-none focus:ring-2 focus:ring-[#aa93ed] border border-gray-600"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
+
+                {userPRs.length === 0 ? (
+                    <div className="text-gray-400">No merged PRs found.</div>
+                ) : (
+                    <div className="w-full overflow-x-auto">
+                        <table className="min-w-[600px] w-full text-left bg-white border border-gray-600 rounded-md">
+                            <thead className="text-black bg-[#d7d7d7] border-b border-gray-600">
+                                <tr>
+                                    <th className="py-5 px-4 whitespace-nowrap">Username</th>
+                                    <th className="py-5 px-4 whitespace-nowrap">PR Title</th>
+                                    <th className="py-5 px-4 whitespace-nowrap">Points</th>
+                                    <th className="py-5 px-4 whitespace-nowrap">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {userPRs
+                                    .filter((entry) =>
+                                        entry.username.toLowerCase().includes(searchTerm.toLowerCase())
+                                    )
+                                    .map((entry, index) => (
+                                        <tr key={index} className="border-b border-gray-700 hover:bg-[#eeeeee]">
+                                            <td className="py-4 px-4 font-semibold">
+                                                <span className="flex items-center gap-2">
+                                                    <img src={entry.avatar} alt="avatar" className="h-5 rounded-full" />
+                                                    {entry.username}
+                                                </span>
+                                            </td>
+                                            <td className="py-4 px-4 text-[#1e3ffa] max-w-xs truncate">
+                                                <a
+                                                    href={entry.prUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="hover:underline block"
+                                                >
+                                                    {entry.prTitle}
+                                                </a>
+                                            </td>
+                                            <td className="py-4 px-4 font-bold">
+                                                {editingIndex === index ? (
+                                                    <input
+                                                        type="number"
+                                                        value={newPoints}
+                                                        onChange={(e) => setNewPoints(e.target.value)}
+                                                        onKeyDown={(e) => {
+                                                            if (e.key === 'Enter') handlePointsSave(index);
+                                                            if (e.key === 'Escape') setEditingIndex(null);
+                                                        }}
+                                                        onBlur={() => handlePointsSave(index)}
+                                                        autoFocus
+                                                        className="bg-[#999999] text-white p-1 rounded w-20 focus:outline-none appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                                                    />
+                                                ) : (
+                                                    <div
+                                                        className="cursor-pointer flex items-center gap-2"
+                                                        onClick={() => {
+                                                            setEditingIndex(index);
+                                                            setNewPoints(entry.points.toString());
+                                                        }}
+                                                    >
+                                                        {entry.points}
+                                                        {entry.isAssigned && entry.points > 0 && (
+                                                            <span className="text-xs bg-green-600 text-white px-2 py-1 rounded">
+                                                                Assigned
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                )}
+                                            </td>
+                                            <td className="py-4 px-4">
+                                                <button
+                                                    className="bg-[#d7d7d7] px-4 py-2 rounded-md hover:bg-[#1e3ffa] hover:text-white transition"
+                                                    onClick={() => {
+                                                        setEditingIndex(index);
+                                                        setNewPoints(entry.points.toString());
+                                                    }}
+                                                >
+                                                    Edit Points
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    ))}
+                            </tbody>
+                        </table>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
