@@ -14,7 +14,7 @@ const CheckSubmission = () => {
 
     const fetchPRs = async (currentOffset) => {
         try {
-            const res = await fetch(`http://api.ieeesoc.xyz/api/admin-dashboard?offset=${currentOffset}`, {
+            const res = await fetch(`https://api.ieeesoc.xyz/api/admin-dashboard?offset=${currentOffset}`, {
                 credentials: "include",
             });
             const data = await res.json();
