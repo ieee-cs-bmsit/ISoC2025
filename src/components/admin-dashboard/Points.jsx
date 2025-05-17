@@ -11,66 +11,27 @@ const Points = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [editingIndex, setEditingIndex] = useState(null);
     const [newPoints, setNewPoints] = useState("");
-    const [isLoading, setIsLoading] = useState(true);
-
-    // Fetch existing points for specific PRs
-    const fetchPRPoints = async () => {
-        try {
-            const response = await axios.get(`https://api.ieeesoc.xyz/api/prs/points`);
-            return response.data.prPoints || {};
-        } catch (error) {
-            console.error(`Error fetching PR points:`, error);
-            return {};
-        }
-    };
 
     useEffect(() => {
         if (prs.length === 0) {
             setUserPRs([]);
-            setIsLoading(false);
             return;
         }
 
-        const loadPRsWithPoints = async () => {
-            setIsLoading(true);
-            
-            // Fetch points for all PRs
-            const prPointsMap = await fetchPRPoints();
-            
-            const entries = prs
-                .filter((pr) => pr.state === "closed")
-                .map((pr) => {
-                    // Get points for this specific PR using the PR URL as a unique identifier
-                    const prKey = pr.html_url;
-                    const existingPoints = prPointsMap[prKey] || 0;
-                    
-                    return {
-                        username: pr.user?.login,
-                        avatar: pr.user?.avatar_url,
-                        prTitle: pr.title,
-                        prUrl: pr.html_url,
-                        prId: pr.id,
-                        points: existingPoints,
-                        isAssigned: existingPoints > 0,
-                    };
-                })
-                .filter((entry) => entry.username);
+        const entries = prs
+            .filter((pr) => pr.state === "closed")
+            .map((pr) => ({
+                username: pr.user?.login,
+                avatar: pr.user?.avatar_url,
+                prTitle: pr.title,
+                prUrl: pr.html_url,
+                points: 0,
+                isAssigned: false,
+            }))
+            .filter((entry) => entry.username);
 
-            setUserPRs(entries);
-            setIsLoading(false);
-        };
-
-        loadPRsWithPoints();
+        setUserPRs(entries);
     }, [prs]);
-
-    if (isLoading) {
-        return (
-            <div className="min-h-screen bg-[#eeeeee] text-black flex flex-col items-center justify-center p-6 sm:p-8">
-                <h1 className="text-xl font-bold mb-2">Loading points data...</h1>
-                <p className="text-gray-600 text-center">Please wait while we fetch the points data.</p>
-            </div>
-        );
-    }
 
     if (prs.length === 0) {
         return (
@@ -88,30 +49,21 @@ const Points = () => {
         const updated = [...userPRs];
         const parsedPoints = parseInt(newPoints, 10);
         const validPoints = isNaN(parsedPoints) ? 0 : parsedPoints;
-        const pr = updated[index];
+        const user = updated[index];
 
         // Optimistically update UI
-        pr.points = validPoints;
-        pr.isAssigned = validPoints > 0;
+        user.points = validPoints;
+        user.isAssigned = validPoints > 0;
         setUserPRs(updated);
         setEditingIndex(null);
         setNewPoints("");
 
         try {
-            // Store points for this specific PR
-            await axios.post(`https://api.ieeesoc.xyz/api/prs/points`, {
-                prUrl: pr.prUrl,
-                prId: pr.prId,
-                username: pr.username,
+            await axios.patch(`https://api.ieeesoc.xyz/api/users/${user.username}/points`, {
                 points: validPoints,
             });
 
-            // Also update user's total points
-            await axios.patch(`https://api.ieeesoc.xyz/api/users/${pr.username}/points`, {
-                points: validPoints,
-            });
-
-            toast.success(`Points updated for PR: ${pr.prTitle}`);
+            toast.success(`Points updated for ${user.username}`);
         } catch (error) {
             toast.error("Failed to update points in database");
             console.error("Error updating points:", error);
@@ -225,7 +177,7 @@ const Points = () => {
                                                         }}
                                                     >
                                                         {entry.points}
-                                                        {entry.isAssigned && (
+                                                        {entry.isAssigned && entry.points > 0 && (
                                                             <span className="text-xs bg-green-600 text-white px-2 py-1 rounded">
                                                                 Assigned
                                                             </span>
