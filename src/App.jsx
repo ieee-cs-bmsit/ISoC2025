@@ -11,6 +11,7 @@ import RepoPreview from "./pages/Repopreviewpage";
 import Dashboard from "./pages/Dashboardpage";
 import ADashboard from "./pages/ADashboard";
 import ProtectedRoute from "./components/Protectedroutes";
+import AProtectedRoute from "./components/AProtectedRoute";
 import { Toaster } from "react-hot-toast";
 
 const App = () => {
@@ -45,7 +46,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          
+
           {/* <Route path="/repos" element={<Repospage />} /> */}
           <Route path="/team" element={<Teampage />} />
           <Route path="/faqs" element={<FAQpage />} />
@@ -69,7 +70,9 @@ const App = () => {
             <Route
               path="/admin-dashboard"
               element={
-                <ADashboard />
+                <AProtectedRoute>
+                  <ADashboard />
+                </AProtectedRoute>
               }
             />
           </Routes>

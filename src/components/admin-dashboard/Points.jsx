@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import toast from "react-hot-toast";
+import React, { useState, useEffect, useRef } from "react";
 import { usePRContext } from "../../context/PRProvider";
+import { toast } from "react-hot-toast";
+import axios from "axios";
 
 const Points = () => {
     const { prsByStatus } = usePRContext();
@@ -12,6 +12,9 @@ const Points = () => {
     const [editingIndex, setEditingIndex] = useState(null);
     const [newPoints, setNewPoints] = useState("");
 
+    // Ref to prevent multiple saves (double calls)
+    const saveInProgress = useRef(false);
+
     useEffect(() => {
         if (prs.length === 0) {
             setUserPRs([]);
@@ -21,12 +24,13 @@ const Points = () => {
         const entries = prs
             .filter((pr) => pr.state === "closed")
             .map((pr) => ({
+                prId: pr.id,
                 username: pr.user?.login,
                 avatar: pr.user?.avatar_url,
                 prTitle: pr.title,
                 prUrl: pr.html_url,
-                points: 0,
-                isAssigned: false,
+                points: pr.points || 0,
+                isAssigned: pr.assigned || false,
             }))
             .filter((entry) => entry.username);
 
@@ -46,29 +50,36 @@ const Points = () => {
     }
 
     const handlePointsSave = async (index) => {
+        if (saveInProgress.current) return; // prevent duplicate saves
+        saveInProgress.current = true;
+
         const updated = [...userPRs];
         const parsedPoints = parseInt(newPoints, 10);
         const validPoints = isNaN(parsedPoints) ? 0 : parsedPoints;
-        const user = updated[index];
-
-        // Optimistically update UI
-        user.points = validPoints;
-        user.isAssigned = validPoints > 0;
-        setUserPRs(updated);
-        setEditingIndex(null);
-        setNewPoints("");
 
         try {
-            await axios.patch(`https://api.ieeesoc.xyz/api/users/${user.username}/points`, {
+            await axios.post(`https://api.ieeesoc.xyz/api/users/points/assign`, {
+                prId: updated[index].prId,
+                username: updated[index].username,
+                prTitle: updated[index].prTitle,
                 points: validPoints,
             });
 
-            toast.success(`Points updated for ${user.username}`);
-        } catch (error) {
-            toast.error("Failed to update points in database");
-            console.error("Error updating points:", error);
+            // Only update UI after successful save
+            updated[index].points = validPoints;
+            updated[index].isAssigned = validPoints > 0;
+            setUserPRs(updated);
+            toast.success("Points saved successfully!");
+            setEditingIndex(null);
+            setNewPoints("");
+        } catch (err) {
+            console.error("Error saving points:", err);
+            toast.error("Failed to save points. Please try again.");
+        } finally {
+            saveInProgress.current = false;
         }
     };
+
 
     return (
         <div
@@ -86,14 +97,14 @@ const Points = () => {
                         fontFamily: "CameraObscuraDEMO, sans-serif",
                         letterSpacing: 2,
                         textShadow: `
-                -2px -2px 0 #fff,
-                2px -2px 0 #fff,
-                -2px 2px 0 #fff,
-                2px 2px 0 #fff,
-                0px 2px 0 #fff,
-                2px 0px 0 #fff,
-                0px -2px 0 #fff,
-                -2px 0px 0 #fff
+              -2px -2px 0 #fff,
+              2px -2px 0 #fff,
+              -2px 2px 0 #fff,
+              2px 2px 0 #fff,
+              0px 2px 0 #fff,
+              2px 0px 0 #fff,
+              0px -2px 0 #fff,
+              -2px 0px 0 #fff
             `,
                     }}
                 >
