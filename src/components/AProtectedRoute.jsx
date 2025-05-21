@@ -3,7 +3,7 @@ import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/Authcontext";
 import toast from "react-hot-toast";
 
-const maintainers = ['PrithwisK07', 'Atul-k-m', 'Arnabpaul0101', 'Itsmenuma', 'Devansh051'];
+const maintainers = ['PrithwisK07', 'Atul-k-m', 'Arnabpaul0101', 'Itsmenuma', 'Devansh051', 'akshay-s-madhwani', 'Community-Programmer', 'UmashankarGouda', 'Kushal-Raj-135'];
 
 const AProtectedRoute = ({ children }) => {
     const { user, loading } = useAuth();
