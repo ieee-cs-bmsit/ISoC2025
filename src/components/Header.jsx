@@ -3,7 +3,7 @@ import { useAuth } from "../context/Authcontext";
 import { Link } from "react-router-dom";
 import { Github } from "lucide-react";
 
-const maintainers = ['PrithwisK07', 'Atul-k-m', 'Arnabpaul0101', 'Itsmenuma', 'Devansh051'];
+const maintainers = ['PrithwisK07', 'Atul-k-m', 'Arnabpaul0101', 'Itsmenuma', 'Devansh051', 'akshay-s-madhwani', 'Community-Programmer', 'UmashankarGouda', 'Kushal-Raj-135'];
 
 const Header = () => {
   const { user, login, logout } = useAuth();
