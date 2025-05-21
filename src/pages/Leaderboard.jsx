@@ -286,10 +286,10 @@ const Leaderboard = () => {
 
             <Footer/>
         </div>
-      ) : (<div className="flex justify-center items-center min-h-screen gap-3">
-        <p className='text-3xl'> Loading LeaderBoard</p>
-        <BeatLoader color="#5972f1" size={20}/>
-      </div>)}
+      ) : (<div className="flex flex-col justify-center items-center min-h-screen px-4 text-center gap-4">
+            <p className="text-xl sm:text-2xl md:text-3xl font-medium">Loading LeaderBoard</p>
+            <BeatLoader color="#5972f1" size={15} />
+        </div>)}
       </>
     );
 };
