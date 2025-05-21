@@ -365,9 +365,9 @@
 }
 
 .user-img-container {
-  width: 140px;
-  height: 140px;
-  top: 32%;
+  width: 150px;
+  height: 150px;
+  top: 30%;
   left: 20%;
 }
 
@@ -852,6 +852,7 @@
     padding: 0 .5rem;
     color: #64748B ;
     font-weight: 700;
+    color: white;
   }
   
   .info-container{
@@ -1256,7 +1257,7 @@
         justify-content: center;
   
         position: absolute;
-        top: 40%; /* Place halfway down the parent */
+        top: 32%; /* Place halfway down the parent */
         left: 20%; /* Center horizontally */
         transform: translate(-50%, -50%); /* Truly center it */
         z-index: 10; /* Bring above background */
