@@ -367,8 +367,8 @@
 .user-img-container {
   width: 140px;
   height: 140px;
-  top: 28%;
-  left: 18%;
+  top: 32%;
+  left: 20%;
 }
 
 .user-name {
@@ -877,7 +877,7 @@
     justify-content: center;
   
     position: absolute;
-    top: 28%; /* Place halfway down the parent */
+    top: 30%; /* Place halfway down the parent */
     left: 20%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Truly center it */
     z-index: 10; /* Bring above background */
@@ -1256,8 +1256,8 @@
         justify-content: center;
   
         position: absolute;
-        top: 30%; /* Place halfway down the parent */
-        left: 22%; /* Center horizontally */
+        top: 40%; /* Place halfway down the parent */
+        left: 20%; /* Center horizontally */
         transform: translate(-50%, -50%); /* Truly center it */
         z-index: 10; /* Bring above background */
       }
