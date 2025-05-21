@@ -13,6 +13,7 @@ import ADashboard from "./pages/ADashboard";
 import ProtectedRoute from "./components/Protectedroutes";
 import AProtectedRoute from "./components/AProtectedRoute";
 import { Toaster } from "react-hot-toast";
+import MaintainerPage from "./pages/MaintainerPage";
 
 const App = () => {
   return (
@@ -51,6 +52,7 @@ const App = () => {
           <Route path="/team" element={<Teampage />} />
           <Route path="/faqs" element={<FAQpage />} />
           <Route path="/sponsors" element={<Sponsorspage />} />
+          <Route path = '/maintainers' element = {<MaintainerPage/>} />
         </Routes>
 
         <AuthProvider>

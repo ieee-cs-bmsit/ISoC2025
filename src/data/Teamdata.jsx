@@ -181,6 +181,7 @@ export const TeamDetails = [
         role: "Tech Team",
         linkedin: "https://www.linkedin.com/in/devansh-agrawal-678785217?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
        instagram: "",
+       github: "https://github.com/Devansh051",
        star_icon: starIcon6,
     }, 
     {

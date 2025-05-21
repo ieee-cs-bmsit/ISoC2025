@@ -216,17 +216,30 @@ const ReposPage = () => {
             ))
           )}
         </div>
-        <a href= "/ContGuide.pdf" target = '_blank' className="flex justify-center mt-8">
-          <div className="relative group">
-            {/* Yellow shadow box */}
-            <div className="absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 z-0"></div>
+       
 
-            {/* Foreground button */}
-            <div className="relative z-10 border-2 border-black bg-white px-4 py-2 md:px-8 md:py-4 font-bold text-black text-lg md:text-2xl transition-transform duration-300 group-hover:scale-103 space-grotesk-regular">
-              Contribution Guidelines
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-10 lg:gap-16 mt-10 z-20">
+
+
+          <a href="/ContGuide.pdf" target="_blank" className="w-full sm:w-auto flex justify-center">
+            <div className="relative group">
+              <div className="absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 z-0 "></div>
+              <div className="relative z-10 border-2 border-black bg-white px-6 py-2 sm:px-8 sm:py-3 font-bold text-black text-base sm:text-lg transition-transform duration-300 group-hover:scale-105 space-grotesk-regular">
+                Contribution Guidelines
+              </div>
             </div>
-          </div>
-        </a>
+          </a>
+
+          <a href="/maintainers" className="w-full sm:w-auto flex justify-center">
+            <div className="relative group">
+              <div className="absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 z-0"></div>
+              <div className="relative z-10 border-2 border-black bg-white px-6 py-2 sm:px-8 sm:py-3 font-bold text-black text-base sm:text-lg transition-transform duration-300 group-hover:scale-105 space-grotesk-regular">
+                Maintainers
+              </div>
+            </div>
+          </a>
+
+        </div>
       </div>
       <Footer />
     </div>
