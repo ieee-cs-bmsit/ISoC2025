@@ -5,11 +5,13 @@ import { useAuth } from '../context/Authcontext';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Navigate, useNavigate } from 'react-router-dom';
+import { BeatLoader } from "react-spinners";
 
 const Leaderboard = () => {
     const [searchValue, setSearchValue] = useState('');
     const [nonempty, setNonempty] = useState(false);
     const [showAll, setShowAll] = useState(true);
+    const [loading, setLoading]= useState(false);
     const [searchMember, setSearchMember] = useState([]);
     const [sortedData, setSortedData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -21,11 +23,13 @@ const Leaderboard = () => {
 
     const fetchData = async () => {
         try {
+            setLoading(true);
             const res = await fetch('https://api.ieeesoc.xyz/api/users/allUserdata');
             const data = await res.json();
 
             if (!data.success) {
                 console.error('Error fetching leaderboard data');
+                setLoading(false);
                 return;
             }
 
@@ -49,6 +53,9 @@ const Leaderboard = () => {
             setSortedData(rankedData);
         } catch (error) {
             console.error('Error during fetch:', error);
+        }
+        finally {
+            setLoading(false);
         }
     };
     
@@ -117,7 +124,9 @@ const Leaderboard = () => {
     const totalPages = Math.ceil(sortedData.length / itemsPerPage);
 
     return (
-      <div className="bg-repeat" style={{
+      <>
+      {!loading ? (
+        <div className="bg-repeat" style={{
         backgroundImage: "url('/images/repopagebg2.png')",
         backgroundRepeat: "repeat",
         backgroundSize: "200%",
@@ -277,6 +286,11 @@ const Leaderboard = () => {
 
             <Footer/>
         </div>
+      ) : (<div className="flex justify-center items-center min-h-screen gap-3">
+        <p className='text-3xl'> Loading LeaderBoard</p>
+        <BeatLoader color="#5972f1" size={20}/>
+      </div>)}
+      </>
     );
 };
 
