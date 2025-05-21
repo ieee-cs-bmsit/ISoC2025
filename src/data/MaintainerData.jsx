@@ -26,7 +26,7 @@ export const MaintainerDetail = [
     {
         img: member2,
         name: "Sarthak Patel",
-        role: "Maintainer",
+        role: "FinTechForge",
         linkedin: "https://www.linkedin.com/in/sarthak-patel23/",
        instagram: "https://www.instagram.com/sarthak_patel23/",
        github:"https://github.com/Community-Programmer",
@@ -36,7 +36,7 @@ export const MaintainerDetail = [
     {
         img: member1,
         name: "Akshay S Madhwani",
-        role: "Maintainer",
+        role: "LocalLoop , QBC",
         linkedin: "https://www.linkedin.com/in/akshay-s-madhwani-92a802349/",
        instagram: "",
        github:"https://github.com/akshay-s-madhwani",
@@ -46,7 +46,7 @@ export const MaintainerDetail = [
     {
         img: member7,
         name: "Sharathchandra patil",
-        role: "Maintainer",
+        role: "StockMind",
         linkedin: "https://www.linkedin.com/in/sharathchandra-patil/",
        instagram: "https://www.instagram.com/sharathchandra_09/",
        github:"https://github.com/sharathchandra-patil/StockMind",
@@ -56,7 +56,7 @@ export const MaintainerDetail = [
     {
         img: member4,
         name: "Abhay Prabhakar",
-        role: "Maintainer",
+        role: "SafeVision",
         linkedin: "https://www.linkedin.com/in/abhay-prabhakar",
        instagram: "https://www.instagram.com/abhay.__.p",
        github:"https://github.com/abhayprabhakar",
@@ -64,19 +64,9 @@ export const MaintainerDetail = [
     }, 
 
     {
-        img: member5,
-        name: "Mohammed Ali Mohammed Al Sakkaf",
-        role: "Maintainer",
-        linkedin: "https://www.linkedin.com/in/mohammed-ali-alsakkaf/",
-       instagram: "https://www.instagram.com/md.ali.alsakkaf/",
-       github:"https://github.com/Binbasri-in",
-       star_icon: starIcon3,
-    },  
-
-    {
         img: member3,
         name: "Tarin Agarwal",
-        role: "Maintainer",
+        role: "Learnify",
         linkedin: "http://linkedin.com/in/tarin-agarwal-810793267/",
        instagram: "https://www.instagram.com/tarinagarwal?igsh=MXMzY2p2ZDBkcnlkMg==",
        github:"https://github.com/tarinagarwal/",
@@ -84,9 +74,19 @@ export const MaintainerDetail = [
     }, 
 
     {
+        img: member5,
+        name: "Mohammed Ali Mohammed Al Sakkaf",
+        role: "Image-Iguana",
+        linkedin: "https://www.linkedin.com/in/mohammed-ali-alsakkaf/",
+       instagram: "https://www.instagram.com/md.ali.alsakkaf/",
+       github:"https://github.com/Binbasri-in",
+       star_icon: starIcon3,
+    },  
+
+    {
         img: member10,
         name: "Numa Rahamath S A",
-        role: "Maintainer",
+        role: "Typing Tutor, War-Data-Analysis",
         linkedin: "https://www.linkedin.com/in/itsmenuma",
         instagram: "https://www.instagram.com/duh.its_numa?igsh=MXQ2dWtwN3ZwNHpnMA%3D%3D&utm_source=qr",
         star_icon: starIcon12,
@@ -95,7 +95,7 @@ export const MaintainerDetail = [
     {
         img: member6,
         name: "Umashankar S",
-        role: "Maintainer",
+        role: "SafeVision",
         linkedin: "http://www.linkedin.com/in/umashankargouda",
        instagram: "",
        github:"https://github.com/UmashankarGouda",
@@ -106,7 +106,7 @@ export const MaintainerDetail = [
     {
         img: member8,
         name: "Arnab Paul",
-        role: "Maintainer",
+        role: "Scrapy, Bloom",
         linkedin: "https://www.linkedin.com/in/arnab-paul-76b306248/",
        instagram: "",
        github:"https://github.com/Arnabpaul0101",
@@ -116,7 +116,7 @@ export const MaintainerDetail = [
     {
         img: member9,
         name: "Devansh Agrawal",
-        role: "Maintainer",
+        role: "Dynamic Ambulence",
         linkedin: "https://www.linkedin.com/in/devansh-agrawal-678785217?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
        instagram: "",
        github:"https://github.com/Devansh051",
