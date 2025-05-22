@@ -16,6 +16,7 @@ import member4 from '../assets/Profile_Picture/IMG_20250108_190903_552 - Abhay P
 import member5 from '../assets/Profile_Picture/MohammedAli - Mohammed Ali Al-sakkaf.jpeg';
 import member6 from '../assets/Profile_Picture/Passport Photo 2 (150kb) - Umashankar S.jpg';
 import member7 from '../assets/Profile_Picture/WhatsApp Image 2025-04-23 at 14.11.30 - Sharathchandra Patil.jpeg';
+import member12 from '../assets/Profile_Picture/IMG_20250314_025112_109 - Ankit Singh.webp';
 
 import member8 from '../assets/Photos Members/Arnab.jpg';
 import member9 from '../assets/Photos Members/devansh.jpg';
@@ -71,7 +72,7 @@ export const MaintainerDetail = [
        instagram: "https://www.instagram.com/tarinagarwal?igsh=MXMzY2p2ZDBkcnlkMg==",
        github:"https://github.com/tarinagarwal/",
        star_icon: starIcon1,
-    }, 
+    },
 
     {
         img: member5,
@@ -83,6 +84,7 @@ export const MaintainerDetail = [
        star_icon: starIcon3,
     },  
 
+
     {
         img: member10,
         name: "Numa Rahamath S A",
@@ -90,6 +92,16 @@ export const MaintainerDetail = [
         linkedin: "https://www.linkedin.com/in/itsmenuma",
         instagram: "https://www.instagram.com/duh.its_numa?igsh=MXQ2dWtwN3ZwNHpnMA%3D%3D&utm_source=qr",
         star_icon: starIcon12,
+    },
+
+    {   
+        img: member12,
+        name: "Ankit Singh ",
+        role: "DebateMate",
+        linkedin: "https://www.linkedin.com/in/ankit-singh-23376a282/",
+       instagram: "https://www.instagram.com/ankit_27_09?igsh=aWk2d2NsZzVjdDU0",
+       github:"https://github.com/Ankit27-09",
+       star_icon: starIcon2,
     },
 
     {
