@@ -120,7 +120,7 @@ function Navbar() {
         </ul>
       </div>
 
-      <div className="block md:hidden text-sm font-bold pr-5">IEEE <span className="text-[#ee540e]">Summer of Code</span></div>
+      <div className="block md:hidden text-sm font-bold pr-5">IEEE <span className="text-[#ee540e]">Winter of Code</span></div>
 
       {/* Hamburger only on mobile */}
       <button

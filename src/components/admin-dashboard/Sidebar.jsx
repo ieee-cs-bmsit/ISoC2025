@@ -34,7 +34,7 @@ const Sidebar = ({ open, setOpen, activeItem, setActiveItem }) => {
                     ${open ? 'w-[17%]' : 'w-17 hidden'} md:block`}
             >
                 <header className={`flex ${open ? 'justify-between px-4' : 'justify-center'} items-center`}>
-                    {open && <h1 className="text-lg font-bold space-grotesk-regular text-[#000]">IEEE <span className='text-[#ee540e]'>Summer of Code</span> </h1>}
+                    {open && <h1 className="text-lg font-bold space-grotesk-regular text-[#000]">IEEE <span className='text-[#ee540e]'>Winter of Code</span> </h1>}
                     {!isMobile && (
                         <button
                             className="cursor-pointer"
