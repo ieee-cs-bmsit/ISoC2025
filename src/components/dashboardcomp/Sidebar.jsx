@@ -54,7 +54,7 @@ const Sidebar = ({ activeItem, setActiveItem, open, setOpen }) => {
             {/* Desktop Sidebar */}
             <aside className={`space-grotesk-regular hidden md:flex flex-col h-full py-7 bg-[#fff] fixed left-0 top-0 z-40 transition-all duration-300 ease-in-out ${open ? 'w-[17%]' : 'w-17'} `}>
                 <header className={`flex ${open ? 'justify-between px-4' : 'justify-center'} items-center`}>
-                    {open && <h1 className="text-lg font-bold space-grotesk-regular text-[#000]">IEEE <span className='text-[#ee540e]'>Summer of Code</span> </h1>}
+                    {open && <h1 className="text-lg font-bold space-grotesk-regular text-[#000]">IEEE <span className='text-[#ee540e]'>Winter of Code</span> </h1>}
                     {!isMobile && (
                         <button
                             className="cursor-pointer"

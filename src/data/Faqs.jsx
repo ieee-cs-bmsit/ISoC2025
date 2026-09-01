@@ -1,9 +1,9 @@
 
 const faqs = [
     {
-      question: "What is IEEE Summer of Code?",
+      question: "What is IEEE Winter of Code?",
       answer:
-        "IEEE Summer of Code is an open-source initiative by IEEE aimed at helping students and professionals contribute to real-world projects, gain mentorship, and build technical and collaborative skills.",
+        "IEEE Winter of Code is an open-source initiative by IEEE aimed at helping students and professionals contribute to real-world projects, gain mentorship, and build technical and collaborative skills.",
     },
     {
       question: "Who can participate?",
@@ -16,7 +16,7 @@ const faqs = [
     },
     {
       question: "When does the event take place?",
-      answer: "The program runs from 9th May 2025 to 28th June 2025.",
+      answer: "The program runs from 10th September 2026 to 1st December 2026.",
     },
     {
       question: "How will the event be conducted?",

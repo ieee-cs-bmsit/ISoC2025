@@ -90,7 +90,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="w-full border-t border-black text-center text-black flex sm:justify-between justify-center lg:px-20 sm:px-4 py-4 font-bold lg:text-lg text-sm bg-[#ebd22f]">
-                <p>2025 IEEE Summer of Code</p>
+                <p>2026 IEEE Winter of Code</p>
                 <p> &nbsp; | &nbsp;</p>
                 <p>MADE BY IEEE CS BMSIT&M</p>
             </div>
