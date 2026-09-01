@@ -1,29 +1,53 @@
 const events = [
   {
-    title: "Registrations Open",
-    subtitle: "The registration window opens!",
-    date: "April 27, 2025"
-  },
-  
-  {
-    title: "Kickoff + Meet & Code Session",
-    subtitle: "Meet your team and start coding together!",
-    date: "May 9, 2025"
+    title: "Promotions & Registrations",
+    subtitle: "Registration window opens for IEEE Winter of Code",
+    date: "10th Sept - 10th Oct"
   },
   {
-    title: "Registrations Close",
+    title: "Project Unveiling & Issue Publication",
+    subtitle: "Projects and initial issues are published",
+    date: "15th Oct"
+  },
+  {
+    title: "Video Explanations on In-House Projects",
+    subtitle: "Detailed video guides for project understanding",
+    date: "16th Oct"
+  },
+  {
+    title: "Close Registrations",
     subtitle: "Last date to register for the event",
-    date: "May 15, 2025"
+    date: "20th Oct (23:59)"
   },
   {
-    title: "More Coming Soon",
-    subtitle: "Stay tuned for upcoming surprises!",
-    date: "Date TBD"
+    title: "Issues Assigned",
+    subtitle: "Participants receive their assigned issues",
+    date: "8th October"
   },
   {
-    title: "Event Ends",
+    title: "First Meet & Code Session",
+    subtitle: "First speaker session (Offline)",
+    date: "6th November"
+  },
+  {
+    title: "Second Set of Issues Released",
+    subtitle: "Additional issues made available",
+    date: "6th November"
+  },
+  {
+    title: "Second Meet & Code Session",
+    subtitle: "Continue coding with team support",
+    date: "3rd Week of May"
+  },
+  {
+    title: "Third Set of Issues Released",
+    subtitle: "Final batch of issues published",
+    date: "27th November"
+  },
+  {
+    title: "Event Conclusion",
     subtitle: "All submissions close. Thanks for participating!",
-    date: "June 28, 2025"
+    date: "1st December"
   }
 ];
 
