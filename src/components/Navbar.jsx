@@ -178,7 +178,7 @@ function Navbar() {
           </ul>
 
           <Link
-            to="https://unstop.com/p/ieee-summer-of-code-bms-insitute-of-technology-and-management-1469982"
+            to="https://devfolio.co/REPLACE_WITH_DEVFOLIO_LINK"
             className="register-btn"
           >
             Register
