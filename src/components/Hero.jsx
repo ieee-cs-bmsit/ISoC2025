@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
-import heroBg from "../assets/img/ISoc_Desktop_Hero.svg";
-import mobileLogo from "../assets/img/ISoc_Mobile_Hero.svg";
+import heroBg from "../assets/img/banner.png"
+import mobileLogo from "../assets/img/banner.png"
 import "./Hero.css";
 import { useNavigate } from "react-router-dom";
 const Hero = () => {
@@ -39,7 +39,7 @@ const Hero = () => {
           >
             <button
               onClick={() => navigate("/repos")}
-              href="https://unstop.com/p/ieee-summer-of-code-bms-insitute-of-technology-and-management-1469982"
+              href="https://devfolio.co/REPLACE_WITH_DEVFOLIO_LINK"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -65,25 +65,25 @@ const Hero = () => {
         <div className="marquee-text-track">
           <p>BMSITM</p>
           <p>✺</p>
-          <p>9th May to 28st June</p>
+          <p>15th Oct to 1st Dec</p>
           <p>✺</p>
           <p>IEEE CS BMSITM</p>
           <p>✺</p>
           <p>BMSITM</p>
           <p>✺</p>
-          <p>9th May to 28st June</p>
+          <p>15th Oct to 1st Dec</p>
           <p>✺</p>
           <p>IEEE CS BMSITM</p>
           <p>✺</p>
           <p aria-hidden="true">BMSITM</p>
           <p aria-hidden="true">✺</p>
-          <p aria-hidden="true">9th May to 28st June</p>
+          <p aria-hidden="true">15th Oct to 1st Dec</p>
           <p aria-hidden="true">✺</p>
           <p aria-hidden="true">IEEE CS BMSITM</p>
           <p>✺</p>
           <p aria-hidden="true">BMSITM</p>
           <p aria-hidden="true">✺</p>
-          <p aria-hidden="true">9th May to 28st June</p>
+          <p aria-hidden="true">15th Oct to 1st Dec</p>
           <p aria-hidden="true">✺</p>
           <p aria-hidden="true">IEEE CS BMSITM</p>
           <p>✺</p>
