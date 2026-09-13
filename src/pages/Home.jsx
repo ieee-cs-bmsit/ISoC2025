@@ -94,9 +94,9 @@ const Home = () => {
         </p>
 
         <Sponsorsection
-          texts={[sponsor, sponsor]}
+          texts={[sponsor]}
           velocity={80}
-          numCopies={3}
+          numCopies={5}
           className="custom-scroll-text"
         />
 

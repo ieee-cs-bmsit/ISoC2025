@@ -26,7 +26,7 @@ const Hero = () => {
         <img
           src={isMobile ? mobileLogo : heroBg}
           alt="Winter of Code Hero"
-          className="w-full h-full absolute top-0 left-0 object-contain z-10"
+          className="w-full h-full absolute top-0 left-0 object-cover z-10"
         />
 
         {/* Buttons */}
