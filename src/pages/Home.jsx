@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Sponsorsection from "../components/Sponsorsection";
 import Timeline from "../components/Timeline";
 import About from "../components/About";
 import Faqsection from "../components/Faqsection";
@@ -12,7 +11,6 @@ import {sponsors} from "../data/Sponsordata.jsx";
 
 const Home = () => {
   const location = useLocation();
-  const sponsor = [];
 
   useEffect(() => {
     // Scroll to top when visiting home
@@ -31,27 +29,6 @@ const Home = () => {
       }, 300); // Give a small delay
     }
   }, [location]);
-
-  for (let i = 0; i < sponsors.length; i++) {
-    sponsor.push(
-      <a
-        key={i}
-        href={sponsors[i].url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mx-2 inline-block"
-      >
-        <motion.img
-          src={sponsors[i].image}
-          alt={`Sponsor ${i + 1}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: i * 0.1 }}
-          className="w-[220px] md:w-[370px] object-contain"
-        />
-      </a>
-    );
-  }
 
   return (
     <div>
@@ -93,12 +70,26 @@ const Home = () => {
           Our Sponsors
         </p>
 
-        <Sponsorsection
-          texts={[sponsor]}
-          velocity={80}
-          numCopies={5}
-          className="custom-scroll-text"
-        />
+        <div className="flex justify-center items-center py-10">
+          {sponsors.map((sponsor, i) => (
+            <a
+              key={i}
+              href={sponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <motion.img
+                src={sponsor.image}
+                alt={`Sponsor ${i + 1}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="w-[220px] md:w-[370px] object-contain"
+              />
+            </a>
+          ))}
+        </div>
 
         <Link to="/sponsors" className="flex justify-center mt-8">
           <div className="relative group">
